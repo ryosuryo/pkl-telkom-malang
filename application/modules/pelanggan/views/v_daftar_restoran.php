@@ -44,7 +44,7 @@
 									'<img style="width:385px;height: 270px;" src="<?= base_url('assets/gambar/')?>'+dt['gambar']+'" alt="...">'+
 
 									'<table class="table table-hover table-stripped">'+
-						        		'<tr><td>'+dt['alamat_restoran']+'</td><td><a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-success" style="text-decoration:none">Lihat Detail</a></td></tr>'+
+						        		'<tr><td>'+dt['alamat_restoran']+'<br>'+dt['status']+'</td><td><a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-success" style="text-decoration:none">Lihat Detail</a></td></tr>'+
 						      		'</table>'+
 											
 									'</p>'+
@@ -66,18 +66,32 @@
 				'<table class="table table-hover table-stripped">'+
 	        		'<tr><td>Nama Restoran</td><td>'+data['nama_restoran']+'</td></tr>'+
 	        		'<tr><td>Alamat</td><td>'+data['alamat_restoran']+'</td></tr>'+
-	        		'<tr><td>Deskripsi</td><td>----</td></tr>'+
-	        		'<tr><td>Status</td><td><div id="sm"></div></td></tr>'+
+	        		'<tr><td>Deskripsi</td><td></td></tr>'+
+	        		'<tr><td>Jam Buka</td><td>'+data['jam_buka']+'</td></tr>'+
 	      		'</table>'
 	      		);
 			$('#nomor_meja').html(
-	      		'<label>No. Meja</label>'+
-	      		'<input type="number" id="jumlah_item" value="1" name="nomor_meja" class="form-control">'
+	      		'<label>Pesan Meja Nomor ?</label>'+
+	      		'<input type="number" id="no_item" value="1" name="nomor_meja" class="form-control">'
 	      		);
 	    	$('#btn').html(
 	        	'<button id="beli" onclick="beli('+data['id_restoran']+')" class="btn btn-default">PESAN</button>'
 	        	
 	      		);
+		});
+	}
+	//proses pesan meja
+	function pesan(id_restoran){
+		var no_meja=$('no_item').val();
+
+		$.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/tambah_cart/"+id_restoran+"/"+no_meja,function(hasil){
+			//$('#cart').html(hasil['total_cart']);
+			$('#pesan').html("item anda ditambahkan ke cart");
+			$('#pesan').addClass('alert alert-success');
+			$('#pesan').show('animate');
+			setTimeout(function(){
+				$('#pesan').hide('fade');
+			}, 3000);
 		});
 	}
 </script>
