@@ -14,7 +14,7 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>ID Restoran</th>
-                                        <th>Nama Restoran</th>
+                                        <th>Nama RESTORAN</th>
                                         <th>Gambar</th>
                                         <th>Alamat Restoran</th>
                                         <th>Aksi</th>
