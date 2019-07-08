@@ -96,13 +96,14 @@
 	      		'<input type="number" id="no_item" value="1" name="no_meja" class="form-control">'
 	      		);
 	    	$('#btn').html(
-	        	'<button id="beli" onclick="pesan('+data['id_restoran']+')" class="btn btn-default">PESAN</button>'
+	        	'<button id="beli" onclick="beli('+data['id_restoran']+')" class="btn btn-default">PESAN</button>'
 	        	
 	      		);
 		});
 	}
 	//menampilkan detail menu makanan di setiap restoran
 	function mas_detail(id_restoran){
+
 		$.getJSON("<?= base_url()?>index.php/pelanggan/Get_restoran/detail_mas/"+id_restoran,function(data){
 			$('#deskripsi_masakan').html(
 				'<table class="table table-hover table-stripped">'+
@@ -112,11 +113,13 @@
 		});
 	}
 	//proses pesan meja
-	function pesan(id_restoran){
-		var no_meja=$('no_item').val();
+	function beli(id_restoran){
+		var no_meja=$('#no_item').val();
 
+		$('#pesan').hide();
+		$('#pesan').removeClass("alert alert-success");
 		$.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/tambah_cart/"+id_restoran+"/"+no_meja,function(hasil){
-			//$('#cart').html(hasil['total_cart']);
+			$('#cart').html(hasil['total_cart']);
 			$('#pesan').html("item anda ditambahkan ke cart");
 			$('#pesan').addClass('alert alert-success');
 			$('#pesan').show('animate');

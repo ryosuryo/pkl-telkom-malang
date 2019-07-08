@@ -12,11 +12,8 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>ID Masakan</th>
-                                        <th>Nama Masakan</th>
-                                        <th>Quantity</th>
-                                        <th>Subtotal</th>
-                                        <th>Aksi</th>
+                                        <th>ID Restoran</th>
+                                        <th>Meja</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tm_pesanan">
@@ -30,7 +27,7 @@
                                 </div>
                              </form>
                             <br>
-                            <a href="<?= base_url()?>index.php/Dashboard_pelanggan/index" class="btn btn-primary">Pesan Lagi</a>
+                            <a href="#" class="btn btn-primary">Pesan Lagi</a>
                             <a href="#bayar" onclick="simpan_list_db()" class="btn btn-warning" data-toggle="modal">Bayar</a>
                         </div>
                     </div>
@@ -56,7 +53,25 @@
                                     </div>
                                 </div>
 <script type="text/javascript">
-   
+   function load_cart()
+   {
+    $('#tm_pesanan').html('');
+    $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/tm_pesanan",function(hasil){
+      var no=0;
+
+       $.each(hasil['data_cart'],function(key,obj){
+        no++;
+        $("#tm_pesanan").append(
+          '<tr>'+
+            '<td>'+no+'</td>'+
+            '<td>'+obj['id']+'</td>'+
+            '<td>'+obj['number']+'</td>'+
+          '</tr>'
+          );
+      });
+    });
+   }
+   load_cart();
 
 
 </script>

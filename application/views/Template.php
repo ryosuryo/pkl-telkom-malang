@@ -164,6 +164,8 @@
                                 ?>
                                     <li><a href="<?= base_url()?>index.php/pelanggan/Daftar_restoran"><i class="notika-icon notika-draft"></i>Pilih Restoran</a>
                                 </li>
+                                 <li class=""><a href="<?= base_url()?>index.php/pelanggan/Transaksi_pel"><i class="notika-icon notika-checked"></i>Check Out</a>
+                                </li>
                                 
                                 
                                 <?php

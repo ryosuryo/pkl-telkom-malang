@@ -9,11 +9,14 @@ class Get_restoran_model extends CI_Model {
 	}	
 	public function get_detail_res($id_restoran)
 	{
-		return $this->db->where('id_restoran', $id_restoran)->get('restoran')->row();
+		return $this->db->where('id_restoran', $id_restoran)
+						->get('restoran')->row();
 	}
 	public function get_detail_mas($id_restoran)
 	{
-		return $this->db->where('id_restoran', $id_restoran)->get('masakan')->row();
+		return $this->db->where('id_restoran',$id_restoran)
+						->get('masakan')
+						->row();
 	}
 	
 
