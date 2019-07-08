@@ -19,16 +19,16 @@ class Transaksi_pel extends CI_Controller {
 			'number'  => $no_meja
 		); 
 		
-		$add_cart=$this->cart->insert( $data_produk );
+		$add_cart=$this->cart->insert($data_produk);
 		if ($add_cart) 
 		{
-			$dt['total_cart']=$this->cart->total_items();
+			//$dt['total_cart']=$this->cart->total_items();
 			$dt['status']=1;
 			echo json_encode($dt);
 		}
 		else
 		{
-			$dt['total_cart']=$this->cart->total_items();
+			//$dt['total_cart']=$this->cart->total_items();
 			$dt['status']=0;
 			echo json_encode($dt);
 		}
