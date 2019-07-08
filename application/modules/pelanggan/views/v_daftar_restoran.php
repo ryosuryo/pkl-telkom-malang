@@ -27,6 +27,27 @@
                                 </div>
 
 
+
+<div class="modal fade" id="detail_masakan" role="dialog">
+                                    <div class="modal-dialog modals-default">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4>List Menu</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                
+                                               <div id="deskripsi_masakan"></div>
+                                               
+                                            </div>
+                                            <div class="modal-footer">
+                                            	
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
 <script type="text/javascript">
 	//menampilkan pilihan daftar restoran
 	$.getJSON("<?= base_url()?>index.php/pelanggan/Get_restoran",function(data){
@@ -44,7 +65,7 @@
 									'<img style="width:385px;height: 270px;" src="<?= base_url('assets/gambar/')?>'+dt['gambar']+'" alt="...">'+
 
 									'<table class="table table-hover table-stripped">'+
-						        		'<tr><td>'+dt['alamat_restoran']+'<br>'+dt['status']+'</td><td><a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-success" style="text-decoration:none">Lihat Detail</a></td></tr>'+
+						        		'<tr><td>'+dt['alamat_restoran']+'<br>'+dt['status']+'</td><td><a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-success" style="text-decoration:none">Detail</a> <a href="#detail_masakan" data-toggle="modal" onclick="mas_detail('+dt['id_restoran']+')" class="btn btn-info" style="text-decoration:none">List Makanan</a></td></tr>'+
 						      		'</table>'+
 											
 									'</p>'+
@@ -72,11 +93,21 @@
 	      		);
 			$('#nomor_meja').html(
 	      		'<label>Pesan Meja Nomor ?</label>'+
-	      		'<input type="number" id="no_item" value="1" name="nomor_meja" class="form-control">'
+	      		'<input type="number" id="no_item" value="1" name="no_meja" class="form-control">'
 	      		);
 	    	$('#btn').html(
-	        	'<button id="beli" onclick="beli('+data['id_restoran']+')" class="btn btn-default">PESAN</button>'
+	        	'<button id="beli" onclick="pesan('+data['id_restoran']+')" class="btn btn-default">PESAN</button>'
 	        	
+	      		);
+		});
+	}
+	//menampilkan detail menu makanan di setiap restoran
+	function mas_detail(id_restoran){
+		$.getJSON("<?= base_url()?>index.php/pelanggan/Get_restoran/detail_mas/"+id_restoran,function(data){
+			$('#deskripsi_masakan').html(
+				'<table class="table table-hover table-stripped">'+
+	        		'<tr><td>'+data['nama_masakan']+'</td><td>'+data['harga']+'</td></tr>'+
+	      		'</table>'
 	      		);
 		});
 	}

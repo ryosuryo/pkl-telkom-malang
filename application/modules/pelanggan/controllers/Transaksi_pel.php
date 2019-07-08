@@ -14,7 +14,19 @@ class Transaksi_pel extends CI_Controller {
 		$dt_detail = $this->gt_res->get_detail_res($id_restoran);
 
 		$data = array('id' => $dt_detail->id_restoran,
-					  'nomor' =>  );
+					  'nomor' => $no_meja  );
+
+		$tambah_cart=$this->cart->insert($data);
+		if ($tambah_cart) 
+		{
+			$dt['status']=1;
+			echo json_encode($dt);
+		}
+		else
+		{
+			$dt['status']=0;
+			echo json_encode($dt);
+		}
 	}
 
 }

@@ -18,6 +18,11 @@ class Get_restoran extends CI_Controller {
 		$dt = $this->grm->get_detail_res($id_restoran);
 		echo json_encode($dt);
 	}
+	public function detail_mas($id_restoran)
+	{
+		$dt = $this->grm->get_detail_mas($id_restoran);
+		echo json_encode($dt);
+	}
 
 }
 
