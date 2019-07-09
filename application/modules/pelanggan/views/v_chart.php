@@ -11,21 +11,17 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>No.</th>
+                                        <th>ID Pesanan</th>
                                         <th>ID Restoran</th>
-                                        <th>Meja</th>
+                                        <th>Nomor Meja</th>
+                                        <th>Username Pemesan</th>
                                     </tr>
                                 </thead>
-                                <tbody id="tm_pesanan">
+                                <tbody id="tm_pesanan_meja">
 
                               
                                 </tbody>
                             </table>
-                            <form>
-                                <div id="tampil_status">
-          
-                                </div>
-                             </form>
                             <br>
                         </div>
                     </div>
@@ -47,9 +43,10 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>No.</th>
+                                        <th>ID Pesanan</th>
                                         <th>ID Restoran</th>
-                                        <th>Meja</th>
+                                        <th>Nomor Meja</th>
+                                        <th>Username Pemesan</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tm_pesanan">
@@ -73,25 +70,21 @@
     </div>
                               
 <script type="text/javascript">
-   function load_cart()
-   {
-    $('#tm_pesanan').html('');
-    $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/tm_pesanan",function(hasil){
-      var no=0;
+  
+   $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/get_pesanan_meja",function(data){
+        var tampil="";
+        $.each(data,function(key,dt){
+            tampil+=
+           '<tr>'+
+                '<td>'+dt['id_pesanan']+'</td>'+
+                '<td>'+dt['id_restoran']+'</td>'+
+                '<td>'+dt['no_meja']+'</td>'+
+                '<td>'+dt['username']+'</td>'+
+            '</tr>'
 
-       $.each(hasil['data_cart'],function(key,obj){
-        no++;
-        $("#tm_pesanan").append(
-          '<tr>'+
-            '<td>'+no+'</td>'+
-            '<td>'+obj['id']+'</td>'+
-            '<td>'+obj['number']+'</td>'+
-          '</tr>'
-          );
-      });
+        });
+        $("#tm_pesanan_meja").html(tampil);
     });
-   }
-   load_cart();
 
 
 </script>

@@ -18,6 +18,11 @@ class Get_restoran_model extends CI_Model {
 						->get('masakan')
 						->row();
 	}
+	public function get_p_meja()
+	{
+		return $this->db->get('pesanan_meja')->result();
+	}
+	
 	
 
 }

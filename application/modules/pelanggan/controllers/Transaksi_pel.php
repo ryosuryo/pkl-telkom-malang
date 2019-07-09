@@ -3,16 +3,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Transaksi_pel extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Get_restoran_model','gt_res');
+	}
 	public function index()
 	{
 		$data['konten']="v_chart";
 		$this->load->view('Template', $data);
 	}
 
+	public function get_pesanan_meja()
+	{
+		$dt = $this->gt_res->get_p_meja();
+		echo json_encode($dt);
+	}
+
+
 	public function pesan_meja($id_restoran,$no_meja)
 	{
-		
-		$this->load->model('Get_restoran_model','gt_res');
 		$dt_res = $this->gt_res->get_detail_res($id_restoran);
 
 		$data = array('id_restoran' => $dt_res->id_restoran,
