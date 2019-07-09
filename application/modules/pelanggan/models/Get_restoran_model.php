@@ -20,9 +20,9 @@ class Get_restoran_model extends CI_Model {
 	}
 	public function get_p_meja()
 	{
-		return $this->db->get('pesanan_meja')->result();
+		$query = $this->db->where('username', $this->session->userdata('username'))->get('pesanan_meja')->result();
+		return $query;
 	}
-	
 	
 
 }

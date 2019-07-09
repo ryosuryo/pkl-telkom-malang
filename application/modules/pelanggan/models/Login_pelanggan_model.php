@@ -12,7 +12,8 @@ class Login_pelanggan_model extends CI_Model {
 		if ($this->db->affected_rows()>0) 
 		{
 			$cek=$login->row();
-			$array = array('username' => $cek->username,
+			$array = array('id_pelanggan' => $cek->id_pelanggan,
+						'username' => $cek->username,
 						'password' => $cek->password,
 						'logged' => true
 					);

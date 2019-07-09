@@ -11,14 +11,28 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
+                                        <th>No.</th>
                                         <th>ID Pesanan</th>
                                         <th>ID Restoran</th>
                                         <th>Nomor Meja</th>
                                         <th>Username Pemesan</th>
                                     </tr>
                                 </thead>
-                                <tbody id="tm_pesanan_meja">
-
+                                <tbody>
+                                    <?php
+                                    $no=0;
+                                    foreach ($data_m as $d) 
+                                    {
+                                        $no++;
+                                        echo '<tr>
+                                                <td>'.$no.'</td>
+                                                <td>'.$d->id_pesanan.'</td>
+                                                <td>'.$d->id_restoran.'</td>
+                                                <td>'.$d->no_meja.'</td>
+                                                <td>'.$d->username.'</td>
+                                            </tr>';
+                                    }
+                                    ?>
                               
                                 </tbody>
                             </table>
@@ -70,23 +84,27 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="bayar" role="dialog">
+                                    <div class="modal-dialog modals-default nk-light-blue">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h2>Terima Kasih telah memilih restoran kami.</h2>
+                                                <p>Silahkan menuju kasir untuk melakukan pembayaran sebesar Rp.<span id="totalnya">0</span>,- </p>
+                                                <span id="pesan"></span>
+                                            </div>
+                                            <div class="modal-footer">
+  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                               
 <script type="text/javascript">
   
-   $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/get_pesanan_meja",function(data){
-        var tampil="";
-        $.each(data,function(key,dt){
-            tampil+=
-           '<tr>'+
-                '<td>'+dt['id_pesanan']+'</td>'+
-                '<td>'+dt['id_restoran']+'</td>'+
-                '<td>'+dt['no_meja']+'</td>'+
-                '<td>'+dt['username']+'</td>'+
-            '</tr>'
-
-        });
-        $("#tm_pesanan_meja").html(tampil);
-    });
 
     //menampilkan chart makanan enak//
 
@@ -108,10 +126,38 @@
           '</tr>'
           );
         });
+        $("#tm_pesanan").append(
+        '<tr>'+
+          '<td colspan="4">Total Keseluruhan</td>'+
+          '<td align="left">'+hasil['total_seluruh']+'</td>'+
+          '<td></td>'+
+        '</tr>'
+        );
 
     });
   }
   load_cart();
 
+  //proses bayar
+   function simpan_list_db(){
+    $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/simpan_bayar",function(hasil){
+    if (hasil['status']==1) {
+      $("#pesan").html('Pesanan sudah terkirim');
+      $("#pesan").show('animate');
+      $("#pesan").addClass("alert alert-success");
+      setTimeout(function(){
+          $("#pesan").hide('animate');
+          $("#pesan").removeClass("alert alert-success");
+          setTimeout(function(){
+            $("#totalnya").html(hasil['total']);
+            $("#bayar").modal("show");
+            $("#id_order").val(hasil['id_order']);
+            load_total_cart();
+            load_cart();
+          }, 500);
+        }, 3000);
+      }
+    });
+  }
 
 </script>

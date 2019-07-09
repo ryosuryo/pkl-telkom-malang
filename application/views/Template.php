@@ -165,6 +165,8 @@
                                 </li>
                                  <li class=""><a href="<?= base_url()?>index.php/pelanggan/Transaksi_pel" class="btn btn-info notika-btn-info"><i class="notika-icon notika-checked"></i>Check Out</a>
                                 </li>
+                                 <li class=""><a href="#"><i class="notika-icon notika-menus"></i>Cart : <span id="cart">0 </span></a>
+                                </li>
                                 
                                 
                                 <?php
@@ -256,5 +258,11 @@
         ============================================ -->
     <script src="<?= base_url()?>assets/js/tawk-chat.js"></script>
 </body>
-
+<script type="text/javascript">
+    function load_total_cart(){
+            $.getJSON("<?= base_url()?>index.php/Transaksi_pel/show_cart_item",function(hasil){
+                $("#cart").html(hasil['total_cart']);
+            });
+        }
+</script>
 </html>

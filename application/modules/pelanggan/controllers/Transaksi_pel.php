@@ -11,15 +11,9 @@ class Transaksi_pel extends CI_Controller {
 	public function index()
 	{
 		$data['konten']="v_chart";
+		$data['data_m']=$this->gt_res->get_p_meja();
 		$this->load->view('Template', $data);
 	}
-
-	public function get_pesanan_meja()
-	{
-		$dt = $this->gt_res->get_p_meja();
-		echo json_encode($dt);
-	}
-
 
 	public function pesan_meja($id_restoran,$no_meja)
 	{
@@ -94,7 +88,7 @@ class Transaksi_pel extends CI_Controller {
 		}
 		
 	}
-	public function simpan_bayar($meja)
+	public function simpan_bayar()
 	{
 		if ($this->session->userdata('logged')==TRUE) {
 			$this->load->model('Get_masakan_model','gt_mas');
@@ -106,7 +100,6 @@ class Transaksi_pel extends CI_Controller {
 				{	
 					$object[] = array('id_order' => $dt_order->id_order,
 									'id_masakan' => $item['id'],
-									'no_meja' => $meja,
 									'jumlah' => $item['qty']
 
 								);
