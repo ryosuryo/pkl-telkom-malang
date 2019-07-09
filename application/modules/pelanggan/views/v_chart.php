@@ -88,7 +88,7 @@
         $("#tm_pesanan_meja").html(tampil);
     });
 
-    //menampilkan chart makanan//
+    //menampilkan chart makanan enak//
 
     function load_cart() {
     $('#tm_pesanan').html('');
