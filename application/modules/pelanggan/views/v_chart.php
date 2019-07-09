@@ -11,21 +11,17 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>No.</th>
+                                        <th>ID Pesanan</th>
                                         <th>ID Restoran</th>
-                                        <th>Meja</th>
+                                        <th>Nomor Meja</th>
+                                        <th>Username Pemesan</th>
                                     </tr>
                                 </thead>
-                                <tbody id="tm_pesanan">
+                                <tbody id="tm_pesanan_meja">
 
                               
                                 </tbody>
                             </table>
-                            <form>
-                                <div id="tampil_status">
-          
-                                </div>
-                             </form>
                             <br>
                         </div>
                     </div>
@@ -76,25 +72,46 @@
     </div>
                               
 <script type="text/javascript">
-   function load_cart()
-   {
+  
+   $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/get_pesanan_meja",function(data){
+        var tampil="";
+        $.each(data,function(key,dt){
+            tampil+=
+           '<tr>'+
+                '<td>'+dt['id_pesanan']+'</td>'+
+                '<td>'+dt['id_restoran']+'</td>'+
+                '<td>'+dt['no_meja']+'</td>'+
+                '<td>'+dt['username']+'</td>'+
+            '</tr>'
+
+        });
+        $("#tm_pesanan_meja").html(tampil);
+    });
+
+    //menampilkan chart makanan//
+
+    function load_cart() {
     $('#tm_pesanan').html('');
     $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/tm_pesanan",function(hasil){
       var no=0;
 
-       $.each(hasil['data_cart'],function(key,obj){
+        $.each(hasil['data_cart'],function(key,obj){
         no++;
         $("#tm_pesanan").append(
           '<tr>'+
             '<td>'+no+'</td>'+
             '<td>'+obj['id']+'</td>'+
-            '<td>'+obj['number']+'</td>'+
+            '<td>'+obj['name']+'</td>'+
+            '<td>'+obj['qty']+'</td>'+
+            '<td align="left">'+obj['subtotal']+'</td>'+
+            '<td><a href="#" class="btn btn-danger btn-sm" onclick="if(confirm(\'Apakah Yakin?\')){ hapus_cart(\''+obj['rowid']+'\')}">delete</a></td>'+
           '</tr>'
           );
-      });
+        });
+
     });
-   }
-   load_cart();
+  }
+  load_cart();
 
 
 </script>
