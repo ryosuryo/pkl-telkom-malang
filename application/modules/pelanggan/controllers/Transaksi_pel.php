@@ -96,11 +96,14 @@ class Transaksi_pel extends CI_Controller {
 			if ($buat_order) 
 			{
 				$dt_order=$this->gt_mas->get_last_order();
+				$dt_meja=$this->gt_mas->get_last_meja();
 				foreach ($this->cart->contents() as $item)  
 				{	
 					$object[] = array('id_order' => $dt_order->id_order,
 									'id_masakan' => $item['id'],
-									'jumlah' => $item['qty']
+									'jumlah' => $item['qty'],
+									'no_meja' => $dt_meja->no_meja,
+									'id_restoran' => $dt_meja->id_restoran
 
 								);
 				}

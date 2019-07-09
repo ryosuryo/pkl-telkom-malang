@@ -76,7 +76,7 @@
                                 </div>
                              </form>
                             <br>
-                            <a href="#" class="btn btn-primary">Pesan Lagi</a>
+                            <a href="#" class="btn btn-primary">Pesan Makanan</a>
                             <a href="#bayar" onclick="simpan_list_db()" class="btn btn-warning" data-toggle="modal">Bayar</a>
                         </div>
                     </div>

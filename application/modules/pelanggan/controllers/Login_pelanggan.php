@@ -44,6 +44,7 @@ class Login_pelanggan extends CI_Controller {
 	}
 	public function logout()
 	{
+		$this->lpm->hapus_meja();
 		$this->session->sess_destroy();
 		redirect(base_url('index.php/pelanggan/Login_pelanggan/index'),'refresh');
 	}

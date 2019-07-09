@@ -39,4 +39,15 @@ class Get_masakan_model extends CI_Model {
   
       return $this->db->where('id_order', $id_order)->update('tb_order',$data);
     }
+    public function get_last_meja()
+    {
+        return $this->db->where('username', $this->session->userdata('username'))
+                        ->limit('1')
+                        ->order_by('id_pesanan')
+                        ->limit('1')
+                        ->get('pesanan_meja')
+                        ->row();
+    }
+
+   
 }

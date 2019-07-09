@@ -36,7 +36,10 @@ class Login_pelanggan_model extends CI_Model {
 						'password' => $this->input->post('password'));
 		return $this->db->insert('pelanggan', $data);
 	}
-
+	public function hapus_meja()
+  {
+    return $this->db->where('username', $this->session->userdata('username'))->delete('pesanan_meja');
+  }
 }
 
 /* End of file Login_pelanggan_model.php */
