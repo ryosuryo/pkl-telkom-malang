@@ -20,7 +20,7 @@ class Get_masakan extends CI_Controller {
             redirect('pelanggan/login_pelanggan/index','refresh');   
         }
     }
-    public function detail()
+    public function detail($id_masakan)
     {
         if ($this->session->userdata('logged')== True)
         {

@@ -48,8 +48,11 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>ID Restoran</th>
-                                        <th>Meja</th>
+                                        <th>ID Makanan</th>
+                                        <th>Nama Masakan</th>
+                                        <th>Quantity</th>
+                                        <th>Subtotal</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tm_pesanan">
