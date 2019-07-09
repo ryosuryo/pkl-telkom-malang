@@ -2,6 +2,7 @@
 	
 </div>
 
+
 <div class="modal fade" id="detail" role="dialog">
                                     <div class="modal-dialog modals-default">
                                         <div class="modal-content">
