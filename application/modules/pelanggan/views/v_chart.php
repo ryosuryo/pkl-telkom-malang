@@ -160,4 +160,31 @@
     });
   }
 
+  //hapus chart
+
+  function hapus_cart(id)
+  {
+      $.getJSON('<?= base_url()?>index.php/pelanggan/Transaksi_pel/hapus_cart/'+id, function(hasil){
+      if(hasil['status']==1){
+          load_cart();
+          load_total_cart();
+          $("#pesan").html("sukses menghapus cart");
+          $("#pesan").slow('animate');
+          $("#pesan").addClass("alert alert-success");
+
+      }
+
+      else{
+          $("#pesan").html("gagal menghapus cart");
+          $("#pesan").slow('animate');
+          $("#pesan").addClass("alert alert-danger");
+      }
+
+      setTimeout(function(){
+          $("#pesan").hide('animate');
+          $("#pesan").removeClass("alert alert-danger");
+      },3000);
+      }
+      );
+  }
 </script>
