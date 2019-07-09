@@ -161,9 +161,9 @@
                             else
                             {
                                 ?>
-                                    <li><a href="<?= base_url()?>index.php/pelanggan/Daftar_restoran"><i class="notika-icon notika-draft"></i>Pilih Restoran</a>
+                                    <li><a href="<?= base_url()?>index.php/pelanggan/Daftar_restoran" class="btn btn-warning notika-btn-warning"><i class="notika-icon notika-draft"></i>Pilih Restoran</a>
                                 </li>
-                                 <li class=""><a href="<?= base_url()?>index.php/pelanggan/Transaksi_pel"><i class="notika-icon notika-checked"></i>Check Out</a>
+                                 <li class=""><a href="<?= base_url()?>index.php/pelanggan/Transaksi_pel" class="btn btn-info notika-btn-info"><i class="notika-icon notika-checked"></i>Check Out</a>
                                 </li>
                                 
                                 

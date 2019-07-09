@@ -27,6 +27,42 @@
                                 </div>
                              </form>
                             <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="normal-table-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="normal-table-list mg-t-30">
+                        <div class="basic-tb-hd">
+                            <h2>Data Pemesanan Makanan</h2>
+                            
+                        </div>
+                        <div class="bsc-tbl-st">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>ID Restoran</th>
+                                        <th>Meja</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tm_pesanan">
+
+                              
+                                </tbody>
+                            </table>
+                            <form>
+                                <div id="tampil_status">
+          
+                                </div>
+                             </form>
+                            <br>
                             <a href="#" class="btn btn-primary">Pesan Lagi</a>
                             <a href="#bayar" onclick="simpan_list_db()" class="btn btn-warning" data-toggle="modal">Bayar</a>
                         </div>

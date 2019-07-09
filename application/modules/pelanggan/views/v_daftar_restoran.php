@@ -118,9 +118,9 @@
 
 		$('#pesan').hide();
 		$('#pesan').removeClass("alert alert-success");
-		$.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/tambah_cart/"+id_restoran+"/"+no_meja,function(hasil){
-			$('#cart').html(hasil['total_cart']);
-			$('#pesan').html("item anda ditambahkan ke cart");
+		$.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/pesan_meja/"+id_restoran+"/"+no_meja,function(hasil){
+			//$('#cart').html(hasil['total_cart']);
+			$('#pesan').html("meja anda ditambahkan ke pesanan");
 			$('#pesan').addClass('alert alert-success');
 			$('#pesan').show('animate');
 			setTimeout(function(){
