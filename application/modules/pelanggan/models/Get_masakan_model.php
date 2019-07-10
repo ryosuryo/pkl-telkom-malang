@@ -48,6 +48,12 @@ class Get_masakan_model extends CI_Model {
                         ->get('pesanan_meja')
                         ->row();
     }
+    public function update_bukti()
+    {
+      $data = array('bukti' => $this->upload->data('file_name'));
+      return $this->db->where('id_order', $this->input->post('id_order'))->update('tb_order',$data);
+      
+    }
 
    
 }

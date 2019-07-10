@@ -98,7 +98,10 @@
                                                 <form enctype="multipart/form-data" method="post" id="upload_bukti">
                                                     <input type="file" name="bukti" class="form-control"><br>
                                                     <input type="hidden" name="id_order" id="id_order">
-                                                    <input type="submit" name="submit" value="kirim" class="btn btn-success" style="float:left;margin-right:10px;">
+                                                    <button type="submit" name="submit" value="kirim" class="btn btn-default btn-icon-notika waves-effect">
+                                                        <i class="notika-icon notika-next"></i>
+                                                    </button>
+                                                    <span id="pesan_kirim"></span>
                                                 </form>
                                                 <span id="pesan"></span>
                                             </div>
@@ -193,4 +196,57 @@
       }
       );
   }
+
+  //upload bukti
+  $('#upload_bukti').submit(function(event){
+    event.preventDefault();
+    var url = "<?= base_url()?>index.php/pelanggan/Transaksi_pel/upload_bukti";
+    var formData = new FormData($("#upload_bukti")[0]);
+        $.ajax({
+            url:url,
+            type:"post",
+            data:formData,
+            contentType: false,
+            processData: false,
+            dataType:"json",
+            beforeSend:function()
+            {
+                $("#loading").css("display","block");
+            },
+            success:function(hasil)
+            {
+                if(hasil['status']==1)
+                {
+                    $("#loading").css("display","none");
+                    $("#pesan_kirim").html("Bukti telah terupload");
+                    $("#pesan_kirim").show("fade");
+                    $("#pesan_kirim").addClass("alert alert-success");
+                    setTimeout(function()
+                    {
+                        $("#pesan_kirim").hide("fade");
+                        setTimeout(function() 
+                        {
+                            $("#bayar").modal("hide");
+                            $("#pesan_kirim").removeClass("alert alert-success");    
+                        }, 500);
+                    }, 2000);
+                }
+                else
+                {
+                    $("#loading").css("display","none");
+                    $("#pesan_kirim").html("Bukti gagal terupload");
+                    $("#pesan_kirim").show("fade");
+                    $("#pesan_kirim").addClass("alert alert-danger");
+                    setTimeout(function()
+                    {
+                        $("#pesan_kirim").hide("fade");
+                        setTimeout(function() 
+                        {
+                            $("#pesan_kirim").removeClass("alert alert-success");    
+                        }, 500);
+                    }, 2000);
+                }
+            }
+        });
+  });
 </script>

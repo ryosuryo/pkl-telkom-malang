@@ -11,6 +11,8 @@ class Verif_model extends CI_Model {
 	{
 		return $this->db->join('tb_order', 'tb_order.id_order = detail_order.id_order')
 						->join('pelanggan','pelanggan.id_pelanggan=tb_order.id_pelanggan')
+						->join('restoran','restoran.id_restoran=detail_order.id_restoran')
+						->join('masakan','masakan.id_masakan=detail_order.id_masakan')
 						->get('detail_order')->result();
 	}
 	public function detail($id_order)

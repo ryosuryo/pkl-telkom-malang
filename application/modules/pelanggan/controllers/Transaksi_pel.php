@@ -155,6 +155,32 @@ class Transaksi_pel extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	public function upload_bukti()
+	{
+		
+		$config['upload_path'] = './assets/bukti';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		$config['max_size']  = '100000000000';
+		$config['max_width']  = '10240000000000';
+		$config['max_height']  = '7680000000000';
+		
+		$this->load->library('upload', $config);
+		
+		if ( ! $this->upload->do_upload('bukti')){
+			$error = array('status' =>0, 'error' => $this->upload->display_errors());
+			echo json_encode($error);
+		}
+		else{
+			
+			$this->load->model('Get_masakan_model','gt_mas');
+			$get_nota_semua = $this->gt_mas->update_bukti();
+			$data = array('status'=>1, 'upload_data' => $this->upload->data());
+			echo json_encode($data);
+			
+		}
+		
+	}
+
 }
 
 /* End of file Transaksi_pel.php */

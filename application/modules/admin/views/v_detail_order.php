@@ -41,9 +41,12 @@
                                         <th>NO</th>
                                         <th>Nama Pelanggan</th>
                                         <th>Tanggal</th>
+                                        <th>Nama Restoran</th>
                                         <th>No. Meja</th>
+                                        <th>Nama Masakan</th>
                                         <th>Jumlah</th>
                                         <th>Total Bayar</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -57,7 +60,9 @@
                                             <td>'.$no.'</td>
                                             <td>'.$dn->nama.'</td>
                                             <td>'.$dn->tanggal.'</td>
+                                            <td>'.$dn->nama_restoran.'</td>
                                             <td>'.$dn->no_meja.'</td>
+                                            <td>'.$dn->nama_masakan.'</td>
                                             <td>'.$dn->jumlah.'</td>
                                             <td>'.$dn->total_bayar.'</td>
 
