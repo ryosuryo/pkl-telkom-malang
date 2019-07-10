@@ -57,8 +57,10 @@ class Verif_model extends CI_Model {
 						->where('tb_order.id_order', $id_order)
 						->join('detail_order' , 'detail_order.id_order = tb_order.id_order')
 						->join('masakan' , 'masakan.id_masakan = detail_order.id_masakan')
+						->join('restoran', 'restoran.id_restoran=detail_order.id_restoran')
 						->get('tb_order')->result();
-    }
+	}
+	
     public function cari($tanggal)
     {
         $data = $this->db->where('tanggal',$tanggal)

@@ -66,8 +66,8 @@ class Verifikasi extends CI_Controller {
 	}
 
     public function cetak_nota($id_order){
-        $this->load->model('verif_model');
-        $data['data_order'] = $this->verif_model->cetak('$id_order');
+        $this->load->model('Verif_model','vm');
+        $data['data_order'] = $this->vm->cetak($id_order);
         $this->load->view('v_cetak_nota',$data);
         
         

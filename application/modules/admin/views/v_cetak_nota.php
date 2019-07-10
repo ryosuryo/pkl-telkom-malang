@@ -66,10 +66,12 @@
                                 <thead>
                                     <tr>
                                         <th style="text-align: center;">No</th>
-										<th style="text-align: center;">Masakan</th>
-										<th style="text-align: center;">Harga</th>
-										<th style="text-align: center;">Jumlah</th>
-										<th style="text-align: center;">Subtotal</th>
+                                        <th style="text-align: center;">Nama Restoran</th>
+                                        <th style="text-align: center;">Meja</th>
+                                        <th style="text-align: center;">Masakan</th>
+                                        <th style="text-align: center;">Harga</th>
+                                        <th style="text-align: center;">Jumlah</th>
+                                        <th style="text-align: center;">Subtotal</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -80,7 +82,9 @@
 											$no++;
 											$sub= $dt_der->harga*$dt_der->jumlah;
 											echo '<tr style="text-align:center;">
-											<td>'.$no.'</td>
+                      <td>'.$no.'</td>
+                      <td>'.$dt_der->nama_restoran.'</td>
+                      <td>'.$dt_der->no_meja.'</td>
 											<td>'.$dt_der->nama_masakan.'</td>
 											<td>'.$dt_der->harga.'</td>
 											<td>'.$dt_der->jumlah.'</td>
@@ -89,25 +93,25 @@
 										
 										echo
 										'<tr>
-											<td colspan="4">Total Bayar</td>
+											<td colspan="6">Total Bayar</td>
 											<td>: Rp.'.$dt_der->total_bayar.',00-</td>
 										</tr>
 										<tr>
-											<td colspan="4">Keterangan</td>
+											<td colspan="6">Keterangan</td>
 											<td>: '.$dt_der->status.'</td>
 										</tr>
 										<tr>
-											<td colspan="4">No Meja</td>
+											<td colspan="6">No Meja</td>
 											<td>: '.$dt_der->no_meja.'</td>
 										</tr>
 										<tr>
-											<td colspan="4">Pelanggan</td>
+											<td colspan="6">Pelanggan</td>
 											<td>: '.$dt_der->nama.'</td>
 										</tr>
 										<tr>
-											<td colspan="4">Kasir</td>
+											<td colspan="6">Kasir</td>
 											<td>: '.$this->session->userdata('username').'</td>
-                                        </tr>';
+                    </tr>';
                                         }
 										?>
 				

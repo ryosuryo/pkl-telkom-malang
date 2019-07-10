@@ -97,6 +97,7 @@
 	      		'<input type="number" id="no_item" value="1" name="no_meja" class="form-control">'
 	      		);
 	    	$('#btn').html(
+	    		'<a href="#" class="btn btn-primary">PESAN MAKANAN</a>'+
 	        	'<button id="beli" onclick="beli('+data['id_restoran']+')" class="btn btn-default">PESAN</button>'
 	        	
 	      		);
