@@ -86,7 +86,7 @@
 											<td>'.$dt_der->jumlah.'</td>
 											<td>Rp.'.$sub.',-</td>
 											</tr>';
-										}
+										
 										echo
 										'<tr>
 											<td colspan="4">Total Bayar</td>
@@ -107,7 +107,8 @@
 										<tr>
 											<td colspan="4">Kasir</td>
 											<td>: '.$this->session->userdata('username').'</td>
-										</tr>'
+                                        </tr>';
+                                        }
 										?>
 				
                                    
