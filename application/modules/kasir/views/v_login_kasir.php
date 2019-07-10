@@ -62,8 +62,8 @@
 
         <!-- Login -->
         <div class="nk-block toggled" id="l-login">
-            <form action="<?= base_url()?>index.php/admin/Login/proses_login" method="post">
-                 <h3 style="color: white;font-size: 20px;">LOGIN ADMIN</h3>
+            <form action="<?= base_url()?>index.php/kasir/Login_kasir/proses_login" method="post">
+                 <h3 style="color: white;font-size: 20px;">LOGIN KASIR</h3>
                 <div class="nk-form">
                 <div class="input-group">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>

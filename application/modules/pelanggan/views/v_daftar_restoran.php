@@ -101,7 +101,7 @@
 	        	
 	      		);
 		});
-	}
+	}	
 	//menampilkan detail menu makanan di setiap restoran
 	function mas_detail(id_restoran){
 

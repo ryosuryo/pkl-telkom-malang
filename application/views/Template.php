@@ -98,7 +98,7 @@
                                         else if ($this->session->userdata('nama_level')=="kasir") 
                                         {
                                             ?>
-                                             <li role="presentation"><a href="<?= base_url()?>index.php/admin/Login/logout" role="menuitem"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+                                             <li role="presentation"><a href="<?= base_url()?>index.php/kasir/Login_kasir/logout" role="menuitem"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
                                             <?php
                                         }
                                         else
@@ -153,7 +153,7 @@
                                 </li>
                                <li><a href="<?= base_url()?>index.php/admin/Verifikasi"><i class="notika-icon notika-edit"></i> Verifikasi Order</a>
                                 </li>
-                                <li><a href="<?= base_url()?>index.php/admin/Verikasi/tampil_nota"><i class="notika-icon notika-bar-chart"></i> Riwayat Order</a>
+                                <li><a href="<?= base_url()?>index.php/admin/Verifikasi/tampil_nota"><i class="notika-icon notika-bar-chart"></i> Riwayat Order</a>
                                  </li>
 
                                <?php
