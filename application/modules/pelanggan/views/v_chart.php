@@ -92,8 +92,14 @@
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
                                             <div class="modal-body">
-                                                <h2>Terima Kasih telah memilih restoran kami.</h2>
-                                                <p>Silahkan menuju kasir untuk melakukan pembayaran sebesar Rp.<span id="totalnya">0</span>,- </p>
+                                                <h2>Terima Kasih.....</h2>
+                                                <p>Silahkan upload bukti transfer pembayaran sebesar Rp.<span id="totalnya">0</span>,- ke rekeninig berikut:</p>
+                                                <p>BANK BRI : 096898612371324</p>
+                                                <form enctype="multipart/form-data" method="post" id="upload_bukti">
+                                                    <input type="file" name="bukti" class="form-control"><br>
+                                                    <input type="hidden" name="id_order" id="id_order">
+                                                    <input type="submit" name="submit" value="kirim" class="btn btn-success" style="float:left;margin-right:10px;">
+                                                </form>
                                                 <span id="pesan"></span>
                                             </div>
                                             <div class="modal-footer">

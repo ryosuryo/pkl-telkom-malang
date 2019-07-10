@@ -140,9 +140,9 @@
                         </li>
                         <li><a href="<?= base_url()?>index.php/admin/Pelanggan"><i class="notika-icon notika-support"></i> Daftar Pelanggan</a>
                         </li>
-                        <li><a href="#"><i class="notika-icon notika-edit"></i> Verifikasi Order</a>
+                        <li><a href="<?= base_url()?>index.php/admin/Verifikasi"><i class="notika-icon notika-edit"></i> Verifikasi Order</a>
                         </li>
-                        <li><a href="#"><i class="notika-icon notika-bar-chart"></i> Riwayat Order</a>
+                        <li><a href="<?= base_url()?>index.php/admin/Verifikasi/tampil_nota"><i class="notika-icon notika-bar-chart"></i> Riwayat Order</a>
                         </li>
                          <?php       
                             }
@@ -151,9 +151,9 @@
                                ?>
                                <li><a href="<?= base_url()?>index.php/kasir/Masakan"><i class="notika-icon notika-windows"></i> Tabel Masakan</a>
                                 </li>
-                               <li><a href="#"><i class="notika-icon notika-edit"></i> Verifikasi Order</a>
+                               <li><a href="<?= base_url()?>index.php/admin/Verifikasi"><i class="notika-icon notika-edit"></i> Verifikasi Order</a>
                                 </li>
-                                <li><a href="#"><i class="notika-icon notika-bar-chart"></i> Riwayat Order</a>
+                                <li><a href="<?= base_url()?>index.php/admin/Verikasi/tampil_nota"><i class="notika-icon notika-bar-chart"></i> Riwayat Order</a>
                                  </li>
 
                                <?php
