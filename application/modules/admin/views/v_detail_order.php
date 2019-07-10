@@ -17,20 +17,12 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <button class="btn btn-success notika-btn-success">Cari</button>
-
                                 </div>
                             </form>
-
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 
@@ -41,7 +33,6 @@
                     <div class="normal-table-list mg-t-30">
                         <div class="basic-tb-hd">
                             <h2>Data Riwayat Order</h2>
-
                         </div>
                         <div class="bsc-tbl-st">
                             <table class="table table-striped">
@@ -53,7 +44,6 @@
                                         <th>No. Meja</th>
                                         <th>Jumlah</th>
                                         <th>Total Bayar</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -74,13 +64,10 @@
                                           </tr>';
                                       }
                                       ?>
-
-
                                 </tbody>
                             </table>
                             <br>
                             <a href="<?=base_url()?>index.php/admin/Verifikasi/tampil_nota" class="btn btn-primary notika-btn-primary">Reset Filter</a>
-
                         </div>
                     </div>
                 </div>

@@ -72,4 +72,20 @@ class Verifikasi extends CI_Controller {
         
         
     }
+
+    public function cari()
+	{
+		$tgl = $this->input->post('tanggal');
+		if($tgl == null)
+		{
+			redirect('/admin/Verifikasi/tampil_nota','refresh');
+		} 
+		else
+		{
+			$data['konten']="v_detail_order";
+			$this->load->model('Verif_model');
+			$data['data_nota']=$this->Verif_model->cari($tgl);
+			$this->load->view('Template', $data);
+		}
+	}
 }
