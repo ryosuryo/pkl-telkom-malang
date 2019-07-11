@@ -84,9 +84,9 @@
                                         <input type="text" />
                                     </div>
                                 </div>
-                            </li>
+                            </li>   
 
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i><?php echo $this->session->userdata('username');?></span></a>
+                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i>  <?php echo $this->session->userdata('username');?></span></a>
                                 <ul class="dropdown-menu nk-teal" role="menu">
                                     <?php 
                                         if ($this->session->userdata('nama_level')=="admin") 

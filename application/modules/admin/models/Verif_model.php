@@ -75,12 +75,27 @@ class Verif_model extends CI_Model {
 	
     public function cari($tanggal)
     {
-        $data = $this->db->where('tanggal',$tanggal)
+    	if ($this->session->userdata('nama_level')=="admin") 
+    	{
+    		$data = $this->db->where('tanggal',$tanggal)
                         ->join('tb_order','tb_order.id_order = detail_order.id_order')
 						->join('pelanggan','pelanggan.id_pelanggan=tb_order.id_pelanggan')
 						->join('restoran','restoran.id_restoran=detail_order.id_restoran')
 						->join('masakan','masakan.id_masakan=detail_order.id_masakan')    
 					    ->get('detail_order')->result();
-		return $data;
+			return $data;
+    	}
+    	else
+    	{
+    		$data = $this->db->where('tanggal',$tanggal)
+                        ->join('tb_order','tb_order.id_order = detail_order.id_order')
+						->join('pelanggan','pelanggan.id_pelanggan=tb_order.id_pelanggan')
+						->join('restoran','restoran.id_restoran=detail_order.id_restoran')
+						->where('restoran.id_restoran', $this->session->userdata('id_restoran'))
+						->join('masakan','masakan.id_masakan=detail_order.id_masakan')    
+					    ->get('detail_order')->result();
+			return $data;
+    	}
+        
     }
 }

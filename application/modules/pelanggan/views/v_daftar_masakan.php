@@ -53,7 +53,7 @@
 	function tm_detail(id_masakan){
 		$.getJSON("<?= base_url()?>index.php/pelanggan/get_masakan/detail/"+id_masakan,function(data){
 		$('#gambar').html(
-			'<img src="<?= base_url()?>assets/gambar/'+data['gambar_masakan']+'" style="width:100%">'
+			'<img src="<?= base_url()?>assets/gambar_masakan/'+data['gambar_masakan']+'" style="width:100%">'
 			);
 		$('#deskripsi').html(
 			'<table class="table table-hover table-stripped">'+
