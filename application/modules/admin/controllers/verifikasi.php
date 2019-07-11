@@ -33,10 +33,10 @@ class Verifikasi extends CI_Controller {
     }
     
     public function get_detail_order($id_order)
-    {
+   	 {
         $this->load->model('Verif_model','vm');
         $data_detail = $this->vm->detail('id_order');
-        echo json_encode($data_detali);
+        echo json_encode($data_detail);
         
     }
 
@@ -55,12 +55,12 @@ class Verifikasi extends CI_Controller {
 			{
 				$this->session->flashdata('pesan','gagal ubah');
 			}
-			redirect('admin/Verifikasi/index','refresh');
+			redirect('admin/verifikasi/index','refresh');
 		} 
 		else 
 		{
 			$this->session->flashdata('pesan',validation_errors());
-			redirect('admin/Verifikasi/index','refresh');
+			redirect('admin/verifikasi/index','refresh');
 		}
 		
 	}
