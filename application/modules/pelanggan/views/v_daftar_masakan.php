@@ -11,7 +11,7 @@
 								<div class="panel-body">
 									<p>
 									
-									<img style="width:380px;height: 270px;" src='.base_url("assets/gambar/$mas->gambar").' alt="...">
+									<img style="width:380px;height: 270px;" src='.base_url("assets/gambar_masakan/$mas->gambar_masakan").' alt="...">
 									
 									<span class="short-description" style="font-size: 30px;"><strong>'.$mas->harga.'</strong></span><br><br>
 										<a href="#detail" data-toggle="modal" onclick="tm_detail('.$mas->id_masakan.')" class="btn btn-warning" style="text-decoration:none">Lihat</a>
@@ -53,7 +53,7 @@
 	function tm_detail(id_masakan){
 		$.getJSON("<?= base_url()?>index.php/pelanggan/get_masakan/detail/"+id_masakan,function(data){
 		$('#gambar').html(
-			'<img src="<?= base_url()?>assets/gambar/'+data['gambar']+'" style="width:100%">'
+			'<img src="<?= base_url()?>assets/gambar/'+data['gambar_masakan']+'" style="width:100%">'
 			);
 		$('#deskripsi').html(
 			'<table class="table table-hover table-stripped">'+
