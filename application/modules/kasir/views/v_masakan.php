@@ -119,9 +119,9 @@
                                                       <label>Gambar</label>
                                                       <input type="file" name="gambar_masakan" class="form-control" id="gambar_masakan">
                                                       <label>Harga</label>
-                                                      <input type="text" name="harga"  class="form-control" id="harga">
+                                                      <input type="text" name="harga"  class="form-control" id="hargamas">
                                                       <label>Restoran</label>
-                                                      <select class="form-control" name="id_restoran" id="id_restoran">
+                                                      <select class="form-control" name="id_restoran" id="id_resto">
                                                          <option></option>
                                                           <?php
                                                             foreach ($data_res as $res) {
@@ -153,8 +153,8 @@
             $('#id_masakan').val(data['id_masakan']);
             $('#nama_masakan').val(data['nama_masakan']);
             $('#gambar_masakan').val(data['gambar_masakan']);
-            $('#harga').val(data['harga']);
-            $('#id_restoran').val(data['id_restoran']);
+            $('#hargamas').val(data['harga']);
+            $('#id_resto').val(data['id_restoran']);
             $('#status_masakan').val(data['status_masakan']);
         });
     }

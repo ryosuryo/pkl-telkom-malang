@@ -5,7 +5,19 @@ class Verif_model extends CI_Model {
 
 	public function get_order()
 	{
-		return $this->db->join('pelanggan', 'pelanggan.id_pelanggan = tb_order.id_pelanggan')->get('tb_order')->result();
+		if ($this->session->userdata('nama_level')=="admin") 
+		{
+			return $this->db->join('pelanggan', 'pelanggan.id_pelanggan = tb_order.id_pelanggan')->get('tb_order')->result();
+		} 
+		else 
+		{
+			return $this->db->join('pelanggan', 'pelanggan.id_pelanggan = tb_order.id_pelanggan')
+							->join('detail_order', 'detail_order.id_order=tb_order.id_order')
+							->where('detail_order.id_restoran', $this->session->userdata('id_restoran'))
+							->get('tb_order')->result();
+		}
+		
+		
 	}
 	public function get_nota()
 	{

@@ -4,7 +4,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                            <h2>Filter</h2>
+                            <h2>Filter Tanggal</h2>
                         </div>
                         <div class="row">
                             <form action="<?= base_url()?>index.php/admin/Verifikasi/cari" method="post">
