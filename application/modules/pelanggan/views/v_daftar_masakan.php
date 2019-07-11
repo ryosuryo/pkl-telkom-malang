@@ -1,22 +1,45 @@
 
-	<div id="tampil_masakan">
-	
+	<div>
+		<?php
+		foreach ($dt_mas as $mas) 
+		{
+			echo '<div class="col-md-4">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">'.$mas->nama_masakan.'</h3>
+								</div>
+								<div class="panel-body">
+									<p>
+									
+									<img style="width:380px;height: 270px;" src='.base_url("assets/gambar/$mas->gambar").' alt="...">
+									
+									<span class="short-description" style="font-size: 30px;"><strong>'.$mas->harga.'</strong></span><br><br>
+										<a href="#detail" data-toggle="modal" onclick="tm_detail('.$mas->id_masakan.')" class="btn btn-warning" style="text-decoration:none">Lihat</a>
+											
+									</p>
+								</div>
+							</div>
+						</div>';
+		}
+		?>
+
+		
 	</div>
 
-		<div class="modal fade" id="detail" role="dialog">
-		<div class="modal-dialog modals-default">
-	    <div class="modal-content">
-         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-          <div class="modal-body">
-         <div id="gambar"></div>
-         <div id="deskripsi"></div>
-         <div id="jumlah"></div><br><br>             	
-         <div id="pesan"></div>  
-          </div>
-                 <div class="modal-footer">
-       <div id="btn"></div>                         
+								<div class="modal fade" id="detail" role="dialog">
+									<div class="modal-dialog modals-default">
+							    		<div class="modal-content">
+						         			<div class="modal-header">
+						         				 <button type="button" class="close" data-dismiss="modal">&times;</button>
+						       				 </div>
+						         			<div class="modal-body">
+										         <div id="gambar"></div>
+										         <div id="deskripsi"></div>
+										         <div id="jumlah"></div><br><br>             	
+										         <div id="pesan"></div>  
+						          			</div>
+										     <div class="modal-footer">
+										       <div id="btn"></div>                         
                                             </div>
                                         </div>
                                     </div>
@@ -25,31 +48,7 @@
 
 <script type="text/javascript">
 	//menampilkan menu makanan
-	$.getJSON("<?= base_url()?>index.php/pelanggan/Get_masakan",function(data){
-		var tampil="";
-		$.each(data,function(key,dt){
-			tampil+=
-			'<div class="col-md-4">'+
-							'<div class="panel">'+
-								'<div class="panel-heading">'+
-									'<h3 class="panel-title">'+dt['nama_masakan']+'</h3>'+
-								'</div>'+
-								'<div class="panel-body">'+
-									'<p>'+
-									
-									'<img style="width:380px;height: 270px;" src="<?= base_url('assets/gambar/')?>'+dt['gambar']+'" alt="...">'+
-									
-									'<span class="short-description" style="font-size: 30px;"><strong>Rp.'+dt['harga']+',-</strong></span><br><br>'+
-										'<a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_masakan']+')" class="btn btn-warning" style="text-decoration:none">Lihat</a>'+
-											
-									'</p>'+
-								'</div>'+
-							'</div>'+
-						'</div>'
-		});
-		$("#tampil_masakan").html(tampil);
-	});
-
+	
 	//menampilkan detail masakan
 	function tm_detail(id_masakan){
 		$.getJSON("<?= base_url()?>index.php/pelanggan/get_masakan/detail/"+id_masakan,function(data){

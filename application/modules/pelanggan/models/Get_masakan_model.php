@@ -3,9 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Get_masakan_model extends CI_Model {
 
-	public function get_masakan()
+	public function get_masakan($id_restoran)
 	  {
-		return $this->db->get('masakan')->result();
+		return $this->db->join('restoran','restoran.id_restoran=masakan.id_restoran')
+                    ->where('restoran.id_restoran',$id_restoran)
+                    ->get('masakan')
+                    ->result();
     }
   
   public function  get_detail_mas($id_masakan)

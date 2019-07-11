@@ -9,16 +9,9 @@ class Get_masakan extends CI_Controller {
 		$this->load->model('Get_masakan_model','gmm');
     }
 
-    public function index(){
-        if ($this->session->userdata('logged')== true)
-        {
-            $dt_mas = $this->gmm->get_masakan();
-            echo json_encode($dt_mas);
-        }
-        else
-        {    
-            redirect('pelanggan/login_pelanggan/index','refresh');   
-        }
+    public function index()
+    {
+       
     }
     public function detail($id_masakan)
     {
@@ -33,5 +26,11 @@ class Get_masakan extends CI_Controller {
             redirect('pelanggan/Login_pelanggan/index','refresh');
             
         }
+    }
+    public function tm_pesan_masakan($id_restoran)
+    {
+        $data['dt_mas']=$this->gmm->get_masakan($id_restoran);
+        $data['konten']='v_daftar_masakan';
+        $this->load->view('Template', $data);
     }
 }
