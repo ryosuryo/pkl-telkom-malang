@@ -5,7 +5,17 @@ class Masakan_model extends CI_Model {
 
 	public function get_masakan()
 	{
-		return $this->db->join('restoran', 'masakan.id_restoran = restoran.id_restoran')->get('masakan')->result();
+		if ($this->session->userdata('nama_level')=="admin") 
+		{
+			return $this->db->join('restoran', 'masakan.id_restoran = restoran.id_restoran')->get('masakan')->result();	
+		} 
+		else 
+		{
+			return $this->db->join('restoran', 'masakan.id_restoran = restoran.id_restoran')
+							->where('restoran.id_restoran' , $this->session->userdata('id_restoran'))
+							->get('masakan')
+							->result();
+		}
 	}
 	public function get_resto()
 	{
@@ -13,7 +23,7 @@ class Masakan_model extends CI_Model {
 	}	
 	public function tambah()
 	{
-		$config['upload_path'] = './assets/gambar';
+		$config['upload_path'] = './assets/gambar_masakan';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size']  = '1000900000';
 		$config['max_width']  = '1024000000';
@@ -21,7 +31,7 @@ class Masakan_model extends CI_Model {
 		
 		$this->load->library('upload', $config);
 		
-		if ( ! $this->upload->do_upload('gambar')){
+		if ( ! $this->upload->do_upload('gambar_masakan')){
 			$this->session->set_flashdata('pesan',$this->upload->display_errors());
 		}
 		else
@@ -30,7 +40,7 @@ class Masakan_model extends CI_Model {
 					'harga' => $this->input->post('harga'),
 					'status_masakan' => $this->input->post('status_masakan'),
 					'id_restoran' => $this->input->post('id_restoran'),
-					'gambar' => $this->upload->data('file_name')
+					'gambar_masakan' => $this->upload->data('file_name')
 					
 				);
 
@@ -50,7 +60,7 @@ class Masakan_model extends CI_Model {
 		$nama_gambar = $_FILES['gambar']['name'];
 		if ($nama_gambar!=null) 
 		{
-			$config['upload_path'] = './assets/gambar';
+			$config['upload_path'] = './assets/gambar_masakan';
 			$config['allowed_types'] = 'gif|jpg|png|jpeg';
 			$config['max_size']  = '1000000000';
 			$config['max_width']  = '10240000000';
@@ -58,7 +68,7 @@ class Masakan_model extends CI_Model {
 			
 			$this->load->library('upload', $config);
 			
-			if ( ! $this->upload->do_upload('gambar')){
+			if ( ! $this->upload->do_upload('gambar_masakan')){
 				$this->session->set_flashdata('pesan',$this->upload->display_errors());
 			}
 			else
@@ -67,7 +77,7 @@ class Masakan_model extends CI_Model {
 					'harga' => $this->input->post('harga'),
 					'status_masakan' => $this->input->post('status_masakan'),
 					'id_restoran' => $this->input->post('id_restoran'),
-					'gambar' => $this->upload->data('file_name')
+					'gambar_masakan' => $this->upload->data('file_name')
 					
 				);
 				return $this->db->where('id_masakan', $this->input->post('id_masakan'))->update('masakan',$data);

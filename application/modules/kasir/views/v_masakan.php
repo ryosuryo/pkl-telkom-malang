@@ -32,7 +32,7 @@
                                                 <td>'.$no.'</td>
                                                 <td>'.$dm->id_masakan.'</td>
                                                 <td>'.$dm->nama_masakan.'</td>
-                                                <td><img src='.base_url("assets/gambar/$dm->gambar").' width="100px" height="75px"></td>
+                                                <td><img src='.base_url("assets/gambar_masakan/$dm->gambar_masakan").' width="100px" height="75px"></td>
                                                 <td>'.$dm->harga.'</td>
                                                 <td>'.$dm->nama_restoran.'</td>
                                                 <td>'.$dm->status_masakan.'</td>
@@ -72,7 +72,7 @@
                                                       <label>Nama Masakan</label>
                                                       <input type="text" name="nama_masakan"  class="form-control">
                                                       <label>Gambar</label>
-                                                      <input type="file" name="gambar" class="form-control">
+                                                      <input type="file" name="gambar_masakan" class="form-control">
                                                       <label>Harga</label>
                                                       <input type="text" name="harga"  class="form-control">
                                                       <label>Restoran</label>
@@ -117,7 +117,7 @@
                                                       <label>Nama Masakan</label>
                                                       <input type="text" name="nama_masakan"  class="form-control" id="nama_masakan">
                                                       <label>Gambar</label>
-                                                      <input type="file" name="gambar" class="form-control" id="gambar">
+                                                      <input type="file" name="gambar_masakan" class="form-control" id="gambar_masakan">
                                                       <label>Harga</label>
                                                       <input type="text" name="harga"  class="form-control" id="harga">
                                                       <label>Restoran</label>
@@ -152,7 +152,7 @@
         $.getJSON("<?= base_url()?>index.php/kasir/Masakan/detail/"+id_masakan,function(data){
             $('#id_masakan').val(data['id_masakan']);
             $('#nama_masakan').val(data['nama_masakan']);
-            $('#gambar').val(data['gambar']);
+            $('#gambar_masakan').val(data['gambar_masakan']);
             $('#harga').val(data['harga']);
             $('#id_restoran').val(data['id_restoran']);
             $('#status_masakan').val(data['status_masakan']);

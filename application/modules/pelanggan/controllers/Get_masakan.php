@@ -8,11 +8,6 @@ class Get_masakan extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Get_masakan_model','gmm');
     }
-
-    public function index()
-    {
-       
-    }
     public function detail($id_masakan)
     {
         if ($this->session->userdata('logged')== True)

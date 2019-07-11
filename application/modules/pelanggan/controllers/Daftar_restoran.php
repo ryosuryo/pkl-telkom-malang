@@ -10,6 +10,9 @@ class Daftar_restoran extends CI_Controller {
 	}
 
 
+	
+
+
 }
 
 /* End of file Daftar_restoran.php */
