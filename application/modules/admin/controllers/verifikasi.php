@@ -55,12 +55,12 @@ class Verifikasi extends CI_Controller {
 			{
 				$this->session->flashdata('pesan','gagal ubah');
 			}
-			redirect('Verifikasi/index','refresh');
+			redirect('admin/Verifikasi/index','refresh');
 		} 
 		else 
 		{
 			$this->session->flashdata('pesan',validation_errors());
-			redirect('Verifikasi/index','refresh');
+			redirect('admin/Verifikasi/index','refresh');
 		}
 		
 	}
