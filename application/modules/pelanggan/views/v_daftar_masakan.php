@@ -40,7 +40,7 @@
 						          			</div>
 										     <div class="modal-footer">
 										       <div id="btn"></div>                         
-                                            </div>
+                                            </div> 
                                         </div>
                                     </div>
                                 </div>
