@@ -127,6 +127,7 @@
 			$('#nomor_meja').html(
 	      		'<label>Pesan Meja Nomor ?</label>'+
 	      		'<input type="number" id="no_item" value="1" name="no_meja" class="form-control">'
+
 	      		
 	      		);
 	    	$('#btn').html(
