@@ -10,9 +10,17 @@ class Pelanggan extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['konten']='v_pelanggan';
-		$data['data_pel']=$this->pm->get_pelanggan();
-		$this->load->view('Template', $data);
+		if ($this->session->userdata('logged')==true) 
+		{
+			$data['konten']='v_pelanggan';
+			$data['data_pel']=$this->pm->get_pelanggan();
+			$this->load->view('Template', $data);
+		}
+		else
+		{
+			redirect('admin/Login/index','refresh');
+		}
+		
 	}
 	public function proses_hapus($id_pelanggan)
 	{

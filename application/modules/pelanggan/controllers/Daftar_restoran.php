@@ -5,8 +5,16 @@ class Daftar_restoran extends CI_Controller {
 
 	public function index()
 	{
-		$data['konten']='v_daftar_restoran';
-		$this->load->view('Template', $data);		
+		if ($this->session->userdata('logged')==true) 
+		{
+			$data['konten']='v_daftar_restoran';
+			$this->load->view('Template', $data);
+		}
+		else
+		{
+			redirect('pelanggan/Login_pelanggan/index','refresh');
+		}
+				
 	}
 
 

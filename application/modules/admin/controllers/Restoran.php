@@ -10,9 +10,17 @@ class Restoran extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['konten']='v_restoran';
-		$data['datares']=$this->rm->get_resto();
-		$this->load->view('Template', $data);
+		if ($this->session->userdata('logged')==true) 
+		{
+			$data['konten']='v_restoran';
+			$data['datares']=$this->rm->get_resto();
+			$this->load->view('Template', $data);
+		}
+		else
+		{
+			redirect('admin/Login/index','refresh');
+		}
+		
 	}
 	public function proses_tambah()
 	{

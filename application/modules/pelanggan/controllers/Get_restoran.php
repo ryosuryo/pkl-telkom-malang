@@ -10,8 +10,16 @@ class Get_restoran extends CI_Controller {
 	}
 	public function index()
 	{
-		$dt = $this->grm->get_restoran();
-		echo json_encode($dt);
+		if ($this->session->userdata('logged')==true) 
+		{
+			$dt = $this->grm->get_restoran();
+			echo json_encode($dt);
+		}
+		else
+		{
+			redirect('pelanggan/Login_pelanggan','refresh');
+		}
+		
 	}
 	public function detail($id_restoran)
 	{

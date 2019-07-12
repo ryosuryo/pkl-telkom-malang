@@ -19,7 +19,7 @@ class Pengurus extends CI_Controller {
 		}
 		else
 		{
-			redirect('Login/index','refresh');
+			redirect('admin/Login/index','refresh');
 		}
 		
 	}

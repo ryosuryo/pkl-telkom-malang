@@ -13,7 +13,7 @@ class Verifikasi extends CI_Controller {
 		}
 		else
 		{
-			redirect('Login/index','refresh');
+			redirect('kasir/Login_kasir/index','refresh');
 		}
     }
 
@@ -27,7 +27,7 @@ class Verifikasi extends CI_Controller {
 		}
 		else
 		{
-			redirect('Login/index','refresh');
+			redirect('kasir/Login_kasir/index','refresh');
 		}
 		
     }
@@ -66,26 +66,42 @@ class Verifikasi extends CI_Controller {
 	}
 
     public function cetak_nota($id_order){
-        $this->load->model('Verif_model','vm');
-        $data['data_order'] = $this->vm->cetak($id_order);
-        $this->load->view('v_cetak_nota',$data);
+    	if ($this->session->userdata('logged')==true) 
+    	{
+    		 $this->load->model('Verif_model','vm');
+	        $data['data_order'] = $this->vm->cetak($id_order);
+	        $this->load->view('v_cetak_nota',$data);
+    	}
+    	else
+    	{
+    		redirect('kasir/Login_kasir/index','refresh');
+    	}
+       
         
         
     }
 
     public function cari()
 	{
-		$tgl = $this->input->post('tanggal');
-		if($tgl == null)
+		if ($this->session->userdata('logged')==true) 
 		{
-			redirect('/admin/Verifikasi/tampil_nota','refresh');
-		} 
+			$tgl = $this->input->post('tanggal');
+			if($tgl == null)
+			{
+				redirect('/admin/Verifikasi/tampil_nota','refresh');
+			} 
+			else
+			{
+				$data['konten']="v_detail_order";
+				$this->load->model('Verif_model');
+				$data['data_nota']=$this->Verif_model->cari($tgl);
+				$this->load->view('Template', $data);
+			}
+		}
 		else
 		{
-			$data['konten']="v_detail_order";
-			$this->load->model('Verif_model');
-			$data['data_nota']=$this->Verif_model->cari($tgl);
-			$this->load->view('Template', $data);
+			redirect('kasir/login_kasir/index','refresh');
 		}
+		
 	}
 }

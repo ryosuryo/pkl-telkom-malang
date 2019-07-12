@@ -24,8 +24,16 @@ class Get_masakan extends CI_Controller {
     }
     public function tm_pesan_masakan($id_restoran)
     {
-        $data['dt_mas']=$this->gmm->get_masakan($id_restoran);
-        $data['konten']='v_daftar_masakan';
-        $this->load->view('Template', $data);
+        if ($this->session->userdata('logged')==true) 
+        {
+            $data['dt_mas']=$this->gmm->get_masakan($id_restoran);
+            $data['konten']='v_daftar_masakan';
+            $this->load->view('Template', $data);
+        }
+        else
+        {
+            redirect('pelanggan/Login_pelanggan','refresh');
+        }
+        
     }
 }

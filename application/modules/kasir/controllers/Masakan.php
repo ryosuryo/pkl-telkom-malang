@@ -10,10 +10,18 @@ class Masakan extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['data_mas']=$this->mm->get_masakan();
-		$data['data_res']=$this->mm->get_resto();
-		$data['konten']='v_masakan';
-		$this->load->view('Template', $data);		
+		if ($this->session->userdata('logged')==true) 
+		{
+			$data['data_mas']=$this->mm->get_masakan();
+			$data['data_res']=$this->mm->get_resto();
+			$data['konten']='v_masakan';
+			$this->load->view('Template', $data);
+		}
+		else
+		{
+			redirect('kasir/Login_kasir/index','refresh');
+		}
+				
 	}
 	public function proses_tambah()
 	{

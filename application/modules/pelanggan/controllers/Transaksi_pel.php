@@ -10,9 +10,17 @@ class Transaksi_pel extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['konten']="v_chart";
-		$data['data_m']=$this->gt_res->get_p_meja();
-		$this->load->view('Template', $data);
+		if ($this->session->userdata('logged')==true) 
+		{
+			$data['konten']="v_chart";
+			$data['data_m']=$this->gt_res->get_p_meja();
+			$this->load->view('Template', $data);
+		}
+		else
+		{
+			redirect('pelanggan/Login_pelanggan/index','refresh');
+		}
+		
 	}
 
 	public function pesan_meja($id_restoran,$no_meja)
