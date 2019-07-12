@@ -126,8 +126,15 @@
 	      		);
 			$('#nomor_meja').html(
 	      		'<label>Pesan Meja Nomor ?</label>'+
-	      		'<input type="number" id="no_item" value="1" name="no_meja" class="form-control">'
-
+	      		//'<input type="number" id="no_item" value="1" name="no_meja" class="form-control">'+
+				  '<fieldset>'+
+					'<label>'+
+     				'<input type="checkbox" id="no_item" name="no_meja"  value="1"  class="form-control">1</label>'+
+   					'<label>'+
+     				'<input type="checkbox" id="no_item" name="no_meja"  value="2"  class="form-control">2 </label>'+
+   					'<label>'+
+     				'<input type="checkbox" id="no_item" name="no_meja"  value="3"  class="form-control">3 </label>'+
+				'</fieldset>'
 	      		
 	      		);
 	    	$('#btn').html(
