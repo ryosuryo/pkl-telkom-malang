@@ -153,6 +153,8 @@
                                ?>
                                <li><a href="<?= base_url()?>index.php/kasir/Masakan"><i class="notika-icon notika-windows"></i> Tabel Masakan</a>
                                 </li>
+                                <li><a href="#"><i class="notika-icon notika-windows"></i> Meja Yang Telah Dipesan</a>
+                                </li>
                                <li><a href="<?= base_url()?>index.php/admin/Verifikasi"><i class="notika-icon notika-edit"></i> Verifikasi Order</a>
                                 </li>
                                 <li><a href="<?= base_url()?>index.php/admin/Verifikasi/tampil_nota"><i class="notika-icon notika-bar-chart"></i> Riwayat Order</a>

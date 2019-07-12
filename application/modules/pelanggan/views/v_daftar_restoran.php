@@ -126,21 +126,8 @@
 	      		);
 			$('#nomor_meja').html(
 	      		'<label>Pesan Meja Nomor ?</label>'+
-	      		'<input type="number" id="no_item" value="1" name="no_meja" class="form-control"><br>'+
-	      		'<div class="btn-toolbar" role="toolbar">'+
-					'<div class="btn-group notika-tl-btn">'+
-			              '<button type="button" class="btn btn-primary notika-gp-primary" disabled="disabled">1</button>'+
-			              '<button type="button" class="btn btn-primary notika-gp-primary">2</button>'+
-			              '<button type="button" class="btn btn-primary notika-gp-primary">3</button>'+
-			              '<button type="button" class="btn btn-primary notika-gp-primary">4</button>'+
-			              '<button type="button" class="btn btn-primary notika-gp-primary">5</button>'+
-			              '<button type="button" class="btn btn-primary notika-gp-primary">6</button>'+
-			              '<button type="button" class="btn btn-primary notika-gp-primary">7</button>'+
-			              '<button type="button" class="btn btn-primary notika-gp-primary">8</button>'+
-			              '<button type="button" class="btn btn-primary notika-gp-primary">9</button>'+
-			              '<button type="button" class="btn btn-primary notika-gp-primary">10</button>'+
-			         '</div>'+
-				'</div>' 
+	      		'<input type="number" id="no_item" value="1" name="no_meja" class="form-control">'
+	      		
 	      		);
 	    	$('#btn').html(
 	    		'<a href="<?= base_url()?>index.php/pelanggan/Get_masakan/tm_pesan_masakan/'+data['id_restoran']+'" class="btn btn-primary">PESAN MAKANAN</a>'+
