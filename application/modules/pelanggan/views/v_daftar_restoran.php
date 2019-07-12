@@ -112,6 +112,20 @@
 		$("#tampil_restoran").html(tampil);
 	});
 
+	function selected(frm)
+	{
+		var selectedmeja="";
+		for ( i = 0; i < frm.no_meja.length; i++) 
+		{
+			if(frm.no_meja[i].checked)
+			{
+				selectedmeja += frm.no_meja[i].value;
+			}
+		}
+		//memunculkan input
+		document.getElementById("no_item").value=selectedmeja; 
+	}
+
 	//menampilkan detail restoran
 	function tm_detail(id_restoran){
 		$.getJSON("<?= base_url()?>index.php/pelanggan/Get_restoran/detail/"+id_restoran,function(data){
@@ -125,18 +139,22 @@
 	      		'</table>'
 	      		);
 			$('#nomor_meja').html(
+				'<form>'+
 	      		'<label>Pesan Meja Nomor ?</label>'+
-	      		//'<input type="number" id="no_item" value="1" name="no_meja" class="form-control">'+
+	      		'<input type="hidden" id="no_item" class="form-control"><br>'+
 				  '<fieldset>'+
 					'<label>'+
-     				'<input type="checkbox" id="no_item" name="no_meja"  value="1"  class="form-control">1</label>'+
-   					'<label>'+
-     				'<input type="checkbox" id="no_item" name="no_meja"  value="2"  class="form-control">2 </label>'+
-   					'<label>'+
-     				'<input type="checkbox" id="no_item" name="no_meja"  value="3"  class="form-control">3 </label>'+
-				'</fieldset>'
+     				'<input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="1" >1'+
+   					
+     				'<input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="2" >2'+
+   					
+     				'<input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="3" >3'+
+				'</fieldset>'+
+				
+				'</form>'
 	      		
 	      		);
+
 	    	$('#btn').html(
 	    		'<a href="<?= base_url()?>index.php/pelanggan/Get_masakan/tm_pesan_masakan/'+data['id_restoran']+'" class="btn btn-primary">PESAN MAKANAN</a>'+
 	        	'<button id="beli" onclick="beli('+data['id_restoran']+')" class="btn btn-default">PESAN</button>'
@@ -144,6 +162,8 @@
 	      		);
 		});
 	}	
+
+	
 	//menampilkan detail menu makanan di setiap restoran
 	function mas_detail(id_restoran){
 
