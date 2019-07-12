@@ -21,6 +21,13 @@ class Get_restoran extends CI_Controller {
 		}
 		
 	}
+
+	public function cari($nama_restoran='')
+	{
+		$dt = $this->grm->cari_get_restoran($nama_restoran);
+		echo json_encode($dt);
+	}
+
 	public function detail($id_restoran)
 	{
 		$dt = $this->grm->get_detail_res($id_restoran);

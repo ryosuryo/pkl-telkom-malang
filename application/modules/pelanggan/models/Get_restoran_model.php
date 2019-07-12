@@ -7,6 +7,10 @@ class Get_restoran_model extends CI_Model {
 	{
 		return $this->db->get('restoran')->result();
 	}	
+	public function cari_get_restoran($nama_restoran)
+	{
+		return $this->db->like('nama_restoran', $nama_restoran)->get('restoran')->result();
+	}
 	public function get_detail_res($id_restoran)
 	{
 		return $this->db->where('id_restoran', $id_restoran)

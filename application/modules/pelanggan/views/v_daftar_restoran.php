@@ -11,7 +11,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <div class="nk-int-st">
-                                            <input type="text" name="tanggal" class="form-control" placeholder="Cari Bersarkan Nama Restoran">
+                                            <input type="text" name="cari" id="cari" class="form-control" placeholder="Cari Bersarkan Nama Restoran">
                                         </div>
                                     </div>
                                 </div>
@@ -112,6 +112,37 @@
 		$("#tampil_restoran").html(tampil);
 	});
 
+	//cari restoran
+	$("#cari").on('keyup',function(){
+		$.getJSON("<?= base_url()?>index.php/pelanggan/Get_restoran/cari/"+$('#cari').val(),function(data){
+		var tampil="";
+		$.each(data,function(key,dt){
+			tampil+=
+			'<div class="col-md-4">'+
+							'<div class="panel">'+
+								'<div class="panel-heading">'+
+									'<h3 class="panel-title" style="text-align: center; font-size: 30px;">'+dt['nama_restoran']+'</h3>'+
+								'</div>'+
+								'<div class="panel-body">'+
+									'<p>'+
+									
+									'<img style="width:100%;" src="<?= base_url('assets/gambar/')?>'+dt['gambar']+'" alt="...">'+
+
+									'<table class="table table-hover table-stripped">'+
+						        		'<tr><td>'+dt['alamat_restoran']+'<br>'+dt['status']+'</td><td><a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-success" style="text-decoration:none">Detail</a> <a href="#detail_masakan" data-toggle="modal" onclick="mas_detail('+dt['id_restoran']+')" class="btn btn-info" style="text-decoration:none">List Makanan</a></td></tr>'+
+						      		'</table>'+
+											
+									'</p>'+
+								'</div>'+
+							'</div>'+
+						'</div>'
+
+		});
+		$("#tampil_restoran").html(tampil);
+	});
+});
+
+//checkbox
 	function selected(frm)
 	{
 		var selectedmeja="";
