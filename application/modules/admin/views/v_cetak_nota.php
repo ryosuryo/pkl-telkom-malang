@@ -62,12 +62,11 @@
                             
                         </div>
                         <div class="bsc-tbl-st">
-                            <table class="table table-striped">
+                            <table border="1" class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th style="text-align: center;">No</th>
-                                        <th style="text-align: center;">Nama Restoran</th>
-                                        <th style="text-align: center;">Meja</th>
+                                        <th style="text-align: center;">Nama Restoran</th>    
                                         <th style="text-align: center;">Masakan</th>
                                         <th style="text-align: center;">Harga</th>
                                         <th style="text-align: center;">Jumlah</th>
@@ -84,7 +83,6 @@
 											echo '<tr style="text-align:center;">
                       <td>'.$no.'</td>
                       <td>'.$dt_der->nama_restoran.'</td>
-                      <td>'.$dt_der->no_meja.'</td>
 											<td>'.$dt_der->nama_masakan.'</td>
 											<td>'.$dt_der->harga.'</td>
 											<td>'.$dt_der->jumlah.'</td>
@@ -93,24 +91,24 @@
 										
 										echo
 										'<tr>
-											<td colspan="6">Total Bayar</td>
-											<td>: Rp.'.$dt_der->total_bayar.',00-</td>
+											<td colspan="5">Total Bayar</td>
+											<td> Rp.'.$dt_der->total_bayar.',00-</td>
 										</tr>
 										<tr>
-											<td colspan="6">Keterangan</td>
-											<td>: '.$dt_der->status.'</td>
+											<td colspan="5">Tanggal</td>
+											<td> '.$dt_der->tanggal.'</td>
 										</tr>
 										<tr>
-											<td colspan="6">No Meja</td>
-											<td>: '.$dt_der->no_meja.'</td>
+											<td colspan="5">No Meja</td>
+											<td> '.$dt_der->no_meja.'</td>
 										</tr>
 										<tr>
-											<td colspan="6">Pelanggan</td>
-											<td>: '.$dt_der->nama.'</td>
+											<td colspan="5">Pelanggan</td>
+											<td> '.$dt_der->nama.'</td>
 										</tr>
 										<tr>
-											<td colspan="6">Kasir</td>
-											<td>: '.$this->session->userdata('username').'</td>
+											<td colspan="5">Kasir</td>
+											<td> '.$this->session->userdata('username').'</td>
                     </tr>';
                                         }
 										?>
@@ -118,7 +116,6 @@
                                    
                                 </tbody>
                             </table>
-                            <button class="btn btn-info" onclick="window.print()">Print</button>
                             <br>
                         </div>
                     </div>
@@ -191,4 +188,8 @@
     <script src="<?= base_url()?>assets/js/main.js"></script>
 	<!-- tawk chat JS
 		============================================ -->
-    <script src="<?= base_url()?>assets/js/tawk-chat.js"></script>                
+    <script src="<?= base_url()?>assets/js/tawk-chat.js"></script> 
+
+    <script>
+    window.print();
+    </script>               

@@ -62,8 +62,9 @@
         <!-- Login -->
         <div class="nk-block toggled" id="l-login">
             <form method="post" action="<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_login">
-                <h3 style="color: white;font-size: 20px;">LOGIN PELANGGAN</h3>
+                
             <div class="nk-form">
+                <h3 style="font-size: 20px;">LOGIN PELANGGAN</h3>
                 <div class="input-group">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
                     <div class="nk-int-st">
@@ -83,6 +84,7 @@
 
             <div class="nk-navigation nk-lg-ic">
                 <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
+                <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a>
                 
             </div>
         </div>
@@ -95,6 +97,7 @@
                             ?>
         <!-- Register -->
         <div class="nk-block" id="l-register">
+
             <form method="post" action="<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_daftar">
                 <h3 style="color: white;font-size: 20px;">DAFTAR</h3>
             <div class="nk-form">
@@ -143,6 +146,29 @@
         </div>
 
         <!-- Forgot Password -->
+         <div class="nk-block" id="l-forget-password">
+            <div class="nk-form">
+                <p class="text-left">Silahkan ketikkan alamat email anda untuk mengirimkan kode verifikasi.</p>
+                <form action="<?= base_url()?>index.php/pelanggan/Login_pelanggan/reset_password">
+                    <div class="input-group">
+                        <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-mail"></i></span>
+                        <div class="nk-int-st">
+                            <input type="email" class="form-control" placeholder="Alamat Email" name="email">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-login btn-info btn-float"><i class="notika-icon notika-plus-symbol"></i></button>
+                    
+                </form>
+                
+
+                
+            </div>
+
+            <div class="nk-navigation nk-lg-ic rg-ic-stl">
+                <a href="" data-ma-action="nk-login-switch" data-ma-block="#l-login"><i class="notika-icon notika-right-arrow"></i> <span>Sign in</span></a>
+                <a href="" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
+            </div>
+        </div>
        
     </div>
     <!-- Login Register area End-->

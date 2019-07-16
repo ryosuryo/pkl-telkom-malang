@@ -76,15 +76,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
-                            <li class="nav-item dropdown">
-                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
-                                <div role="menu" class="dropdown-menu search-dd animated flipInX">
-                                    <div class="search-input">
-                                        <i class="notika-icon notika-left-arrow"></i>
-                                        <input type="text" />
-                                    </div>
-                                </div>
-                            </li>   
+                            
 
                             <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i>  <?php echo $this->session->userdata('username');?></span></a>
                                 <ul class="dropdown-menu nk-teal" role="menu">
@@ -169,6 +161,7 @@
                                 </li>
                                  <li class=""><a href="<?= base_url()?>index.php/pelanggan/Transaksi_pel" class="btn btn-info notika-btn-info"><i class="notika-icon notika-checked"></i>Check Out</a>
                                 </li>
+            
                                  <li class=""><a href="#"><i class="notika-icon notika-menus"></i>Cart : <span id="cart">0 </span></a>
                                 </li>
                                 

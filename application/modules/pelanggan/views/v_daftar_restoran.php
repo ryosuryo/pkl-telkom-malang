@@ -32,6 +32,9 @@
 	
 
 
+	
+
+
 
 <div class="modal fade" id="detail" role="dialog">
                                     <div class="modal-dialog modals-default">
@@ -46,13 +49,15 @@
                                                 	<div id="deskripsi"></div>
                                                 	<div id="nomor_meja"></div><br><br>
                                                 	
-                                                	<div id="pesan"></div>
+                                                	
                                                
                                             </div>
                                             <div class="modal-footer">
                                             	<div id="btn"></div>
+
                                                 
-                                            </div>
+                                            </div><br><br>
+                                            <div id="pesan"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +102,8 @@
 								'<div class="panel-body">'+
 									'<p>'+
 									
-									'<img style="width:100%;" src="<?= base_url('assets/gambar/')?>'+dt['gambar']+'" alt="...">'+
+									'<img style="width:387px;height: 270px;" src="<?= base_url('assets/gambar/')?>'+dt['gambar']+'" alt="..." class="img-fluid">'+
+									
 
 									'<table class="table table-hover table-stripped">'+
 						        		'<tr><td>'+dt['alamat_restoran']+'<br>'+dt['status']+'</td><td><a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-success" style="text-decoration:none">Detail</a> <a href="#detail_masakan" data-toggle="modal" onclick="mas_detail('+dt['id_restoran']+')" class="btn btn-info" style="text-decoration:none">List Makanan</a></td></tr>'+
@@ -126,7 +132,7 @@
 								'<div class="panel-body">'+
 									'<p>'+
 									
-									'<img style="width:100%;" src="<?= base_url('assets/gambar/')?>'+dt['gambar']+'" alt="...">'+
+									'<img style="width:387px;height: 270px;" src="<?= base_url('assets/gambar/')?>'+dt['gambar']+'" alt="...">'+
 
 									'<table class="table table-hover table-stripped">'+
 						        		'<tr><td>'+dt['alamat_restoran']+'<br>'+dt['status']+'</td><td><a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-success" style="text-decoration:none">Detail</a> <a href="#detail_masakan" data-toggle="modal" onclick="mas_detail('+dt['id_restoran']+')" class="btn btn-info" style="text-decoration:none">List Makanan</a></td></tr>'+
@@ -174,11 +180,8 @@
 	      		'<label>Pesan Meja Nomor ?</label>'+
 	      		'<input type="hidden" id="no_item" class="form-control"><br>'+
 				  '<fieldset>'+
-					'<label>'+
-     				'<input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="1" >1'+
-   					
-     				'<input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="2" >2'+
-   					
+     				'<input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="1" disabled="disabled">1'+	
+     				'<input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="2" >2'+	
      				'<input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="3" >3'+
 				'</fieldset>'+
 				
@@ -211,9 +214,8 @@
 		});
 	}
 	//proses pesan meja
-	function beli(id_restoran){
+	function beli(id_restoran){		
 		var no_meja=$('#no_item').val();
-
 		$('#pesan').hide();
 		$('#pesan').removeClass("alert alert-success");
 		$.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/pesan_meja/"+id_restoran+"/"+no_meja,function(hasil){

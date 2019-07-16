@@ -1,9 +1,11 @@
 
-	<div>
 		<?php
 		foreach ($dt_mas as $mas) 
 		{
-			echo '<div class="col-md-4">
+			echo '
+			<h2><center>Menu Di Restoran '.$mas->nama_restoran.'</center></h2><br><br>
+	<div>
+			<div class="col-md-4">
 							<div class="panel">
 								<div class="panel-heading">
 									<h3 class="panel-title">'.$mas->nama_masakan.'</h3>
@@ -13,18 +15,19 @@
 									
 									<img style="width:380px;height: 270px;" src='.base_url("assets/gambar_masakan/$mas->gambar_masakan").' alt="...">
 									
-									<span class="short-description" style="font-size: 30px;"><strong>'.$mas->harga.'</strong></span><br><br>
+									<span class="short-description" style="font-size: 30px;"><strong>Rp. '.$mas->harga.',-</strong></span><br><br>
 										<a href="#detail" data-toggle="modal" onclick="tm_detail('.$mas->id_masakan.')" class="btn btn-warning" style="text-decoration:none">Lihat</a>
 											
 									</p>
 								</div>
 							</div>
-						</div>';
+						</div>
+					</div>';
 		}
-		?>
+	?>
 
 		
-	</div>
+	
 
 								<div class="modal fade" id="detail" role="dialog">
 									<div class="modal-dialog modals-default">
@@ -36,11 +39,12 @@
 										         <div id="gambar"></div>
 										         <div id="deskripsi"></div>
 										         <div id="jumlah"></div><br><br>             	
-										         <div id="pesan"></div>  
+										           
 						          			</div>
 										     <div class="modal-footer">
 										       <div id="btn"></div>                         
-                                            </div> 
+                                            </div><br><br> 
+                                            <div id="pesan"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -58,7 +62,7 @@
 		$('#deskripsi').html(
 			'<table class="table table-hover table-stripped">'+
         		'<tr><td>Nama masakan</td><td>'+data['nama_masakan']+'</td></tr>'+
-        		'<tr><td>Harga</td><td>'+data['harga']+'</td></tr>'+
+        		'<tr><td>Harga</td><td>Rp. '+data['harga']+',-</td></tr>'+
         		'<tr><td>Status masakan</td><td><div id="sm"></div></td></tr>'+
       		'</table>'
       		);

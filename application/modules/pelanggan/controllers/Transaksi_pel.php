@@ -26,7 +26,6 @@ class Transaksi_pel extends CI_Controller {
 	public function pesan_meja($id_restoran,$no_meja)
 	{
 		$dt_res = $this->gt_res->get_detail_res($id_restoran);
-
 		$data = array('id_restoran' => $dt_res->id_restoran,
 						'no_meja' => $no_meja,
 						'username' => $this->session->userdata('username')

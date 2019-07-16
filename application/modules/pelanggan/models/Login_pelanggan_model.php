@@ -40,6 +40,19 @@ class Login_pelanggan_model extends CI_Model {
   {
     return $this->db->where('username', $this->session->userdata('username'))->delete('pesanan_meja');
   }
+  public function reset_key($email,$reset)
+  {
+  	 $this->db->where('email', $email);
+  	 $data = array('reset_password' => $reset );
+  	 if ($this->db->affected_rows()>0) 
+  	 {
+  	 	return true;
+  	 }
+  	 else
+  	 {
+  	 	return false;
+  	 }
+  }
 }
 
 /* End of file Login_pelanggan_model.php */
