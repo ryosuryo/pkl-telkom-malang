@@ -26,7 +26,7 @@ class Login_pelanggan extends CI_Controller {
 				}
 				else
 				{
-					$this->session->set_flashdata('pesan', 'gagal login');
+					$this->session->set_flashdata('pesan', 'kombinasi username dan password tidak cocok');
 					redirect('pelanggan/Login_pelanggan/index','refresh');
 				}
 			} 
@@ -38,7 +38,8 @@ class Login_pelanggan extends CI_Controller {
 		}
 		else
 		{
-			redirect('Template/index','refresh');
+			$this->session->set_flashdata('pesan','session yg sebelumnya belum dilogout');
+			redirect('pelanggan/Login_pelanggan/index','refresh');
 		}
 		
 	}
@@ -74,7 +75,7 @@ class Login_pelanggan extends CI_Controller {
 			redirect('pelanggan/Login_pelanggan/index','refresh');
 		} else{
 
-			$this->session->set_flashdata('pesan','gagal login, Mohon lengkapi data dulu');
+			$this->session->set_flashdata('pesan','gagal daftar, Mohon lengkapi data dulu');
 			redirect('pelanggan/Login_pelanggan/index','refresh');
 		}
 	}

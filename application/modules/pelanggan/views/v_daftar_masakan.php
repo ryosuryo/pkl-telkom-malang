@@ -1,19 +1,21 @@
 
+<h2><center>Silhkan Pilih Masakan</center></h2><br><br>
+
 		<?php
 		foreach ($dt_mas as $mas) 
 		{
 			echo '
-			<h2><center>Menu Di Restoran '.$mas->nama_restoran.'</center></h2><br><br>
+			
 	<div>
 			<div class="col-md-4">
 							<div class="panel">
 								<div class="panel-heading">
-									<h3 class="panel-title">'.$mas->nama_masakan.'</h3>
+									<h3 class="panel-title" style="text-align: center; font-size: 30px;">'.$mas->nama_masakan.'</h3>
 								</div>
 								<div class="panel-body">
 									<p>
 									
-									<img style="width:380px;height: 270px;" src='.base_url("assets/gambar_masakan/$mas->gambar_masakan").' alt="...">
+									<img style="width:100%;" src='.base_url("assets/gambar_masakan/$mas->gambar_masakan").' alt="..." class="img-fluid"><br>
 									
 									<span class="short-description" style="font-size: 30px;"><strong>Rp. '.$mas->harga.',-</strong></span><br><br>
 										<a href="#detail" data-toggle="modal" onclick="tm_detail('.$mas->id_masakan.')" class="btn btn-warning" style="text-decoration:none">Lihat</a>

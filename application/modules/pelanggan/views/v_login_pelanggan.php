@@ -80,6 +80,14 @@
                 <button type="submit" class="btn btn-login btn-info btn-float"><i class="notika-icon notika-right-arrow right-arrow-ant"></i></button>
             </div>
             </form>
+
+             <?php
+                                $pesan = $this->session->flashdata('pesan');
+                                if($pesan != NULL){
+                                    echo ' <div class="alert alert-danger">'.$pesan.'</div>';
+                                }
+
+                            ?>
             
 
             <div class="nk-navigation nk-lg-ic">
@@ -87,14 +95,9 @@
                 <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a>
                 
             </div>
-        </div>
-                             <?php
-                                $pesan = $this->session->flashdata('pesan');
-                                if($pesan != NULL){
-                                    echo ' <div class="alert alert-danger">'.$pesan.'</div>';
-                                }
 
-                            ?>
+        </div>
+                           
         <!-- Register -->
         <div class="nk-block" id="l-register">
 

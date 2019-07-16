@@ -171,7 +171,6 @@
 				'<table class="table table-hover table-stripped">'+
 	        		'<tr><td>Nama Restoran</td><td>'+data['nama_restoran']+'</td></tr>'+
 	        		'<tr><td>Alamat</td><td>'+data['alamat_restoran']+'</td></tr>'+
-	        		'<tr><td>Deskripsi</td><td></td></tr>'+
 	        		'<tr><td>Jam Buka</td><td>'+data['jam_buka']+'</td></tr>'+
 	      		'</table>'
 	      		);
@@ -179,11 +178,11 @@
 				'<form>'+
 	      		'<label>Pesan Meja Nomor ?</label>'+
 	      		'<input type="hidden" id="no_item" class="form-control"><br>'+
-				  '<fieldset>'+
-     				'<input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="1" disabled="disabled">1'+	
-     				'<input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="2" >2'+	
-     				'<input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="3" >3'+
-				'</fieldset>'+
+				  '<div class="fm-checkbox">'+
+     				'<label><input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="1" class="i-checks"><i></i>1</label>'+	
+     				'<label><input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="2" class="i-checks"><i></i>2</label>'+	
+     				'<label><input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="3" class="i-checks"><i></i>3</label>'+
+				'</div>'+
 				
 				'</form>'
 	      		
