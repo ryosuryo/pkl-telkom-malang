@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EstateAgency Bootstrap Template</title>
+  <title>Boogja</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="<?= base_url()?>assets2/img/favicon.png" rel="icon">
+  <link href="<?= base_url()?>assets2/img/login.png" rel="icon">
   <link href="<?= base_url()?>assets2/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -46,14 +46,14 @@
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
-      <form class="form-a">
+      <form class="form-a" method="post" action="<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_login">
         <div class="row">
           <div class="col-md-12 mb-2">
             <div class="form-group">
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Username" style="border-radius: 12px;">
+              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Username" name="username" style="border-radius: 12px;">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Password" style="border-radius: 12px;">
+              <input type="password" class="form-control form-control-lg form-control-a" placeholder="Password" name="password" style="border-radius: 12px;">
             </div>
           </div>          
           <div class="col-md-12">
@@ -175,6 +175,14 @@
     </div>
   </div>
   <!--/ Carousel end /-->
+
+                            <?php
+                                $pesan = $this->session->flashdata('pesan');
+                                if($pesan != NULL){
+                                    echo ' <div class="alert alert-danger">'.$pesan.'</div>';
+                                }
+
+                            ?>
 
   <!--/ Intro Single star /-->
   <section class="intro-single">
