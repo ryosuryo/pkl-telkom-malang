@@ -39,7 +39,7 @@
   
  
   <div class="click-closed"></div>
-  <!--/ Form Search Star /-->
+  <!--/ Form Login Start /-->
   <div class="box-collapse">
     <div class="title-box-d">
       <h3 class="title-d">Login Akun Kamu !!!</h3>
@@ -63,7 +63,7 @@
       </form>
     </div>
   </div>
-  <!--/ Form Search End /-->
+  <!--/ Form Login End /-->
 
   <!--/ Nav Star /-->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
@@ -117,7 +117,7 @@
                       <span class="color-b">001 </span> Saatnya
                       <br> Booking Saja</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">Daftar Sekarang</span></a>
+                      <a href="<?= base_url()?>index.php/pelanggan/LandController/form_daftar"><span class="price-a">Daftar Sekarang</span></a>
                     </p>
                   </div>
                 </div>
@@ -140,7 +140,7 @@
                       <span class="color-b">204 </span> Sekarang
                       <br> Lebih mudah !!!</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">Daftar Sekarang</span></a>
+                      <a href="<?= base_url()?>index.php/pelanggan/LandController/form_daftar"><span class="price-a">Daftar Sekarang</span></a>
                     </p>
                   </div>
                 </div>
@@ -163,7 +163,7 @@
                       <span class="color-b">207 </span> Menjadi
                       <br> Tanpa Ribet !!!</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">Daftar Sekarang</span></a>
+                      <a href="<?= base_url()?>index.php/pelanggan/LandController/form_daftar"><span class="price-a">Daftar Sekarang</span></a>
                     </p>
                   </div>
                 </div>
@@ -316,7 +316,7 @@
       </div>
       <div id="property-carousel" class="owl-carousel owl-theme">
         <div class="carousel-item-b">
-          <div class="card-box-a card-shadow">
+          <div class="card-box-a" style="border-radius: 12px;">
             <div class="img-box-a">
               <img src="<?= base_url()?>assets2/img/register.jpg" alt="" class="img-a img-fluid">
             </div>
@@ -338,7 +338,7 @@
           </div>
         </div>
         <div class="carousel-item-b">
-          <div class="card-box-a card-shadow">
+          <div class="card-box-a" style="border-radius: 12px;">
             <div class="img-box-a">
               <img src="<?= base_url()?>assets2/img/login.jpg" alt="" class="img-a img-fluid">
             </div>
@@ -359,7 +359,7 @@
           </div>
         </div>
         <div class="carousel-item-b">
-          <div class="card-box-a card-shadow">
+          <div class="card-box-a" style="border-radius: 12px;">
             <div class="img-box-a">
               <img src="<?= base_url()?>assets2/img/pilihrestoran.jpg" alt="" class="img-a img-fluid">
             </div>
@@ -381,7 +381,7 @@
           </div>
         </div>
         <div class="carousel-item-b">
-          <div class="card-box-a card-shadow">
+          <div class="card-box-a" style="border-radius: 12px;">
             <div class="img-box-a">
               <img src="<?= base_url()?>assets2/img/pilihmakan.jpg" alt="" class="img-a img-fluid">
             </div>
@@ -403,7 +403,7 @@
           </div>
         </div>
         <div class="carousel-item-b">
-          <div class="card-box-a card-shadow">
+          <div class="card-box-a" style="border-radius: 12px;">
             <div class="img-box-a">
               <img src="<?= base_url()?>assets2/img/bayar.jpg" alt="" class="img-a img-fluid">
             </div>

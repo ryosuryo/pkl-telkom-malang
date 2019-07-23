@@ -7,6 +7,11 @@ class LandController extends CI_Controller {
 	{
 		$this->load->view('pelanggan/land');		
 	}
+	public function form_daftar()
+	{
+		$data['konten_pel']='v_form_daftar';
+		$this->load->view('Template_pel', $data);
+	}
 
 }
 
