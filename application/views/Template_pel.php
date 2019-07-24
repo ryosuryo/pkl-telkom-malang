@@ -62,7 +62,7 @@
                 <a class="nav-link " href="<?= base_url()?>index.php/pelanggan/Daftar_Restoran">Pilih Restoran</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">Check Out</a>
+                <a class="nav-link " href="<?= base_url()?>index.php/pelanggan/Transaksi_pel">Check Out</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="<?= base_url()?>index.php/pelanggan/Login_pelanggan/logout">Log Out</a>
