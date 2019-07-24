@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EstateAgency Bootstrap Template</title>
+  <title>Boogja</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="<?= base_url()?>assets2/img/favicon.png" rel="icon">
+  <link href="<?= base_url()?>assets2/img/speaker.png" rel="icon">
   <link href="<?= base_url()?>assets2/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -64,6 +64,61 @@
         $this->load->view($konten_pel);
     ?>
   </div>
+
+  <!--/ footer Star /-->
+  <section class="section-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 ">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">Boogja Agency</h3>
+            </div>
+            <div class="w-body-a">
+              <p class="w-text-a color-text-a">
+                Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
+                sed aute irure.
+              </p>
+            </div>
+            <div class="w-footer-a">
+              <ul class="list-unstyled">
+                <li class="color-a">
+                  <span class="color-text-a">Phone .</span> contact@example.com</li>
+                <li class="color-a">
+                  <span class="color-text-a">Email .</span> +54 356 945234</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+       
+       
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright-footer">
+            <p class="copyright color-text-a">
+              &copy; Copyright
+              <span class="color-a">Booking Saja</span> All Rights Reserved.
+            </p>
+          </div>
+          <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
+            -->
+            Designed by <a href="https://bootstrapmade.com/">--------</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--/ Footer End /-->
 
   
 

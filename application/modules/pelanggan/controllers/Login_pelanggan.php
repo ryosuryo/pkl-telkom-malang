@@ -57,6 +57,7 @@ class Login_pelanggan extends CI_Controller {
 		$this->form_validation->set_rules('telp', 'telp', 'trim|required');
 		$this->form_validation->set_rules('username', 'username', 'trim|required');
 		$this->form_validation->set_rules('password', 'password', 'trim|required');
+		$this->form_validation->set_rules('email', 'email', 'trim|required');
 
 		if($this->form_validation->run()== true)
 		{

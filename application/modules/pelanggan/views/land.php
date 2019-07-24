@@ -75,6 +75,10 @@
         <span></span>
       </button>
       <a class="navbar-brand text-brand" href="#">Boo<span class="color-b">gja</span></a>
+      <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
+        data-target="#navbarTogglerDemo01" aria-expanded="false">
+        <span class="fa fa-dribbble" aria-hidden="true"></span>
+      </button>
       
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
@@ -188,23 +192,14 @@
   <section class="intro-single">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 col-lg-8">
+        <div class="col-md-12 col-lg-7">
           <div class="title-single-box">
             <h1 class="title-single">Apa itu Boogja ?</h1>
             <span class="color-text-a"><img src="<?= base_url()?>assets2/img/speaker.png" style="width: 4%">  Boogja, singkatan dari "Booking Saja" adalah sebuah aplikasi berbasis web yang bertujuan untuk memudahkan para pelanggan untuk memesan meja di restoran favorit secara online, sehingga tidak ... </span>
           </div>
         </div>
-        <div class="col-md-12 col-lg-4">
-          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="#">Home</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Apa itu Boogja ?
-              </li>
-            </ol>
-          </nav>
+        <div class="col-md-12 col-lg-5">
+          <img src="<?= base_url()?>assets2/img/human.png" style="width: 100%;">
         </div>
       </div>
     </div>
@@ -228,13 +223,14 @@
           <div class="card-box-c foo">
             <div class="card-header-c d-flex">
               <div class="card-box-ico">
-                <img src="<?= base_url()?>assets2/img/online-payment.png" style="width: 55%">
+                <img src="<?= base_url()?>assets2/img/online-payment.png" style="width: 50.5%">
               </div>
-              <div class="card-title-c align-self-center">
-                <h2 class="title-c">Mudah</h2>
-              </div>
+              
+               
+    
             </div>
             <div class="card-body-c">
+               <h2 class="">Mudah</h2>
               <p class="content-c">
                 Bila ingin pesan meja tidak perlu datang ke restorannya langsung, cukup pesan secara online melalui website
               </p>
@@ -252,11 +248,9 @@
               <div class="card-box-ico">
                 <img src="<?= base_url()?>assets2/img/time.png" style="width: 50.5%">
               </div>
-              <div class="card-title-c align-self-center">
-                <h2 class="title-c">Waktu</h2>
-              </div>
             </div>
             <div class="card-body-c">
+               <h2 class="">Waktu</h2>
               <p class="content-c">
                 Jika akan memesan meja datang langsung ke tempat restoran, maka akan boros waktu dan biaya untuk perjalanan bolak-balik ke restoran
               </p>
@@ -272,13 +266,11 @@
           <div class="card-box-c foo">
             <div class="card-header-c d-flex">
               <div class="card-box-ico">
-                <img src="<?= base_url()?>assets2/img/food.png" style="width: 95%">
-              </div>
-              <div class="card-title-c align-self-center">
-                <h2 class="title-c">Makanan</h2>
+                <img src="<?= base_url()?>assets2/img/food.png" style="width: 50.5%">
               </div>
             </div>
             <div class="card-body-c">
+              <h2 class="">Makanan</h2>
               <p class="content-c">
                 Selain pesan meja, boogja juga menyediakan fitur pesan makanan sekaligus. Jadi setelah pesan meja pelanggan juga bisa pesan makanan sekaligus.
               </p>

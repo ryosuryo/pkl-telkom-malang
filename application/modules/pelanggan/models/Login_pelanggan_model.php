@@ -33,7 +33,8 @@ class Login_pelanggan_model extends CI_Model {
 						'alamat' => $this->input->post('alamat'),
 						'telp' => $this->input->post('telp'),
 						'username' => $this->input->post('username'),
-						'password' => $this->input->post('password'));
+						'password' => $this->input->post('password'),
+						'email' => $this->input->post('email'));
 		return $this->db->insert('pelanggan', $data);
 	}
 	public function hapus_meja()
