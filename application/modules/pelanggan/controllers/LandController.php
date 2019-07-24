@@ -12,6 +12,11 @@ class LandController extends CI_Controller {
 		$data['konten_pel']='v_form_daftar';
 		$this->load->view('Template_pel', $data);
 	}
+	public function landresto()
+	{
+		$data['konten_pel']='v_landresto';
+		$this->load->view('Template_pel', $data);
+	}
 
 }
 

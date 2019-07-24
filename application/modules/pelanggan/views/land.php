@@ -89,7 +89,7 @@
             <a class="nav-link" href="#">Tentang</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">List Restoran</a>
+            <a class="nav-link" href="<?= base_url()?>index.php/pelanggan/LandController/landresto">List Restoran</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -195,7 +195,7 @@
         <div class="col-md-12 col-lg-7">
           <div class="title-single-box">
             <h1 class="title-single">Apa itu Boogja ?</h1>
-            <span class="color-text-a"><img src="<?= base_url()?>assets2/img/speaker.png" style="width: 4%">  Boogja, singkatan dari "Booking Saja" adalah sebuah aplikasi berbasis web yang bertujuan untuk memudahkan para pelanggan untuk memesan meja di restoran favorit secara online, sehingga tidak ... </span>
+            <span class="color-text-a"><img src="<?= base_url()?>assets2/img/speaker.png" style="width: 4%">  Boogja, singkatan dari "Booking Saja" adalah sebuah aplikasi berbasis web yang bertujuan untuk memudahkan para pelanggan untuk memesan meja di restoran favorit sekaligus memesan masakan di restoran yang dipilih secara online, sehingga para pelanggan tidak perlu datang langsung ke tempat restoran.</span>
           </div>
         </div>
         <div class="col-md-12 col-lg-5">
@@ -207,7 +207,7 @@
   <!--/ Intro Single End /-->
 
   <!--/ Services Star /-->
-  <section class="section-services section-t8">
+  <section class="section-services section-t2">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -250,7 +250,7 @@
               </div>
             </div>
             <div class="card-body-c">
-               <h2 class="">Waktu</h2>
+               <h2 class="">Waktu dan Biaya</h2>
               <p class="content-c">
                 Jika akan memesan meja datang langsung ke tempat restoran, maka akan boros waktu dan biaya untuk perjalanan bolak-balik ke restoran
               </p>
