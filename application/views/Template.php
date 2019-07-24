@@ -95,9 +95,7 @@
                                         }
                                         else
                                         {
-                                            ?>
-                                            <li role="presentation"><a href="<?= base_url()?>index.php/pelanggan/Login_pelanggan/logout" role="menuitem"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
-                                            <?php
+                                           
                                         }
                                     ?>
                                         
@@ -157,13 +155,7 @@
                             else
                             {
                                 ?>
-                                    <li><a href="<?= base_url()?>index.php/pelanggan/Daftar_restoran" class="btn btn-warning notika-btn-warning"><i class="notika-icon notika-draft"></i>Pilih Restoran</a>
-                                </li>
-                                 <li class=""><a href="<?= base_url()?>index.php/pelanggan/Transaksi_pel" class="btn btn-info notika-btn-info"><i class="notika-icon notika-checked"></i>Check Out</a>
-                                </li>
-            
-                                 <li class=""><a href="#"><i class="notika-icon notika-menus"></i>Cart : <span id="cart">0 </span></a>
-                                </li>
+                                    
                                 
                                 
                                 <?php

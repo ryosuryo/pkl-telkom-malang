@@ -12,9 +12,8 @@ class Transaksi_pel extends CI_Controller {
 	{
 		if ($this->session->userdata('logged')==true) 
 		{
-			$data['konten']="v_chart";
 			$data['data_m']=$this->gt_res->get_p_meja();
-			$this->load->view('Template', $data);
+			$this->load->view('v_chart', $data);
 		}
 		else
 		{

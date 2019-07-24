@@ -54,7 +54,28 @@
       
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
-          
+          <?php
+            if ($this->session->userdata('logged')==true) 
+            {
+              ?>
+              <li class="nav-item">
+                <a class="nav-link " href="<?= base_url()?>index.php/pelanggan/Daftar_Restoran">Pilih Restoran</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">Check Out</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="<?= base_url()?>index.php/pelanggan/Login_pelanggan/logout">Log Out</a>
+              </li>
+
+          <?php    
+            }
+            else
+            {
+              ?>
+          <?php    
+            }
+              ?>
         </ul>
       </div>
     </div>
@@ -67,7 +88,19 @@
     ?>
   </div>
 
-  <!--/ footer Star /-->
+  
+
+  <?php
+    if ($this->session->userdata('logged')==true) 
+    {
+      ?>
+
+    <?php
+    }
+    else
+    {
+    ?>
+    <!--/ footer Star /-->
   <section class="section-footer">
     <div class="container">
       <div class="row">
@@ -97,29 +130,33 @@
       </div>
     </div>
   </section>
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="copyright-footer">
-            <p class="copyright color-text-a">
-              &copy; Copyright
-              <span class="color-a">Booking Saja</span> All Rights Reserved.
-            </p>
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="copyright-footer">
+                  <p class="copyright color-text-a">
+                    &copy; Copyright
+                    <span class="color-a">Booking Saja</span> All Rights Reserved.
+                  </p>
+                </div>
+                <div class="credits">
+                  <!--
+                    All the links in the footer should remain intact.
+                    You can delete the links only if you purchased the pro version.
+                    Licensing information: https://bootstrapmade.com/license/
+                    Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
+                  -->
+                  Designed by <a href="https://bootstrapmade.com/">--------</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="credits">
-            <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
-            -->
-            Designed by <a href="https://bootstrapmade.com/">--------</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+        </footer>
+    <?php
+    }
+    ?>
+  
   <!--/ Footer End /-->
 
   

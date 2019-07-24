@@ -7,8 +7,8 @@ class Daftar_restoran extends CI_Controller {
 	{
 		if ($this->session->userdata('logged')==true) 
 		{
-			$data['konten']='v_daftar_restoran';
-			$this->load->view('Template', $data);
+			$data['konten_pel']='v_pilih_resto';
+			$this->load->view('Template_pel', $data);
 		}
 		else
 		{

@@ -59,7 +59,14 @@
           <div class="col-md-12">
             <button type="submit" class="btn btn-b" style="border-radius: 12px;">Submit</button>
           </div>
-        </div>
+        </div><br><br>
+         <?php
+                                $pesan = $this->session->flashdata('pesan');
+                                if($pesan != NULL){
+                                    echo ' <div class="alert alert-danger">'.$pesan.'</div>';
+                                }
+
+                            ?>
       </form>
     </div>
   </div>

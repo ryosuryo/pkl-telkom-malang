@@ -22,24 +22,24 @@ class Login_pelanggan extends CI_Controller {
 			if ($this->form_validation->run() == true) 
 			{
 				if ($this->lpm->cek_login()) {
-					redirect('Dashboard/index','refresh');
+					redirect('Dashboard/dashboard_pelanggan','refresh');
 				}
 				else
 				{
 					$this->session->set_flashdata('pesan', 'kombinasi username dan password tidak cocok');
-					redirect('pelanggan/Login_pelanggan/index','refresh');
+					redirect('pelanggan/LandController','refresh');
 				}
 			} 
 			else 
 			{
 				$this->session->set_flashdata('pesan',validation_errors());
-				redirect('pelanggan/Login_pelanggan/index','refresh');
+				redirect('pelanggan/LandController','refresh');
 			}
 		}
 		else
 		{
 			$this->session->set_flashdata('pesan','session yg sebelumnya belum dilogout');
-			redirect('pelanggan/Login_pelanggan/index','refresh');
+			redirect('pelanggan/LandController','refresh');
 		}
 		
 	}
@@ -47,7 +47,7 @@ class Login_pelanggan extends CI_Controller {
 	{
 		//$this->lpm->hapus_meja();
 		$this->session->sess_destroy();
-		redirect(base_url('index.php/pelanggan/Login_pelanggan/index'),'refresh');
+		redirect(base_url('index.php/pelanggan/LandController'),'refresh');
 	}
 
 	public function proses_daftar()
@@ -73,11 +73,11 @@ class Login_pelanggan extends CI_Controller {
 				$this->session->set_flashdata('pesan','gagal daftar,,lengkapi data dulu');
 				
 			}
-			redirect('pelanggan/Login_pelanggan/index','refresh');
+			redirect('pelanggan/LandController','refresh');
 		} else{
 
 			$this->session->set_flashdata('pesan','gagal daftar, Mohon lengkapi data dulu');
-			redirect('pelanggan/Login_pelanggan/index','refresh');
+			redirect('pelanggan/LandController','refresh');
 		}
 	}
 	
