@@ -11,7 +11,7 @@ class Restoran_model extends CI_Model {
 	{
 		$config['upload_path'] = './assets/gambar';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
-		$config['max_size']  = '1000900000';
+		$config['max_size']  = '10009000000000000000000000000';
 		$config['max_width']  = '1024000000';
 		$config['max_height']  = '7680000000';
 		
@@ -42,9 +42,9 @@ class Restoran_model extends CI_Model {
 		{
 			$config['upload_path'] = './assets/gambar';
 			$config['allowed_types'] = 'gif|jpg|png|jpeg';
-			$config['max_size']  = '1000000000';
-			$config['max_width']  = '10240000000';
-			$config['max_height']  = '768000000000';
+			$config['max_size']  = '1000000000000000000000000000';
+			$config['max_width']  = '10240000000000000000000000000000';
+			$config['max_height']  = '768000000000000000000000000000000000000';
 			
 			$this->load->library('upload', $config);
 			

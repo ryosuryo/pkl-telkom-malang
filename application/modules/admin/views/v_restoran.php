@@ -118,7 +118,6 @@
         $('#id_restoran').val(data['id_restoran']);
         $('#nama_restoran').val(data['nama_restoran']);
         $('#alamat_restoran').val(data['alamat_restoran']);
-        $('#gambar').val(data['gambar']);
       });
    }
 </script>

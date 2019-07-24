@@ -32,6 +32,8 @@
     Author: BootstrapMade.com
     License: https://bootstrapmade.com/license/
   ======================================================= -->
+
+  <script src="<?= base_url()?>assets2/lib/jquery/jquery.min.js"></script>
 </head>
 
 <body>
@@ -126,7 +128,6 @@
   <div id="preloader"></div>
 
   <!-- JavaScript Libraries -->
-  <script src="<?= base_url()?>assets2/lib/jquery/jquery.min.js"></script>
   <script src="<?= base_url()?>assets2/lib/jquery/jquery-migrate.min.js"></script>
   <script src="<?= base_url()?>assets2/lib/popper/popper.min.js"></script>
   <script src="<?= base_url()?>assets2/lib/bootstrap/js/bootstrap.min.js"></script>

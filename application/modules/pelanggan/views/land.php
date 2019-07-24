@@ -199,7 +199,7 @@
           </div>
         </div>
         <div class="col-md-12 col-lg-5">
-          <img src="<?= base_url()?>assets2/img/human.png" style="width: 100%;">
+          <img src="<?= base_url()?>assets2/img/humanfix.png" style="width: 100%;">
         </div>
       </div>
     </div>
