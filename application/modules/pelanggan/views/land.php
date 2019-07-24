@@ -93,7 +93,7 @@
             <a class="nav-link active" href="#">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tentang</a>
+            <a class="nav-link" href="<?= base_url()?>index.php/pelanggan/LandController/about">Tentang</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url()?>index.php/pelanggan/LandController/landresto">List Restoran</a>
