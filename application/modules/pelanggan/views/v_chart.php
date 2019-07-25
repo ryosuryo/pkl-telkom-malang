@@ -95,7 +95,7 @@
                                             </tr>';
 
                                         echo '<tr>
-                                          <a href="<?= base_url()?>index.php/pelanggan/Get_masakan/pesan_lagi/'.$d->id_restoran.'" class="btn btn-danger">Pesan masakan Lagi</a>
+                                          <a href="Get_masakan/pesan_lagi/'.$d->id_restoran.'" class="btn btn-danger">Pesan masakan Lagi</a>
                                         </tr>';
                                     }
                                     ?>

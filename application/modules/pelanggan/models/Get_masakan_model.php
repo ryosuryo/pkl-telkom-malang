@@ -59,11 +59,11 @@ class Get_masakan_model extends CI_Model {
     }
     public function pesan_lagi($id_restoran)
     {
-      $this->db->join('pesanan_meja', 'pesanan_meja.id_restoran = masakan.id_restoran')
+      return $this->db->join('pesanan_meja', 'pesanan_meja.id_restoran = masakan.id_restoran')
                ->where('pesanan_meja.id_restoran', $id_restoran)
-               ->where('pesanan_meja.username', $this->session->userdata('username')
+               ->where('pesanan_meja.username', $this->session->userdata('username'))
                ->get('masakan')
-               ->result());
+               ->result();
     }
 
    

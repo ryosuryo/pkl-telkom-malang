@@ -20,7 +20,7 @@
       <div class="row">
         
         <?php
-		foreach ($data as $d) 
+		foreach ($data_mas as $d) 
 		{
 			echo '
 			<div class="col-md-4">
