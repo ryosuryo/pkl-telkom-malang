@@ -59,9 +59,6 @@
             {
               ?>
               <li class="nav-item">
-                <a class="nav-link " href="<?= base_url()?>index.php/pelanggan/Daftar_Restoran">Pilih Restoran</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link " href="<?= base_url()?>index.php/pelanggan/Transaksi_pel">Check Out</a>
               </li>
               <li class="nav-item">
@@ -73,6 +70,19 @@
             else
             {
               ?>
+
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url()?>index.php/pelanggan/LandController">Beranda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url()?>index.php/pelanggan/LandController/about">Tentang</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url()?>index.php/pelanggan/LandController/landresto">List Restoran</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
           <?php    
             }
               ?>

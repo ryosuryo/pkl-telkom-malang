@@ -1,32 +1,64 @@
 
-<h2><center>Silhkan Pilih Masakan</center></h2><br><br>
+<section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">List Masakan</h1>
+            <span class="color-text-a">Silahken Pilih.....!!!!</span>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+         
+        </div>
+      </div>
+    </div>
+  </section>
 
-		<?php
+<section class="property-grid grid">
+    <div class="container">
+      <div class="row">
+        
+        <?php
 		foreach ($dt_mas as $mas) 
 		{
 			echo '
-			
-	<div>
 			<div class="col-md-4">
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title" style="text-align: center; font-size: 30px;">'.$mas->nama_masakan.'</h3>
-								</div>
-								<div class="panel-body">
-									<p>
-									
-									<img style="width:100%;" src='.base_url("assets/gambar_masakan/$mas->gambar_masakan").' alt="..." class="img-fluid"><br>
-									
-									<span class="short-description" style="font-size: 30px;"><strong>Rp. '.$mas->harga.',-</strong></span><br><br>
-										<a href="#detail" data-toggle="modal" onclick="tm_detail('.$mas->id_masakan.')" class="btn btn-warning" style="text-decoration:none">Lihat</a>
-											
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>';
+	          <div class="card-box-a card-shadow">
+	            <div class="img-box-a">
+	              <img src='.base_url("assets/gambar_masakan/$mas->gambar_masakan").' alt="" class="img-a img-fluid" style="height: 250px;">
+	            </div>
+	            <div class="card-overlay">
+	              <div class="card-overlay-a-content">
+	                <div class="card-header-a">
+	                  <h2 class="card-title-a">
+	                    <a href="#">'.$mas->nama_masakan.'</a>
+	                  </h2>
+	                </div>
+	                <div class="card-body-a">
+	                  <div class="price-box d-flex">
+	                    <span class="price-a">Rp. '.$mas->harga.',-</span>
+	                  </div>
+	                  <a href="#detail" data-toggle="modal" class="link-a" onclick="tm_detail('.$mas->id_masakan.')">Detail Masakan
+	                    <span class="ion-ios-arrow-forward"></span>
+	                  </a>
+	                </div>
+	                <div class="card-footer-a">
+	                  
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>';
 		}
 	?>
+        
+
+      </div>    
+    </div>
+  </section>
+
+		
 
 		
 	
@@ -69,7 +101,7 @@
       		'</table>'
       		);
 		$('#jumlah').html(
-      		'<label>Jumlah</label>'+
+      		'<label>Pesan dengan jumlah</label>'+
       		'<input type="number" id="jumlah_item" value="1" name="jumlah[]" class="form-control">'
       		);
     	$('#btn').html(

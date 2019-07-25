@@ -52,6 +52,29 @@
                                     </div>
                                 </div>
 
+<div class="modal fade" id="detail_masakan" role="dialog">
+                                    <div class="modal-dialog modals-default">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4></h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                
+                                               
+                                                  <table class="table table-hover table-stripped" id="deskripsi_masakan">
+
+                                                  </table>
+                                               
+                                               
+                                            </div>
+                                            <div class="modal-footer">
+                                              
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
   <script type="text/javascript">
     //menampilkan list restoran terdaftar
@@ -84,7 +107,10 @@
                 '</div>'+
               '</div>'+
               '<div class="card-footer-d">'+
-                '<div class="socials-footer d-flex justify-content-center"><a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-danger" style="text-decoration:none">Detail</a>    <a href="#detail_masakan" data-toggle="modal" onclick="mas_detail('+dt['id_restoran']+')" class="btn btn-info" style="text-decoration:none">List Makanan</a></div>'+
+                '<div class="socials-footer d-flex justify-content-center">'+
+                '<a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-danger" style="text-decoration:none">Detail</a>'+ 
+                '<a href="<?= base_url()?>index.php/pelanggan/Get_masakan/tm_pesan_masakan/'+dt['id_restoran']+'" class="btn btn-primary">PESAN MAKANAN</a>'+
+                '</div>'+
               '</div>'+
             '</div>'+
           '</div>'+
@@ -134,26 +160,42 @@ function tm_detail(id_restoran){
             );
 
         $('#btn').html(
-          '<a href="<?= base_url()?>index.php/pelanggan/Get_masakan/tm_pesan_masakan/'+data['id_restoran']+'" class="btn btn-primary">PESAN MAKANAN</a>'+
+            '<a href="#detail_masakan" data-toggle="modal" onclick="mas_detail('+data['id_restoran']+')" class="btn btn-info" style="text-decoration:none">List Makanan</a>'+
             '<button id="beli" onclick="beli('+data['id_restoran']+')" class="btn btn-default">PESAN</button>'
             
             );
     });
   } 
 
+  //menampilkan detail menu makanan di setiap restoran
+  function mas_detail(id_restoran){
+
+    $.getJSON("<?= base_url()?>index.php/pelanggan/Get_restoran/detail_mas/"+id_restoran,function(data){
+      var tampilmas="";
+      $.each(data,function(key,dt){
+        tampilmas+=
+        
+              '<tr><td>'+dt['nama_masakan']+'</td><td> : '+dt['harga']+'</td></tr>'
+            
+      });
+      $("#deskripsi_masakan").html(tampilmas);
+      
+    });
+  }
+
   //proses pesan meja
   function beli(id_restoran){   
     var no_meja=$('#no_item').val();
     $('#pesan').hide();
     $('#pesan').removeClass("alert alert-success");
-    $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/pesan_meja/"+id_restoran+"/"+no_meja,function(hasil){
-      //$('#cart').html(hasil['total_cart']);
-      $('#pesan').html("meja anda ditambahkan ke pesanan");
-      $('#pesan').addClass('alert alert-success');
-      $('#pesan').show('animate');
-      setTimeout(function(){
-        $('#pesan').hide('fade');
-      }, 3000);
-    });
+        $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/pesan_meja/"+id_restoran+"/"+no_meja,function(hasil){
+        //$('#cart').html(hasil['total_cart']);
+          $('#pesan').html("meja anda ditambahkan ke pesanan");
+          $('#pesan').addClass('alert alert-success');
+          $('#pesan').show('animate');
+           setTimeout(function(){
+           $('#pesan').hide('fade');
+          }, 3000);
+      });
   }
   </script>
