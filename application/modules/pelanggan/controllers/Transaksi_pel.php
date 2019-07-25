@@ -97,6 +97,7 @@ class Transaksi_pel extends CI_Controller {
 	public function simpan_bayar()
 	{
 		if ($this->session->userdata('logged')==TRUE) {
+			$this->load->model('Login_pelanggan_model','lpm');
 			$this->load->model('Get_masakan_model','gt_mas');
 			$buat_order = $this->gt_mas->buat_order();
 			if ($buat_order) 
@@ -121,6 +122,7 @@ class Transaksi_pel extends CI_Controller {
 						$data['id_order']=$dt_order->id_order;
 						$data['total']=$this->cart->total();
 						$this->cart->destroy();
+						$this->lpm->hapus_meja();
 						echo json_encode($data);
 					}
 					else
