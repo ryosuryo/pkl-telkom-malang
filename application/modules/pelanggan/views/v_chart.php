@@ -93,6 +93,10 @@
                                                 <td>'.$d->no_meja.'</td>
                                                 <td>'.$d->username.'</td>
                                             </tr>';
+
+                                        echo '<tr>
+                                          <a href="<?= base_url()?>index.php/pelanggan/Get_masakan/pesan_lagi/'.$d->id_restoran.'" class="btn btn-danger">Pesan masakan Lagi</a>
+                                        </tr>';
                                     }
                                     ?>
                               
@@ -139,7 +143,6 @@
                              </form>
                             <br>
                             <a href="#bayar" onclick="simpan_list_db()" class="btn btn-warning" data-toggle="modal">Bayar</a>
-                            <a href="<?= base_url()?>index.php/pelanggan/Daftar_restoran" class="btn btn-danger">Pesan Makan</a>
                         </div>
                     </div>
                 </div>
@@ -277,6 +280,7 @@
   }
   load_cart();
 
+  // pesan lagi
   //proses bayar
    function simpan_list_db(){
     $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/simpan_bayar",function(hasil){

@@ -20,26 +20,26 @@
       <div class="row">
         
         <?php
-		foreach ($dt_mas as $mas) 
+		foreach ($data as $d) 
 		{
 			echo '
 			<div class="col-md-4">
 	          <div class="card-box-a card-shadow">
 	            <div class="img-box-a">
-	              <img src='.base_url("assets/gambar_masakan/$mas->gambar_masakan").' alt="" class="img-a img-fluid" style="height: 250px;">
+	              <img src='.base_url("assets/gambar_masakan/$d->gambar_masakan").' alt="" class="img-a img-fluid" style="height: 250px;">
 	            </div>
 	            <div class="card-overlay">
 	              <div class="card-overlay-a-content">
 	                <div class="card-header-a">
 	                  <h2 class="card-title-a">
-	                    <a href="#">'.$mas->nama_masakan.'</a>
+	                    <a href="#">'.$d->nama_masakan.'</a>
 	                  </h2>
 	                </div>
 	                <div class="card-body-a">
 	                  <div class="price-box d-flex">
-	                    <span class="price-a">Rp. '.$mas->harga.',-</span>
+	                    <span class="price-a">Rp. '.$d->harga.',-</span>
 	                  </div>
-	                  <a href="#detail" data-toggle="modal" class="link-a" onclick="tm_detail('.$mas->id_masakan.')">Detail Masakan
+	                  <a href="#detail" data-toggle="modal" class="link-a" onclick="tm_detail('.$d->id_masakan.')">Detail Masakan
 	                    <span class="ion-ios-arrow-forward"></span>
 	                  </a>
 	                </div>
