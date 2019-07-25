@@ -190,6 +190,14 @@ class Transaksi_pel extends CI_Controller {
 		
 	}
 
+	public function batal_pesan()
+	{
+		$this->load->model('Login_pelanggan_model','lpm');
+		$this->cart->destroy();
+		$this->lpm->hapus_meja();
+		redirect('pelanggan/Daftar_restoran','refresh');
+	}
+
 }
 
 /* End of file Transaksi_pel.php */

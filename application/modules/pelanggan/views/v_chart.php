@@ -143,6 +143,7 @@
                              </form>
                             <br>
                             <a href="#bayar" onclick="simpan_list_db()" class="btn btn-warning" data-toggle="modal">Bayar</a>
+                            <a href="<?=base_url()?>index.php/pelanggan/Transaksi_pel/batal_pesan" onclick="return confirm(\'anda yakin membatalkan item ini?\')" class="btn btn-danger">Batal</a> 
                         </div>
                     </div>
                 </div>
