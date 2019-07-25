@@ -515,20 +515,19 @@
         <div class="col-sm-12 col-md-12 ">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">Boogja Agency</h3>
+              <h3 class="w-title-a text-brand">Boking saja</h3>
             </div>
             <div class="w-body-a">
               <p class="w-text-a color-text-a">
-                Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
-                sed aute irure.
+                Booking saja meja dan makanan di aplikasi boogja
               </p>
             </div>
             <div class="w-footer-a">
               <ul class="list-unstyled">
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> contact@example.com</li>
+                  <span class="color-text-a">Phone .</span> 089023423724</li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> +54 356 945234</li>
+                  <span class="color-text-a">Email .</span> boogja@gmail.com</li>
               </ul>
             </div>
           </div>
