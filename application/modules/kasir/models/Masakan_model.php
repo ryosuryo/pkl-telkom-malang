@@ -57,7 +57,7 @@ class Masakan_model extends CI_Model {
 	}
 	public function update()
 	{
-		$nama_gambar = $_FILES['gambar']['name'];
+		$nama_gambar = $_FILES['gambar_masakan']['name'];
 		if ($nama_gambar!=null) 
 		{
 			$config['upload_path'] = './assets/gambar_masakan';

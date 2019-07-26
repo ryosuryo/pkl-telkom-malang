@@ -129,14 +129,30 @@ function beli(id_masakan){
 		
 		$('#pesan').hide();
 		$('#pesan').removeClass("alert alert-success");
-		$.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/tambah_cart/"+id_masakan+"/"+jumlah,function(hasil){
-			$('#cart').html(hasil['total_cart']);
-			$('#pesan').html("item anda ditambahkan ke cart");
-			$('#pesan').addClass('alert alert-success');
-			$('#pesan').show('animate');
-			setTimeout(function(){
-				$('#pesan').hide('fade');
-			}, 3000);
+		$.getJSON("<?= base_url()?>index.php/pelanggan/get_masakan/detail/"+id_masakan,function(data){
+			if (data['status_masakan']=="ada") 
+			{
+				$.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/tambah_cart/"+id_masakan+"/"+jumlah,function(hasil){
+					$('#cart').html(hasil['total_cart']);
+					$('#pesan').html("item anda ditambahkan ke cart");
+					$('#pesan').addClass('alert alert-success');
+					$('#pesan').show('animate');
+					setTimeout(function(){
+						$('#pesan').hide('fade');
+					}, 3000);
+				});
+			}
+			else
+			{
+					$('#pesan').html("Masakan habis");
+					$('#pesan').addClass('alert alert-danger');
+					$('#pesan').show('animate');
+					setTimeout(function(){
+						$('#pesan').hide('fade');
+					}, 3000);
+			}
+
 		});
+		
 	}
 </script>
