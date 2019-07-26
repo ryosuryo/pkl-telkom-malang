@@ -57,14 +57,6 @@ class Get_masakan_model extends CI_Model {
       return $this->db->where('id_order', $this->input->post('id_order'))->update('tb_order',$data);
       
     }
-    public function pesan_lagi($id_restoran)
-    {
-      return $this->db->join('pesanan_meja', 'pesanan_meja.id_restoran = masakan.id_restoran')
-               ->where('pesanan_meja.id_restoran', $id_restoran)
-               ->where('pesanan_meja.username', $this->session->userdata('username'))
-               ->get('masakan')
-               ->result();
-    }
 
    
 }

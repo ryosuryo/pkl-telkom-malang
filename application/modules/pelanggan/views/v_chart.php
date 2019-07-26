@@ -94,9 +94,6 @@
                                                 <td>'.$d->username.'</td>
                                             </tr>';
 
-                                        echo '<tr>
-                                          <a href="Get_masakan/pesan_lagi/'.$d->id_restoran.'" class="btn btn-danger">Pesan masakan Lagi</a>
-                                        </tr>';
                                     }
                                     ?>
                               

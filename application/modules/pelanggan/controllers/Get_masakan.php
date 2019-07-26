@@ -36,10 +36,5 @@ class Get_masakan extends CI_Controller {
         }
         
     }
-    public function pesan_lagi($id_restoran)
-    {
-        $data['data_mas']=$this->gmm->pesan_lagi($id_restoran);
-        $data['konten_pel']='v_daftar_masakan2';
-        $this->load->view('Template_pel', $data);
-    }
+    
 }

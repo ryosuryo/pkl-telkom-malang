@@ -81,13 +81,13 @@
 											$no++;
 											$sub= $dt_der->harga*$dt_der->jumlah;
 											echo '<tr style="text-align:center;">
-                      <td>'.$no.'</td>
-                      <td>'.$dt_der->nama_restoran.'</td>
-											<td>'.$dt_der->nama_masakan.'</td>
-											<td>'.$dt_der->harga.'</td>
-											<td>'.$dt_der->jumlah.'</td>
-											<td>Rp.'.$sub.',-</td>
-											</tr>';
+                                              <td>'.$no.'</td>
+                                              <td>'.$dt_der->nama_restoran.'</td>
+    											<td>'.$dt_der->nama_masakan.'</td>
+    											<td>'.$dt_der->harga.'</td>
+    											<td>'.$dt_der->jumlah.'</td>
+    											<td>Rp.'.$sub.',-</td>
+    											</tr>';
 										
 										echo
 										'<tr>
