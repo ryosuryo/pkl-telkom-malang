@@ -5,7 +5,8 @@ class Riwayat extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('', $data, FALSE);
+		$data['konten_pel']='v_riwayat';
+		$this->load->view('Template_pel', $data);
 	}
 
 }
