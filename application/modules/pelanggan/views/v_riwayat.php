@@ -14,3 +14,25 @@
     </div>
   </section>
   <!--/ Intro Single End /-->
+
+   <!--/ Services Star /-->
+  <section class="section-services section-t2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card-box-c foo">
+            <div class="card-header-c d-flex">
+              <div class="card-box-ico">
+                Nama Restoran : <br>
+                No. Meja      : <br>
+                Tanggal       : <br>
+                Masakan       : <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!--/ Services End /-->
