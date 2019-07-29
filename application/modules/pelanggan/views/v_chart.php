@@ -160,7 +160,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 <h2>Terima Kasih.....</h2>
-                                                <p>Silahkan upload bukti transfer pembayaran sebesar Rp.<span id="totalnya">0</span>,- ke rekeninig berikut:</p>
+                                                <p>Untuk melanjutkan pesanan, silahkan upload bukti transfer pembayaran sebesar Rp.<span id="totalnya">0</span>,- ke rekeninig berikut:</p>
                                                 <p>BANK BRI : 096898612371324</p>
                                                 <form enctype="multipart/form-data" method="post" id="upload_bukti">
                                                     <input type="file" name="bukti" class="form-control"><br>

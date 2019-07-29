@@ -247,11 +247,5 @@
         ============================================ -->
     <script src="<?= base_url()?>assets/js/tawk-chat.js"></script>
 </body>
-<script type="text/javascript">
-    function load_total_cart(){
-            $.getJSON("<?= base_url()?>index.php/Transaksi_pel/show_cart_item",function(hasil){
-                $("#cart").html(hasil['total_cart']);
-            });
-        }
-</script>
+
 </html>
