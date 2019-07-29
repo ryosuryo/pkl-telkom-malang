@@ -68,6 +68,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false"><?php echo $this->session->userdata('username'); ?></a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Profile</a>
                     <a class="dropdown-item" href="<?= base_url()?>index.php/pelanggan/Login_pelanggan/logout">Log out</a>
                   </div>
               </li>
@@ -88,7 +89,7 @@
                 <a class="nav-link" href="<?= base_url()?>index.php/pelanggan/LandController/landresto">List Restoran</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="<?= base_url()?>index.php/pelanggan/LandController/contact">Contact</a>
               </li>
           <?php    
             }
