@@ -443,7 +443,7 @@
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Testimonials</h2>
+              <h2 class="title-a">Testimoni</h2>
             </div>
           </div>
         </div>
@@ -463,9 +463,8 @@
                 </div>
                 <div class="testimonials-content">
                   <p class="testimonial-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
-                    debitis hic ber quibusdam
-                    voluptatibus officia expedita corpori.
+                    Saya Lalu Fatoni , sebelumnya saya mendapatkan masalah di pemesanan makanan dan meja saya harus cek restoran sana sini, dan ternyata saya menemukan 
+                    aplikasi boogja , alhamdulillah aplikasi ini sangat bermanfaat ,pemesanannya lebih mudah untuk pesen meja dan makan pun jadi lebih efektif
                   </p>
                 </div>
                 <div class="testimonial-author-box">
@@ -490,9 +489,7 @@
                 </div>
                 <div class="testimonials-content">
                   <p class="testimonial-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
-                    debitis hic ber quibusdam
-                    voluptatibus officia expedita corpori.
+                    Saya Dio , Untuk pemesanannya sangat mudah tidak perlu modar mandir kesana kemari untuk memesan meja dan makanan
                   </p>
                 </div>
                 <div class="testimonial-author-box">
