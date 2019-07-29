@@ -190,12 +190,18 @@ class Transaksi_pel extends CI_Controller {
 		
 	}
 
-	public function batal_pesan()
+	public function batal_pesan($id_pesanan)
 	{
 		$this->load->model('Login_pelanggan_model','lpm');
-		$this->cart->destroy();
-		$this->lpm->hapus_meja();
-		redirect('pelanggan/Daftar_restoran','refresh');
+		$hapus = $this->lpm->hapus_meja($id_pesanan);
+		if ($hapus) {
+				$this->session->set_flashdata('pesan','berhasil hapus');
+			}
+			else
+			{
+				$this->session->set_flashdata('pesan','gagal hapus');
+			}
+		redirect('pelanggan/Transaksi_pel','refresh');
 	}
 
 }

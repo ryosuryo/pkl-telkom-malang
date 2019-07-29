@@ -78,6 +78,7 @@
                                         <th>ID Restoran</th>
                                         <th>Nomor Meja</th>
                                         <th>Username Pemesan</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -92,6 +93,7 @@
                                                 <td>'.$d->id_restoran.'</td>
                                                 <td>'.$d->no_meja.'</td>
                                                 <td>'.$d->username.'</td>
+                                                <td><a href='.base_url('index.php/pelanggan/Transaksi_pel/batal_pesan/'.$d->id_pesanan).' onclick="return confirm(\'jika anda belum bayar, sama saja membatalkan item ini\')" class="btn btn-danger">Hapus</a> </td>
                                             </tr>';
 
                                     }
@@ -100,6 +102,7 @@
                                 </tbody>
                             </table>
                             <br>
+                            
                         </div>
                     </div>
                 </div>
@@ -141,7 +144,7 @@
                             <br>
                             <a href="#bayar" onclick="simpan_list_db()" class="btn btn-success" data-toggle="modal">Bayar</a>
                             <a href="<?=base_url()?>index.php/pelanggan/Daftar_restoran" class="btn btn-warning">Kembali Ke Beranda</a> 
-                            <a href="<?=base_url()?>index.php/pelanggan/Transaksi_pel/batal_pesan" onclick="return confirm(\'jika anda belum bayar, sama saja membatalkan item ini\')" class="btn btn-danger">Batal pesan</a> 
+                            
                         </div>
                     </div>
                 </div>
@@ -279,7 +282,7 @@
   }
   load_cart();
 
-  // pesan lagi
+  
   //proses bayar
    function simpan_list_db(){
     $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/simpan_bayar",function(hasil){

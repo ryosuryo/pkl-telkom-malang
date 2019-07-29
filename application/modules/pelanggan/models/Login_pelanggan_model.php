@@ -37,23 +37,11 @@ class Login_pelanggan_model extends CI_Model {
 						'email' => $this->input->post('email'));
 		return $this->db->insert('pelanggan', $data);
 	}
-	public function hapus_meja()
+	public function hapus_meja($id_pesanan)
   {
-    return $this->db->where('username', $this->session->userdata('username'))->delete('pesanan_meja');
+    return $this->db->where('id_pesanan', $id_pesanan)->delete('pesanan_meja');
   }
-  public function reset_key($email,$reset)
-  {
-  	 $this->db->where('email', $email);
-  	 $data = array('reset_password' => $reset );
-  	 if ($this->db->affected_rows()>0) 
-  	 {
-  	 	return true;
-  	 }
-  	 else
-  	 {
-  	 	return false;
-  	 }
-  }
+ 
 }
 
 /* End of file Login_pelanggan_model.php */
