@@ -18,21 +18,32 @@
    <!--/ Services Star /-->
   <section class="section-services section-t2">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card-box-c foo">
-            <div class="card-header-c d-flex">
-              <div class="card-box-ico">
-                Nama Restoran : <br>
-                No. Meja      : <br>
-                Tanggal       : <br>
-                Masakan       : <br>
-              </div>
-            </div>
-          </div>
-        </div>
-
+      <div class="row" id="tampil_riwayat">
+        
       </div>
     </div>
   </section>
   <!--/ Services End /-->
+
+  <script type="text/javascript">
+    $.getJSON("<?= base_url()?>index.php/pelanggan/Riwayat/tampil_riwayat",function(data){
+      var tampil='';
+      $.each(data,function(key,dt){
+        tampil+=
+        '<div class="col-md-4">'+
+          '<div class="card-box-c foo">'+
+            '<div class="card-header-c d-flex">'+
+              '<div class="card-box-ico">'+
+                '<table class="">'+
+                  '<tr><td>Nama Restoran</td><td> : '+dt['nama_restoran']+'</td></tr>'+
+                  '<tr><td>No. Meja</td><td> : '+dt['no_meja']+'</td></tr>'+
+                  '<tr><td>Total Bayar</td><td> : '+dt['total_bayar']+'</td></tr>'+
+                '</table>'+
+              '</div>'+
+            '</div>'+
+          '</div>'+
+        '</div>'
+      });
+      $('#tampil_riwayat').html(tampil);
+    });
+  </script>

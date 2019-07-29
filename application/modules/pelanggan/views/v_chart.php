@@ -139,8 +139,9 @@
                                 </div>
                              </form>
                             <br>
-                            <a href="#bayar" onclick="simpan_list_db()" class="btn btn-warning" data-toggle="modal">Bayar</a>
-                            <a href="<?=base_url()?>index.php/pelanggan/Transaksi_pel/batal_pesan" onclick="return confirm(\'jika anda belum bayar, sama saja membatalkan item ini\')" class="btn btn-danger">Kembali Ke Beranda</a> 
+                            <a href="#bayar" onclick="simpan_list_db()" class="btn btn-success" data-toggle="modal">Bayar</a>
+                            <a href="<?=base_url()?>index.php/pelanggan/Daftar_restoran" class="btn btn-warning">Kembali Ke Beranda</a> 
+                            <a href="<?=base_url()?>index.php/pelanggan/Transaksi_pel/batal_pesan" onclick="return confirm(\'jika anda belum bayar, sama saja membatalkan item ini\')" class="btn btn-danger">Batal pesan</a> 
                         </div>
                     </div>
                 </div>
