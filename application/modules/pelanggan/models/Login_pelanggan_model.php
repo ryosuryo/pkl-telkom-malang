@@ -37,10 +37,7 @@ class Login_pelanggan_model extends CI_Model {
 						'email' => $this->input->post('email'));
 		return $this->db->insert('pelanggan', $data);
 	}
-	public function hapus_meja($id_pesanan)
-  {
-    return $this->db->where('id_pesanan', $id_pesanan)->delete('pesanan_meja');
-  }
+	
  
 }
 

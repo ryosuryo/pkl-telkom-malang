@@ -104,7 +104,7 @@ class Transaksi_pel extends CI_Controller {
 			{
 				$dt_order=$this->gt_mas->get_last_order();
 				$dt_meja=$this->gt_mas->get_last_meja();
-				foreach ($this->cart->contents() as $item)  
+				foreach($this->cart->contents() as $item)  
 				{	
 					$object[] = array('id_order' => $dt_order->id_order,
 									'id_masakan' => $item['id'],
@@ -122,7 +122,6 @@ class Transaksi_pel extends CI_Controller {
 						$data['id_order']=$dt_order->id_order;
 						$data['total']=$this->cart->total();
 						$this->cart->destroy();
-						$this->lpm->hapus_meja();
 						echo json_encode($data);
 					}
 					else
@@ -192,8 +191,7 @@ class Transaksi_pel extends CI_Controller {
 
 	public function batal_pesan($id_pesanan)
 	{
-		$this->load->model('Login_pelanggan_model','lpm');
-		$hapus = $this->lpm->hapus_meja($id_pesanan);
+		$hapus = $this->gt_res->hapus_meja($id_pesanan);
 		if ($hapus) {
 				$this->session->set_flashdata('pesan','berhasil hapus');
 			}

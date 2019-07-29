@@ -27,6 +27,14 @@ class Get_restoran_model extends CI_Model {
 		$query = $this->db->where('username', $this->session->userdata('username'))->get('pesanan_meja')->result();
 		return $query;
 	}
+	public function hapus_meja($id_pesanan)
+	{
+	    return $this->db->where('id_pesanan', $id_pesanan)->delete('pesanan_meja');
+	}
+	public function hapus_all_meja()
+	{
+		return $this->db->where('username', $this->session->userdata('username'))->delete('pesanan_meja');
+	}
 	
 	
 	

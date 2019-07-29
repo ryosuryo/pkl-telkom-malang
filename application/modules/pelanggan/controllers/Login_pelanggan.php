@@ -45,7 +45,8 @@ class Login_pelanggan extends CI_Controller {
 	}
 	public function logout()
 	{
-		//$this->lpm->hapus_meja();
+		$this->load->model('Get_restoran_model','gt');
+		$this->gt->hapus_all_meja();
 		$this->session->sess_destroy();
 		redirect(base_url('index.php/pelanggan/LandController'),'refresh');
 	}

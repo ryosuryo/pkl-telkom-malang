@@ -170,6 +170,7 @@
                                                     </button>
                                                     <span id="pesan_kirim"></span>
                                                 </form>
+
                                                 <span id="pesan"></span>
                                             </div>
                                             <div class="modal-footer">
