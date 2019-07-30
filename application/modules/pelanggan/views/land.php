@@ -202,7 +202,10 @@
         <div class="col-md-12 col-lg-7">
           <div class="title-single-box">
             <h1 class="title-single">Apa itu Boogja ?</h1>
-            <span class="color-text-a"><img src="<?= base_url()?>assets2/img/speaker.png" style="width: 4%">  Boogja, singkatan dari "Booking Saja" adalah sebuah aplikasi berbasis web yang bertujuan untuk memudahkan para pelanggan untuk memesan meja di restoran favorit sekaligus memesan masakan di restoran yang dipilih secara online, sehingga para pelanggan tidak perlu datang langsung ke tempat restoran.</span>
+            <span class="color-text-a"><img src="<?= base_url()?>assets2/img/speaker.png" style="width: 4%">  Boogja, singkatan dari "Booking Saja" adalah sebuah aplikasi berbasis web yang bertujuan untuk memudahkan para pelanggan untuk memesan meja di restoran favorit sekaligus memesan masakan di restoran yang dipilih secara online, sehingga para pelanggan tidak perlu datang langsung ke tempat restoran.</span><br><br>
+            <a href="<?= base_url()?>index.php/pelanggan/LandController/about" class="link-c link-icon">Baca selengkapnya
+                <span class="ion-ios-arrow-forward"></span>
+              </a>
           </div>
         </div>
         <div class="col-md-12 col-lg-5">
@@ -243,9 +246,7 @@
               </p>
             </div>
             <div class="card-footer-c">
-              <a href="#" class="link-c link-icon">Read more
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
+              
             </div>
           </div>
         </div>
@@ -263,9 +264,7 @@
               </p>
             </div>
             <div class="card-footer-c">
-              <a href="#" class="link-c link-icon">Read more
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
+              
             </div>
           </div>
         </div>
@@ -283,9 +282,7 @@
               </p>
             </div>
             <div class="card-footer-c">
-              <a href="#" class="link-c link-icon">Read more
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
+              
             </div>
           </div>
         </div>

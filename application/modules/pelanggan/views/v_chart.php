@@ -142,9 +142,8 @@
                                 </div>
                              </form>
                             <br>
-                            <a href="#bayar" onclick="simpan_list_db()" class="btn btn-success" data-toggle="modal">Bayar</a>
-                            <a href="<?=base_url()?>index.php/pelanggan/Daftar_restoran" class="btn btn-warning">Kembali Ke Beranda</a> 
-                            
+                            <a href="#bayar" onclick="simpan_list_db()" class="btn btn-danger" data-toggle="modal">Bayar</a>
+                            <a href="<?=base_url()?>index.php/pelanggan/Daftar_restoran" class="btn btn-primary">Kembali Ke Beranda</a>
                         </div>
                     </div>
                 </div>
