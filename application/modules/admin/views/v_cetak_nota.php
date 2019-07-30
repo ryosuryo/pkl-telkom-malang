@@ -89,28 +89,29 @@
     											<td>Rp.'.$sub.',-</td>
     											</tr>';
 										
-										echo
-										'<tr>
-											<td colspan="5">Total Bayar</td>
-											<td> Rp.'.$dt_der->total_bayar.',00-</td>
-										</tr>
-										<tr>
-											<td colspan="5">Tanggal</td>
-											<td> '.$dt_der->tanggal.'</td>
-										</tr>
-										<tr>
-											<td colspan="5">No Meja</td>
-											<td> '.$dt_der->no_meja.'</td>
-										</tr>
-										<tr>
-											<td colspan="5">Pelanggan</td>
-											<td> '.$dt_der->nama.'</td>
-										</tr>
-										<tr>
-											<td colspan="5">Kasir</td>
-											<td> '.$this->session->userdata('username').'</td>
-                    </tr>';
                                         }
+
+                                        echo
+                                        '<tr>
+                                            <td colspan="5">Total Bayar</td>
+                                            <td> Rp.'.$dt_der->total_bayar.',00-</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5">Tanggal</td>
+                                            <td> '.$dt_der->tanggal.'</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5">No Meja</td>
+                                            <td> '.$dt_der->no_meja.'</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5">Pelanggan</td>
+                                            <td> '.$dt_der->nama.'</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5">Kasir</td>
+                                            <td> '.$this->session->userdata('username').'</td>
+                                        </tr>';
 										?>
 				
                                    

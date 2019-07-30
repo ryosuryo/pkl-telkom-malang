@@ -35,9 +35,11 @@
             '<div class="card-header-c d-flex">'+
               '<div class="card-box-ico">'+
                 '<table class="">'+
+                  '<tr><td>Tanggal</td><td> : '+dt['tanggal']+'</td></tr>'+
+                  '<tr><td>Nama pelanggan</td><td> : '+dt['nama']+'</td></tr>'+
                   '<tr><td>Nama Restoran</td><td> : '+dt['nama_restoran']+'</td></tr>'+
-                  '<tr><td>No. Meja</td><td> : '+dt['no_meja']+'</td></tr>'+
                   '<tr><td>Total Bayar</td><td> : '+dt['total_bayar']+'</td></tr>'+
+                  '<tr><td>Status Order</td><td> : '+dt['status_order']+'</td></tr>'+
                 '</table>'+
               '</div>'+
             '</div>'+

@@ -36,7 +36,7 @@
                                               <td>'.$dt_p->username.'</td>
                                               <td>'.$dt_p->total_bayar.'</td>
                                               <td><img src='.base_url("assets/bukti/$dt_p->bukti").' width="100px" height="75px"></td>
-                                              <td>'.$dt_p->status.'</td>
+                                              <td>'.$dt_p->status_order.'</td>
                                                   <td><a href="#update" class="btn btn-warning" data-toggle="modal" onclick="tm_detail('.$dt_p->id_order.')">Update</a>
                                                       <a href='.base_url('index.php/admin/Verifikasi/cetak_nota/'.$dt_p->id_order).' class="btn btn-info" onclick="">Cetak Nota</a></td>
                                             </tr>';
