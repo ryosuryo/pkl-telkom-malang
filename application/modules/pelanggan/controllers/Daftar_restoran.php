@@ -28,7 +28,7 @@ class Daftar_restoran extends CI_Controller {
 		}
 		else
 		{
-			redirect('pelanggan/Login_pelanggan/index','refresh');
+			redirect('pelanggan/LandController','refresh');
 		}
 				
 	}

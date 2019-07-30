@@ -34,13 +34,13 @@
           '<div class="card-box-c foo">'+
             '<div class="card-header-c d-flex">'+
               '<div class="card-box-ico">'+
-                '<table class="">'+
+                '<table class="table">'+
                   '<tr><td>Tanggal</td><td> : '+dt['tanggal']+'</td></tr>'+
-                  '<tr><td>Nama pelanggan</td><td> : '+dt['nama']+'</td></tr>'+
-                  '<tr><td>Nama Restoran</td><td> : '+dt['nama_restoran']+'</td></tr>'+
-                  '<tr><td>Total Bayar</td><td> : '+dt['total_bayar']+'</td></tr>'+
-                  '<tr><td>Status Order</td><td> : '+dt['status_order']+'</td></tr>'+
+                  '<tr><td>Restoran</td><td> : '+dt['nama_restoran']+'</td></tr>'+
+                  '<tr><td>Bayar</td><td> : '+dt['total_bayar']+'</td></tr>'+
+                  '<tr><td>Status</td><td> : '+dt['status_order']+'</td></tr>'+
                 '</table>'+
+                '<a href="" class="btn btn-warning" onclick="">Lihat Nota</a>'+
               '</div>'+
             '</div>'+
           '</div>'+

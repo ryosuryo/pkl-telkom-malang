@@ -18,7 +18,7 @@ class Get_masakan extends CI_Controller {
         else
         {
             
-            redirect('pelanggan/Login_pelanggan/index','refresh');
+            redirect('pelanggan/LandController','refresh');
             
         }
     }
@@ -32,7 +32,7 @@ class Get_masakan extends CI_Controller {
         }
         else
         {
-            redirect('pelanggan/Login_pelanggan','refresh');
+            redirect('pelanggan/LandController','refresh');
         }
         
     }

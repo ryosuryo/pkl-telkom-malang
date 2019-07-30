@@ -10,8 +10,16 @@ class Riwayat extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['konten_pel']='v_riwayat';
-		$this->load->view('Template_pel', $data);
+		if ($this->session->userdata('logged')==true) 
+		{
+			$data['konten_pel']='v_riwayat';
+		    $this->load->view('Template_pel', $data);
+		}
+		else
+		{
+			redirect('pelanggan/LandController','refresh');
+		}
+		
 	}
 	public function tampil_riwayat()
 	{

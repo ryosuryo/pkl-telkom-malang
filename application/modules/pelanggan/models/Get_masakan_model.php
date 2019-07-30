@@ -29,8 +29,10 @@ class Get_masakan_model extends CI_Model {
   
   public function buat_order()
     {
+      $status = "proses";
       $data = array('id_pelanggan' => $this->session->userdata('id_pelanggan'),
-              'tanggal' => date('Y-m-d')
+              'tanggal' => date('Y-m-d'),
+              'status_order' => $status
                );
       return $this->db->insert('tb_order', $data);
     }

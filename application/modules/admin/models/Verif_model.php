@@ -52,7 +52,7 @@ class Verif_model extends CI_Model {
 
     public function update()
     {
-        $data = array('status' => $this->input->post('ubah_status'));
+        $data = array('status_order' => $this->input->post('ubah_status'));
         $this->db->where('id_order',$this->input->post('id_order'))->update('tb_order',$data);
         
         if ($this->db->affected_rows()>0) {

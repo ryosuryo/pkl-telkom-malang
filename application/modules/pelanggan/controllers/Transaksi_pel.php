@@ -17,7 +17,7 @@ class Transaksi_pel extends CI_Controller {
 		}
 		else
 		{
-			redirect('pelanggan/Login_pelanggan/index','refresh');
+			redirect('pelanggan/LandController','refresh');
 		}
 		
 	}
@@ -77,7 +77,7 @@ class Transaksi_pel extends CI_Controller {
 		}
 		else
 		{
-			redirect('Login_pelanggan/index','refresh');
+			redirect('LandController','refresh');
 		}
 		
 	}
@@ -90,7 +90,7 @@ class Transaksi_pel extends CI_Controller {
 		}
 		else
 		{
-			redirect('Login_pelanggan/index','refresh');
+			redirect('LandController','refresh');
 		}
 		
 	}
@@ -135,7 +135,7 @@ class Transaksi_pel extends CI_Controller {
 		
 		else
 		{
-			redirect('Login_pelanggan/index','refresh');
+			redirect('LandController','refresh');
 		}
 		
 		
