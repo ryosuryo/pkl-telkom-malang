@@ -4,8 +4,8 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="normal-table-list mg-t-30">
                         <div class="basic-tb-hd">
-                            <h2>Data Order</h2>
-                            
+                            <h2>Data Order</h2><br>
+                            <a href="#" class="btn btn-success">Export ke Excel</a>
                         </div>
                         <div class="bsc-tbl-st">
                             <table class="table table-striped">
