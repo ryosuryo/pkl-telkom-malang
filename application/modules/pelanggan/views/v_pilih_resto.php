@@ -148,10 +148,10 @@ function tm_detail(id_restoran){
         '<form>'+
             '<label>Pesan Meja Nomor ?</label>'+
             '<input type="hidden" id="no_item" class="form-control"><br>'+
-          '<div class="fm-checkbox">'+
-            '<label><input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="1" class="i-checks"><i></i>1</label>'+  
-            '<label><input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="2" class="i-checks"><i></i>2</label>'+  
-            '<label><input type="checkbox" onclick="selected(this.form)" name="no_meja"  value="3" class="i-checks"><i></i>3</label>'+
+          '<div class="">'+
+            '<label><input type="radio" onclick="selected(this.form)" name="no_meja"  value="1" class=""><i></i>1</label>'+  
+            '<label><input type="radio" onclick="selected(this.form)" name="no_meja"  value="2" class=""><i></i>2</label>'+  
+            '<label><input type="radio" onclick="selected(this.form)" name="no_meja"  value="3" class=""><i></i>3</label>'+
         '</div>'+
         
         '</form>'
@@ -187,7 +187,18 @@ function tm_detail(id_restoran){
     var no_meja=$('#no_item').val();
     $('#pesan').hide();
     $('#pesan').removeClass("alert alert-success");
-        $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/pesan_meja/"+id_restoran+"/"+no_meja,function(hasil){
+    if(no_meja=='')
+    {
+      $('#pesan').html("anda belum memilih meja");
+          $('#pesan').addClass('alert alert-danger');
+          $('#pesan').show('animate');
+           setTimeout(function(){
+           $('#pesan').hide('fade');
+          }, 3000);
+    }
+    else
+    {
+      $.getJSON("<?= base_url()?>index.php/pelanggan/Transaksi_pel/pesan_meja/"+id_restoran+"/"+no_meja,function(hasil){
         //$('#cart').html(hasil['total_cart']);
           $('#pesan').html("meja anda ditambahkan ke pesanan");
           $('#pesan').addClass('alert alert-success');
@@ -196,5 +207,7 @@ function tm_detail(id_restoran){
            $('#pesan').hide('fade');
           }, 3000);
       });
+    }
+        
   }
   </script>

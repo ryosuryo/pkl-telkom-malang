@@ -53,7 +53,10 @@
               <input type="text" class="form-control form-control-lg form-control-a" placeholder="Username" name="username" style="border-radius: 12px;">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control form-control-lg form-control-a" placeholder="Password" name="password" style="border-radius: 12px;">
+              <input type="password" class="form-control form-control-lg form-control-a" placeholder="Password" name="password" style="border-radius: 12px;" id="password">
+            </div>
+            <div class="form-group">
+            <input type="checkbox" onclick="myFunction()"> Show Password
             </div>
           </div>          
           <div class="col-md-12">
@@ -605,5 +608,15 @@
   <!-- Template Main Javascript File -->
   <script src="<?= base_url()?>assets2/js/main.js"></script>
 
+  <script>
+    function myFunction() {
+      var x = document.getElementById("password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  </script>
 </body>
 </html>
