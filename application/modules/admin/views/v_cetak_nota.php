@@ -75,19 +75,19 @@
                                 </thead>
                                 <tbody>
                                 	<?php
-										$no=0;
-										$sub=0;
-										foreach ($data_order as $dt_der) {
-											$no++;
-											$sub= $dt_der->harga*$dt_der->jumlah;
-											echo '<tr style="text-align:center;">
+                                        $no=0;
+                                        $sub=0;
+                                        foreach ($data_order as $dt_der) {
+                                          $no++;
+                                          $sub= $dt_der->harga*$dt_der->jumlah;
+                                          echo '<tr style="text-align:center;">
                                               <td>'.$no.'</td>
                                               <td>'.$dt_der->nama_restoran.'</td>
-    											<td>'.$dt_der->nama_masakan.'</td>
-    											<td>'.$dt_der->harga.'</td>
-    											<td>'.$dt_der->jumlah.'</td>
-    											<td>Rp.'.$sub.',-</td>
-    											</tr>';
+                                              <td>'.$dt_der->nama_masakan.'</td>
+                                              <td>'.$dt_der->harga.'</td>
+                                              <td>'.$dt_der->jumlah.'</td>
+                                              <td>Rp.'.$sub.',-</td>
+                                              </tr>';
 										
                                         }
 
@@ -127,7 +127,9 @@
     </div>
 
     
-    <script>window.print();</script>
+    <script>
+    //window.print();
+    </script>
 
 	<script src="<?= base_url()?>assets/js/bootstrap.min.js"></script>
     <!-- wow JS
