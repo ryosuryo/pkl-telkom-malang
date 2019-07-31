@@ -1,7 +1,7 @@
 <head>
 	 <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url()?>assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url()?>assets2/img/speaker.png">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
@@ -125,7 +125,10 @@
 
         </div>
     </div>
-                
+
+    
+    <script>window.print();</script>
+
 	<script src="<?= base_url()?>assets/js/bootstrap.min.js"></script>
     <!-- wow JS
 		============================================ -->
@@ -189,8 +192,9 @@
     <script src="<?= base_url()?>assets/js/main.js"></script>
 	<!-- tawk chat JS
 		============================================ -->
-    <script src="<?= base_url()?>assets/js/tawk-chat.js"></script> 
+    <script src="<?= base_url()?>assets/js/tawk-chat.js"></script>  
 
-    <script>
-    window.print();
-    </script>               
+    
+
+    
+                  

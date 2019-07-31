@@ -40,7 +40,7 @@
                   '<tr><td>Bayar</td><td> : '+dt['total_bayar']+'</td></tr>'+
                   '<tr><td>Status</td><td> : '+dt['status_order']+'</td></tr>'+
                 '</table>'+
-                '<a href="" class="btn btn-warning" onclick="">Lihat Nota</a>'+
+                '<a href="<?= base_url()?>index.php/admin/Verifikasi/cetak_nota/'+dt['id_order']+'" class="btn btn-warning">Lihat Nota</a>'+
               '</div>'+
             '</div>'+
           '</div>'+
