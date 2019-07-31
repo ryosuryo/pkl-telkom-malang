@@ -22,6 +22,7 @@
         
         <div class="col-sm-12 section-t4">
           <div class="row">
+            <div class="col-md-1"></div>
             <div class="col-md-7">
               <form class="form-a contactForm" action="<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_daftar" method="post">
                 <div class="row">
@@ -70,10 +71,8 @@
                             ?>
               </form>
             </div>
-            <div class="col-md-5 section-md-t3">
-
-            <img src="<?= base_url()?>assets2/img/DAFTAR.png" alt="" width="70%">
-              
+            <div class="col-md-4">
+              <img src="<?= base_url()?>assets2/img/DAFTAR.png" alt="" width="95%">
             </div>
           </div>
         </div>
