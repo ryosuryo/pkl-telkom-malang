@@ -71,6 +71,8 @@
               </form>
             </div>
             <div class="col-md-5 section-md-t3">
+
+            <img src="<?= base_url()?>assets2/img/DAFTAR.png" alt="" width="70%">
               
             </div>
           </div>

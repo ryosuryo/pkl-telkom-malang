@@ -134,11 +134,13 @@
             </div>
             <div class="w-footer-a">
               <ul class="list-unstyled">
+              <li class="color-a">
+                  <span class="color-text-a">FAX .</span> 0274 123899469 </li>
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> 089234124242</li>
+                  <span class="color-text-a">Phone .</span> 089023423724</li>
                 <li class="color-a">
                   <span class="color-text-a">Email .</span> boogja@gmail.com</li>
-              </ul>
+                </ul>
             </div>
           </div>
         </div>
