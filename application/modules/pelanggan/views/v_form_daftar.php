@@ -59,7 +59,7 @@
                   </div>
                   <div class="col-md-12">
                     <button type="submit" class="btn btn-a">Sign Up</button>
-                    <a href="<?= base_url()?>index.php/pelanggan/LandController" type="button" class="btn btn-a">Cancel</a>
+                    <a href="<?= base_url()?>index.php/pelanggan/LandController" class="btn btn-a">Cancel</a>
                   </div>
                 </div><br><br>
                 <?php
