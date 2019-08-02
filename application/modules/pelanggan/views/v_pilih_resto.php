@@ -107,7 +107,7 @@
               '</div>'+
               '<div class="card-footer-d">'+
                 '<div class="socials-footer d-flex justify-content-center">'+
-                '<a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-danger" style="text-decoration:none">PESAN MEJA </a>'+ 
+                '<a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-danger" style="text-decoration:none">PESAN MEJA</a>'+ 
                 '<a href="<?= base_url()?>index.php/pelanggan/Get_masakan/tm_pesan_masakan/'+dt['id_restoran']+'" class="btn btn-primary">PESAN MAKANAN</a>'+
                 '</div>'+
               '</div>'+
@@ -149,9 +149,9 @@ function tm_detail(id_restoran){
             '<label>Pesan Meja Nomor ?</label>'+
             '<input type="hidden" id="no_item" class="form-control"><br>'+
           '<div class="">'+
-            '<label><input type="radio" onclick="selected(this.form)" name="no_meja"  value="1" class=""><i></i>1</label>'+  
-            '<label><input type="radio" onclick="selected(this.form)" name="no_meja"  value="2" class=""><i></i>2</label>'+  
-            '<label><input type="radio" onclick="selected(this.form)" name="no_meja"  value="3" class=""><i></i>3</label>'+
+            '<label><input type="button" onclick="selected(this.form)" name="no_meja"  value="1" class="btn btn-info"><i></i></label>'+  
+            '<label><input type="button" onclick="selected(this.form)" name="no_meja"  value="2" class="btn btn-info"><i></i></label>'+  
+            '<label><input type="button" onclick="selected(this.form)" name="no_meja"  value="3" class="btn btn-info"><i></i></label>'+
         '</div>'+
         
         '</form>'
