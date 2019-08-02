@@ -107,7 +107,7 @@
               '</div>'+
               '<div class="card-footer-d">'+
                 '<div class="socials-footer d-flex justify-content-center">'+
-                '<a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-danger" style="text-decoration:none">Detail</a>'+ 
+                '<a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-danger" style="text-decoration:none">PESAN MEJA </a>'+ 
                 '<a href="<?= base_url()?>index.php/pelanggan/Get_masakan/tm_pesan_masakan/'+dt['id_restoran']+'" class="btn btn-primary">PESAN MAKANAN</a>'+
                 '</div>'+
               '</div>'+
