@@ -57,7 +57,7 @@
             </div>
             <div class="form-group">
               <input type="checkbox" onclick="myFunction()"> Show Password &ensp;&ensp;
-            <a href="#">Lupa Password ?</a>
+            <a href="<?= base_url()?>index.php/pelanggan/LandController/forgot_password">Lupa Password ?</a>
             </div>
           </div>          
           <div class="col-md-12">

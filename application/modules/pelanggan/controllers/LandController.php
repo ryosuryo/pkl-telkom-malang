@@ -30,7 +30,6 @@ class LandController extends CI_Controller {
 		$this->load->view('Template_pel', $data);
 	}
 	
-
 }
 
 /* End of file LandController.php */
