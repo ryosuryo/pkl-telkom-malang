@@ -56,8 +56,8 @@
               <input type="password" class="form-control form-control-lg form-control-a" placeholder="Password" name="password" style="border-radius: 12px;" id="password">
             </div>
             <div class="form-group">
-              <a href="#" class="btn btn-warning"><input type="checkbox" onclick="myFunction()"> Show Password</a>
-            <a href="#" class="btn btn-danger">lupa password</a>
+              <input type="checkbox" onclick="myFunction()"> Show Password &ensp;&ensp;
+            <a href="#">Lupa Password ?</a>
             </div>
           </div>          
           <div class="col-md-12">
