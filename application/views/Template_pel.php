@@ -59,6 +59,9 @@
             {
               ?>
               <li class="nav-item">
+                <a class="nav-link " href="<?= base_url()?>index.php/pelanggan/Daftar_restoran">Restoran</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link " href="<?= base_url()?>index.php/pelanggan/Riwayat">Riwayat</a>
               </li>
               <li class="nav-item">
