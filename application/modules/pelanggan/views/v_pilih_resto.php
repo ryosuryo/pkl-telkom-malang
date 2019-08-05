@@ -160,7 +160,7 @@ function tm_detail(id_restoran){
 
         $('#btn').html(
             '<a href="#detail_masakan" data-toggle="modal" onclick="mas_detail('+data['id_restoran']+')" class="btn btn-info" style="text-decoration:none">List Makanan</a> &ensp; '+
-            '<button id="beli" onclick="beli('+data['id_restoran']+')" class="btn btn-default">PESAN</button>'
+            '<button id="beli" onclick="beli('+data['id_restoran']+')" class="btn btn-success">PESAN</button>'
             
             );
     });
