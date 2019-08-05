@@ -52,31 +52,27 @@ class Login_pelanggan extends CI_Controller {
 	public function proses_daftar()
 	{
 		$this->form_validation->set_rules('nama', 'nama', 'trim|required');
+		$this->form_validation->set_rules('email', 'email', 'trim|required|valid_email|is_unique[pelanggan.email]',[
+			'is_unique' => 'email sudah didaftarkan'
+		]);
 		$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
 		$this->form_validation->set_rules('telp', 'telp', 'trim|required');
 		$this->form_validation->set_rules('username', 'username', 'trim|required');
-		$this->form_validation->set_rules('password', 'password', 'trim|required');
-		$this->form_validation->set_rules('email', 'email', 'trim|required');
+		$this->form_validation->set_rules('password', 'password', 'trim|required|min_length[3]',[
+			'min_length' => 'Password Kurang panjang'
+		]);
+		
 
 		if($this->form_validation->run()== true)
 		{
-			$tambah = $this->lpm->daftar();
-			if ($tambah) 
-			{
-				$this->session->set_flashdata('pesan','berhasil daftar, silahkan login');
-				
-			}
-
-			else
-			{
-				$this->session->set_flashdata('pesan','gagal daftar,,lengkapi data dulu');
-				
-			}
+			$this->lpm->daftar();
+			$this->session->set_flashdata('pesan_login', 'Akun anda sudah didaftarkan, silahkan Login');
 			redirect('pelanggan/LandController','refresh');
-		} else{
-
-			$this->session->set_flashdata('pesan','gagal daftar, Mohon lengkapi data dulu');
-			redirect('pelanggan/LandController','refresh');
+			
+		} 
+		else
+		{
+			$this->load->view('v_form_daftar');
 		}
 	}
 	

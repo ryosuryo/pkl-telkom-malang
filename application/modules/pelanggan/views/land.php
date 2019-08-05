@@ -127,12 +127,13 @@
                 <div class="col-lg-8">
                   <div class="intro-body">
                     <p class="intro-title-top">Yogyakarta, Indonesia
-                      <br> 78345</p>
+                      <br> <?= $this->session->flashdata('pesan_login');?></p>
                     <h1 class="intro-title mb-4">
                       <span class="color-b">001 </span> Saatnya
                       <br> Booking Saja</h1>
                     <p class="intro-subtitle intro-price">
                       <a href="<?= base_url()?>index.php/pelanggan/LandController/form_daftar"><span class="price-a">Daftar Sekarang</span></a>
+                      
                     </p>
                   </div>
                 </div>
@@ -150,7 +151,7 @@
                 <div class="col-lg-8">
                   <div class="intro-body">
                     <p class="intro-title-top">Yogyakarta, Indonesia
-                      <br> 78345</p>
+                      <br> <?= $this->session->flashdata('pesan_login');?></p>
                     <h1 class="intro-title mb-4">
                       <span class="color-b">204 </span> Sekarang
                       <br> Lebih mudah !!!</h1>
@@ -173,7 +174,7 @@
                 <div class="col-lg-8">
                   <div class="intro-body">
                     <p class="intro-title-top">Yogyakarta, Indonesia
-                      <br> 78345</p>
+                      <br> <?= $this->session->flashdata('pesan_login');?></p>
                     <h1 class="intro-title mb-4">
                       <span class="color-b">207 </span> Menjadi
                       <br> Tanpa Ribet !!!</h1>
@@ -191,13 +192,6 @@
   </div>
   <!--/ Carousel end /-->
 
-                            <?php
-                                $pesan = $this->session->flashdata('pesan');
-                                if($pesan != NULL){
-                                    echo ' <div class="alert alert-danger">'.$pesan.'</div>';
-                                }
-
-                            ?>
 
   <!--/ Intro Single star /-->
   <section class="intro-single">

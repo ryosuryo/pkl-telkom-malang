@@ -1,81 +1,120 @@
-<section class="intro-single">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-lg-8">
-          <div class="title-single-box">
-            <h1 class="title-single">Daftar akun anda agar mendapat pelayanan terbaik dari Boogja</h1>
-            <span class="color-text-a"><img src="<?= base_url()?>assets2/img/speaker.png" style="width: 4%"></span>
-          </div>
-        </div>
-        <div class="col-md-12 col-lg-4">
-          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/ Intro Single End /-->
+<!DOCTYPE html>
+<html lang="en">
 
-<section class="contact">
-    <div class="container">
-      <div class="row">
-        
-        <div class="col-sm-12 section-t4">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-7">
-              <form class="form-a contactForm" action="<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_daftar" method="post">
-                <div class="row">
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                      <input type="text" name="nama" class="form-control form-control-lg form-control-a" placeholder="Your Name" >
-                      
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                      <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="Your Email" data-rule="email">
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                      <input type="text" name="telp" class="form-control form-control-lg form-control-a" placeholder="Your Telephone">
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                      <textarea name="alamat" class="form-control" name="alamat" cols="45" rows="5" data-rule="required" placeholder="Address"></textarea>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <div class="form-group">
-                      <input type="text" name="username" class="form-control form-control-lg form-control-a" placeholder="Username">
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <div class="form-group">
-                      <input type="password" name="password" class="form-control form-control-lg form-control-a" placeholder="password">
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <button type="submit" class="btn btn-a">Sign Up</button>
-                    <a href="<?= base_url()?>index.php/pelanggan/LandController" class="btn btn-a">Cancel</a>
-                  </div>
-                </div><br><br>
-                <?php
-                                $pesan = $this->session->flashdata('pesan');
-                                if($pesan != NULL){
-                                    echo ' <div class="alert alert-danger">'.$pesan.'</div>';
-                                }
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
-                            ?>
-              </form>
+    <!-- Title Page-->
+    <title>Au Register Forms by Colorlib</title>
+
+    <!-- Icons font CSS-->
+    <link href="<?= base_url()?>assets3/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="<?= base_url()?>assets3/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="<?= base_url()?>assets3/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="<?= base_url()?>assets3/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="<?= base_url()?>assets3/css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Silahkan Isi Data Diri Anda !!!</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_daftar">
+                        <div class="form-row">
+                            <div class="name">Nama</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="nama" value="<?= set_value('nama');?>">
+                                    <?= form_error('nama','<small style="color: red;">','</small>'); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" name="email" value="<?= set_value('email');?>">
+                                    <?= form_error('email','<small style="color: red;">','</small>')?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Alamat</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="alamat" value="<?= set_value('alamat');?>">
+                                    <?= form_error('alamat','<small style="color: red;">','</small>')?>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="name">Phone</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="telp" value="<?= set_value('telp');?>">
+                                    <?= form_error('telp','<small style="color: red;">','</small>')?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Akun</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" placeholder="username" name="username" value="<?= set_value('username');?>">
+                                            <?= form_error('username','<small style="color: red;">','</small>')?>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" placeholder="password" type="password" name="password" value="<?= set_value('password');?>">
+                                            <?= form_error('password','<small style="color: red;">','</small>')?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Register</button>
+                            <button class="btn btn--radius-2 btn--red">Cancel</button>
+                            
+                        </div>
+                         
+
+                    </form>
+                </div>
             </div>
-            <div class="col-md-4">
-              <img src="<?= base_url()?>assets2/img/DAFTAR.png" alt="" width="95%">
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
+
+    <!-- Jquery JS-->
+    <script src="<?= base_url()?>assets3/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="<?= base_url()?>assets3/vendor/select2/select2.min.js"></script>
+    <script src="<?= base_url()?>assets3/vendor/datepicker/moment.min.js"></script>
+    <script src="<?= base_url()?>assets3/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="<?= base_url()?>assets3/js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
