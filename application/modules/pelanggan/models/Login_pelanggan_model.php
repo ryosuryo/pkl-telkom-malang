@@ -6,7 +6,7 @@ class Login_pelanggan_model extends CI_Model {
 	public function cek_login()
 	{
 		$login = $this->db->where('username', $this->input->post('username'))
-							->where('password', $this->input->post('password'))
+							->where('password', $this->input->post('password')) 
 							->get('pelanggan');
 
 		if ($this->db->affected_rows()>0) 
@@ -27,6 +27,7 @@ class Login_pelanggan_model extends CI_Model {
 		}
 	}	
 
+
 	public function daftar()
 	{
 		$data = array('nama' => $this->input->post('nama'),
@@ -34,8 +35,8 @@ class Login_pelanggan_model extends CI_Model {
 						'alamat' => $this->input->post('alamat'),
 						'telp' => $this->input->post('telp'),
 						'username' => $this->input->post('username'),
-						'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-						'is_actived' => 1,
+						'password' => $this->input->post('password'),
+						'is_actived' => 0,
 						'date_created' => time());
 		return $this->db->insert('pelanggan', $data);
 	}
