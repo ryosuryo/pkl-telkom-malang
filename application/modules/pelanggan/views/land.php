@@ -46,11 +46,11 @@
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
-      <form class="form-a" method="post" action="<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_login">
+      <form class="form-a" method="post" id="sign_in">
         <div class="row">
           <div class="col-md-12 mb-2">
             <div class="form-group">
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Username" name="username" style="border-radius: 12px;">
+              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Username" name="username" style="border-radius: 12px;" id="username">
             </div>
             <div class="form-group">
               <input type="password" class="form-control form-control-lg form-control-a" placeholder="Password" name="password" style="border-radius: 12px;" id="password">
@@ -64,6 +64,7 @@
             <button type="submit" class="btn btn-b" style="border-radius: 12px;">Submit</button>
           </div>
         </div><br><br>
+        <div id="pesan" class="alert alert-warning"></div>
          <?php
                                 $pesan = $this->session->flashdata('pesan');
                                 if($pesan != NULL){
@@ -612,6 +613,32 @@
         x.type = "password";
       }
     }
+
+    //login
+    $('#pesan').hide(); 
+    $('#sign_in').submit(function(event){
+      event.preventDefault();
+      var datalogin=$('#sign_in').serialize();
+      $.ajax({
+        url: "<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_login",
+        data:datalogin,
+        type:"post",
+        dataType:"json",
+        success:function(hasil){
+          if (hasil['status']==1) {
+            $('#pesan').show('animate');
+            $('#pesan').html("Sukses Login");
+            setTimeout(function(){
+              location.href="<?= base_url()?>index.php/Dashboard/dashboard_pelanggan";
+            }, 2000);
+          }
+          else
+          {
+            $('#pesan').html("Kombinasi username password tidak cocok");
+          }
+        }
+      });
+    });
   </script>
 </body>
 </html>

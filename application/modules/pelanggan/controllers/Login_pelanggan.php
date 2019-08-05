@@ -22,15 +22,14 @@ class Login_pelanggan extends CI_Controller {
 
 			if ($this->form_validation->run() == true) 
 			{
-				
 				if ($this->lpm->cek_login()) {
-					
-					redirect('Dashboard/dashboard_pelanggan','refresh');
+					$data['status']=1;
+					echo json_encode($data);
 				}
 				else
 				{
-					$this->session->set_flashdata('pesan', 'kombinasi username dan password tidak cocok');
-					redirect('pelanggan/LandController','refresh');
+					$data['status']=0;
+					echo json_encode($data);
 				}
 			} 
 			else 

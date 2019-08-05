@@ -9,6 +9,7 @@ class Login_pelanggan_model extends CI_Model {
 							->where('password', $this->input->post('password')) 
 							->get('pelanggan');
 
+
 		if ($this->db->affected_rows()>0) 
 		{
 			$cek=$login->row();
