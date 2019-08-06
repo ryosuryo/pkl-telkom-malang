@@ -31,7 +31,7 @@ class Login_pelanggan_model extends CI_Model {
 	public function get_pel($username)
 	{
 		return $this->db->where('username', $username)
-							->get('pelanggan')->row();
+							->get('pelanggan')->row_array();
 	}
 
 	public function daftar()

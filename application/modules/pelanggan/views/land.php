@@ -650,7 +650,7 @@
         else
         {
             $('#pesan').show('animate');
-                  $('#pesan').html("Akun Belum aktif, Tidah bisa login");
+                  $('#pesan').html("Akun Belum aktif, Tidak bisa login");
                   setTimeout(function(){
                     $('#pesan').hide('fade');
                   }, 2000);
