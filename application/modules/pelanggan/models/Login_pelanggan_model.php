@@ -13,6 +13,7 @@ class Login_pelanggan_model extends CI_Model {
 		if ($this->db->affected_rows()>0) 
 		{
 			$cek=$login->row();
+
 			$array = array('id_pelanggan' => $cek->id_pelanggan,
 						'username' => $cek->username,
 						'password' => $cek->password,
@@ -27,7 +28,11 @@ class Login_pelanggan_model extends CI_Model {
 			return false;
 		}
 	}	
-
+	public function get_pel($username)
+	{
+		return $this->db->where('username', $username)
+							->get('pelanggan')->row();
+	}
 
 	public function daftar()
 	{

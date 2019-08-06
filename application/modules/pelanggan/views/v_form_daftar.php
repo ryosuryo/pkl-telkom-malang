@@ -93,7 +93,7 @@
                         </div>
                         <div>
                             <button class="btn btn--radius-2 btn--blue" type="submit">Register</button>
-                            <button class="btn btn--radius-2 btn--red">Cancel</button>
+                            <a href="<?= base_url()?>index.php/pelanggan/LandController" class="btn btn--radius-2 btn--red" style="text-decoration: none;">Cancel</a>
                             
                         </div>
                          

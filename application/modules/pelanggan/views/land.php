@@ -50,14 +50,14 @@
         <div class="row">
           <div class="col-md-12 mb-2">
             <div class="form-group">
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Username" name="username" style="border-radius: 12px;" id="username">
+              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Username" name="username" id="username" style="border-radius: 12px;" id="username">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control form-control-lg form-control-a" placeholder="Password" name="password" style="border-radius: 12px;" id="password">
+              <input type="password" class="form-control form-control-lg form-control-a" placeholder="Password" name="password" id="password" style="border-radius: 12px;" id="password">
             </div>
             <div class="form-group">
               <input type="checkbox" onclick="myFunction()"> Show Password &ensp;&ensp;
-            <a href="<?= base_url()?>index.php/pelanggan/LandController/forgot_password">Lupa Password ?</a>
+            <a href="<?= base_url()?>index.php/pelanggan/LandController/forgotPassword">Lupa Password ?</a>
             </div>
           </div>          
           <div class="col-md-12">
@@ -619,25 +619,44 @@
     $('#sign_in').submit(function(event){
       event.preventDefault();
       var datalogin=$('#sign_in').serialize();
-      $.ajax({
-        url: "<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_login",
-        data:datalogin,
-        type:"post",
-        dataType:"json",
-        success:function(hasil){
-          if (hasil['status']==1) {
+      var username=$('#username').val();
+      $('#pesan').hide();
+      $.getJSON("<?= base_url()?>index.php/pelanggan/Login_pelanggan/get_pelanggan/"+username,function(data){
+        if (data['is_actived']==1) {
+             $.ajax({
+              url: "<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_login",
+              data:datalogin,
+              type:"post",
+              dataType:"json",
+              success:function(hasil){
+                if (hasil['status']==1) {
+                  $('#pesan').show('animate');
+                  $('#pesan').html("Sukses Login");
+                  setTimeout(function(){
+                    location.href="<?= base_url()?>index.php/Dashboard/dashboard_pelanggan";
+                  }, 2000);
+                }
+                else
+                {
+                  $('#pesan').show('animate');
+                  $('#pesan').html("Kombinasi username password tidak cocok");
+                  setTimeout(function(){
+                    $('#pesan').hide('fade');
+                  }, 2000);
+                }
+              }
+            });
+        }
+        else
+        {
             $('#pesan').show('animate');
-            $('#pesan').html("Sukses Login");
-            setTimeout(function(){
-              location.href="<?= base_url()?>index.php/Dashboard/dashboard_pelanggan";
-            }, 2000);
-          }
-          else
-          {
-            $('#pesan').html("Kombinasi username password tidak cocok");
-          }
+                  $('#pesan').html("Akun Belum aktif, Tidah bisa login");
+                  setTimeout(function(){
+                    $('#pesan').hide('fade');
+                  }, 2000);
         }
       });
+     
     });
   </script>
 </body>

@@ -32,25 +32,23 @@
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">Lupa Password !!!</h2>
+                    <h2 class="title">Change Password for <?= $this->session->userdata('reset_email')?></h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="<?= base_url()?>index.php/pelanggan/Login_pelanggan/forgotPassword">
+                    <form method="POST" action="<?= base_url()?>index.php/pelanggan/Login_pelanggan/changePassword">
                         <?= $this->session->flashdata('pesan_login');?><br>
                         <div class="form-row">
-                            <div class="name">Email</div>
+                            <div class="name">Password</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email" value="<?= set_value('email');?>">
-                                    <?= form_error('email','<small style="color: red;">','</small>')?>
+                                    <input class="input--style-5" type="password" name="password" value="<?= set_value('password');?>">
+                                    <?= form_error('password','<small style="color: red;">','</small>')?>
                                 </div>
                             </div>
                         </div>
                         
                         <div>
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Kirim</button>
-                            <a href="<?= base_url()?>index.php/pelanggan/LandController" class="btn btn--radius-2 btn--red" style="text-decoration: none;">Cancel</a>
-                            
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Change</button>
                         </div>
                          
 
