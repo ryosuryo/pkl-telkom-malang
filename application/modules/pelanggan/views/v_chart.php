@@ -6,59 +6,37 @@
     <title>Cart</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-        ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url()?>assets/img/boogja.png">
-    <!-- Google Fonts
-        ============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <!-- Bootstrap CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/bootstrap.min.css">
-    <!-- Bootstrap CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/font-awesome.min.css">
-    <!-- owl.carousel CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/owl.theme.css">
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/owl.transitions.css">
-    <!-- meanmenu CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/meanmenu/meanmenu.min.css">
-    <!-- animate CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/animate.css">
-    <!-- normalize CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/normalize.css">
-    <!-- mCustomScrollbar CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- jvectormap CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/jvectormap/jquery-jvectormap-2.0.3.css">
-    <!-- notika icon CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/notika-custom-icon.css">
-    <!-- wave CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/wave/waves.min.css">
-    <!-- main CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/main.css">
-    <!-- style CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/style.css">
-    <!-- responsive CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/responsive.css">
-    <!-- modernizr JS
-        ============================================ -->
-    <script src="<?= base_url()?>assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    <script src="<?= base_url()?>assets/js/vendor/jquery-1.12.4.min.js"></script>
+    
+    <link href="<?= base_url()?>assets2/img/speaker.png" rel="icon">
+  <link href="<?= base_url()?>assets2/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="<?= base_url()?>assets2/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="<?= base_url()?>assets2/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="<?= base_url()?>assets2/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="<?= base_url()?>assets2/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="<?= base_url()?>assets2/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="<?= base_url()?>assets2/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: EstateAgency
+    Theme URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+
+  <script src="<?= base_url()?>assets2/lib/jquery/jquery.min.js"></script>
 </head>
 <body>
+
+<section class="intro-single">
 
   <div class="normal-table-area">
         <div class="container">
@@ -159,24 +137,27 @@
                                             </div>
                                             <div class="modal-body">
                                                 <h2>Terima Kasih.....</h2>
-                                                <p>Untuk melanjutkan pesanan, silahkan upload bukti transfer pembayaran sebesar Rp.<span id="totalnya">0</span>,- ke rekeninig berikut:</p>
+                                                <p>Untuk melanjutkan pesanan, silahkan upload bukti transfer pembayaran sebesar Rp.<span id="totalnya">0</span>,- ke rekening berikut:</p>
                                                 <p>BANK BRI : 096898612371324</p>
                                                 <form enctype="multipart/form-data" method="post" id="upload_bukti">
                                                     <input type="file" name="bukti" class="form-control"><br>
                                                     <input type="hidden" name="id_order" id="id_order">
-                                                    <button type="submit" name="submit" value="kirim" class="btn btn-default btn-icon-notika waves-effect">
-                                                        <i class="notika-icon notika-next"></i>
-                                                    </button>
+                                                    <button type="submit" name="submit" value="kirim" class="btn btn-success ">Kirim Bukti
+                                                        </button>
                                                     <span id="pesan_kirim"></span>
+                                                    <br>
+                                                    <br>
+                                                    <span id="pesan"></span>
                                                 </form>
 
-                                                <span id="pesan"></span>
+                                                
                                             </div>
                                             <div class="modal-footer">
   
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                                 </div>
     <!-- jquery
         ============================================ -->
@@ -248,6 +229,8 @@
         ============================================ -->
     <script src="<?= base_url()?>assets/js/tawk-chat.js"></script>
     <script type="text/javascript">
+
+
   
 
     //menampilkan chart makanan enak//
