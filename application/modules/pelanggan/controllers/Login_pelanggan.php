@@ -223,6 +223,7 @@ class Login_pelanggan extends CI_Controller {
 			if ($user_token) {
 				$this->session->set_userdata('reset_email',$email);
 				$this->changePassword();
+				$this->db->delete('user_token', ['email' => $email]);
 			}
 			else
 			{

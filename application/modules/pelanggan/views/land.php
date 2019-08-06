@@ -57,7 +57,7 @@
             </div>
             <div class="form-group">
               <input type="checkbox" onclick="myFunction()"> Show Password &ensp;&ensp;
-            <a href="<?= base_url()?>index.php/pelanggan/LandController/forgotPassword">Lupa Password ?</a>
+            <a href="<?= base_url()?>index.php/pelanggan/Login_pelanggan/forgotPassword">Lupa Password ?</a>
             </div>
           </div>          
           <div class="col-md-12">
@@ -89,7 +89,7 @@
       <a class="navbar-brand text-brand" href="#">Boo<span class="color-b">gja</span></a>
       <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
         data-target="#navbarTogglerDemo01" aria-expanded="false">
-        <span class="fa fa-dribbble" aria-hidden="true"></span>
+        <span class="fa fa-sign-in" aria-hidden="true"></span>
       </button>
       
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
