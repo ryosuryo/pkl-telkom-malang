@@ -11,16 +11,19 @@
   <link href="<?= base_url()?>assets2/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
+  
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
   <!-- Bootstrap CSS File -->
   <link href="<?= base_url()?>assets2/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
 
   <!-- Libraries CSS Files -->
   <link href="<?= base_url()?>assets2/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="<?= base_url()?>assets2/lib/animate/animate.min.css" rel="stylesheet">
   <link href="<?= base_url()?>assets2/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="<?= base_url()?>assets2/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?= base_url()?>assets/css/responsive.css">
+
 
   <!-- Main Stylesheet File -->
   <link href="<?= base_url()?>assets2/css/style.css" rel="stylesheet">
@@ -190,9 +193,6 @@
     <script src="<?= base_url()?>assets/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- jvectormap JS
         ============================================ -->
-    <script src="<?= base_url()?>assets/js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="<?= base_url()?>assets/js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="<?= base_url()?>assets/js/jvectormap/jvectormap-active.js"></script>
     <!-- sparkline JS
         ============================================ -->
     <script src="<?= base_url()?>assets/js/sparkline/jquery.sparkline.min.js"></script>

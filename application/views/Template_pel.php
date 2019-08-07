@@ -51,10 +51,6 @@
         <span></span>
       </button>
       <a class="navbar-brand text-brand" href="#">Boo<span class="color-b">gja</span></a>
-      <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none"
-        data-target="#">
-        <span class="fa fa-address-card" aria-hidden="true"></span>
-      </button>
       
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
@@ -73,9 +69,9 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false"><span class="fa fa-id-badge"></span> <?php echo $this->session->userdata('username'); ?></a>
+                  aria-haspopup="true" aria-expanded="false"><?php echo $this->session->userdata('username'); ?></a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?= base_url()?>index.php/pelanggan/Login_pelanggan/logout"><span class="fa fa-sign-out"></span> Log out</a>
+                    <a class="dropdown-item" href="<?= base_url()?>index.php/pelanggan/Login_pelanggan/logout">Log out</a>
                   </div>
               </li>
 
@@ -102,7 +98,6 @@
               ?>
         </ul>
       </div>
-      </button>
     </div>
   </nav>
   <!--/ Nav End /-->
@@ -190,17 +185,17 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
 
-  <!-- JavaScript Libraries -->
-  <script src="<?= base_url()?>assets2/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="<?= base_url()?>assets2/lib/popper/popper.min.js"></script>
-  <script src="<?= base_url()?>assets2/lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="<?= base_url()?>assets2/lib/easing/easing.min.js"></script>
-  <script src="<?= base_url()?>assets2/lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="<?= base_url()?>assets2/lib/scrollreveal/scrollreveal.min.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="<?= base_url()?>assets2/contactform/contactform.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="<?= base_url()?>assets2/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="<?= base_url()?>assets2/lib/popper/popper.min.js"></script>
+    <script src="<?= base_url()?>assets2/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?= base_url()?>assets2/lib/easing/easing.min.js"></script>
+    <script src="<?= base_url()?>assets2/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="<?= base_url()?>assets2/lib/scrollreveal/scrollreveal.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="<?= base_url()?>assets2/contactform/contactform.js"></script>
 
-  <!-- Template Main Javascript File -->
+    <!-- Template Main Javascript File -->
   <script src="<?= base_url()?>assets2/js/main.js"></script>
 
 </body>
