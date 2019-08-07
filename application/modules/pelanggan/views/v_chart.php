@@ -12,7 +12,8 @@
 
   <!-- Google Fonts -->
   
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+  
   <!-- Bootstrap CSS File -->
   <link href="<?= base_url()?>assets2/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   
@@ -167,7 +168,6 @@
   
     <!-- bootstrap JS
         ============================================ -->
-    <script src="<?= base_url()?>assets/js/bootstrap.min.js"></script>
     <!-- wow JS
         ============================================ -->
     <script src="<?= base_url()?>assets/js/wow.min.js"></script>
@@ -185,9 +185,7 @@
     <script src="<?= base_url()?>assets/js/meanmenu/jquery.meanmenu.js"></script>
     <!-- counterup JS
         ============================================ -->
-    <script src="<?= base_url()?>assets/js/counterup/jquery.counterup.min.js"></script>
-    <script src="<?= base_url()?>assets/js/counterup/waypoints.min.js"></script>
-    <script src="<?= base_url()?>assets/js/counterup/counterup-active.js"></script>
+   
     <!-- mCustomScrollbar JS
         ============================================ -->
     <script src="<?= base_url()?>assets/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -223,8 +221,7 @@
     <script src="<?= base_url()?>assets/js/chat/moment.min.js"></script>
     <script src="<?= base_url()?>assets/js/chat/jquery.chat.js"></script>
     <!-- main JS
-        ============================================ -->
-    <script src="<?= base_url()?>assets/js/main.js"></script>
+        ============================================ -->\
     <!-- tawk chat JS
         ============================================ -->
     <script src="<?= base_url()?>assets/js/tawk-chat.js"></script>
