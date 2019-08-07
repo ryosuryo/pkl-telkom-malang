@@ -10,9 +10,10 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Daftar Akun</title>
 
     <!-- Icons font CSS-->
+    <link href="<?= base_url()?>assets2/img/login.png" rel="icon">
     <link href="<?= base_url()?>assets3/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="<?= base_url()?>assets3/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
@@ -27,7 +28,7 @@
 </head>
 
 <body>
-    <div class="page-wrapper p-t-45 p-b-50">
+    <div class="page-wrapper p-t-45 p-b-50" style="background-color: #2eca6a;">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
@@ -93,7 +94,7 @@
                         </div>
                         <div>
                             <button class="btn btn--radius-2 btn--blue" type="submit">Register</button>
-                            <a href="<?= base_url()?>index.php/pelanggan/LandController" class="btn btn--radius-2 btn--red" style="text-decoration: none;">Cancel</a>
+                            <a href="<?= base_url()?>index.php/pelanggan/LandController" class="btn btn--radius-2 btn--red" style="text-decoration: none;">Kembali</a>
                             
                         </div>
                          

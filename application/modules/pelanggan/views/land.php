@@ -56,8 +56,8 @@
               <input type="password" class="form-control form-control-lg form-control-a" placeholder="Password" name="password" id="password" style="border-radius: 12px;" id="password">
             </div>
             <div class="form-group">
-              <input type="checkbox" onclick="myFunction()"> Show Password &ensp;&ensp;
-            <a href="<?= base_url()?>index.php/pelanggan/Login_pelanggan/forgotPassword">Lupa Password ?</a>
+              <input type="checkbox" onclick="myFunction()"><small> Show Password</small> &ensp;&ensp;
+            <a href="<?= base_url()?>index.php/pelanggan/Login_pelanggan/forgotPassword"><small>Lupa Password ?</small></a>
             </div>
           </div>          
           <div class="col-md-12">
@@ -128,7 +128,7 @@
                 <div class="col-lg-8">
                   <div class="intro-body">
                     <p class="intro-title-top">Yogyakarta, Indonesia
-                      <br> <?= $this->session->flashdata('pesan_login');?></p>
+                      <br> </p>
                     <h1 class="intro-title mb-4">
                       <span class="color-b">001 </span> Saatnya
                       <br> Booking Saja</h1>
@@ -152,7 +152,7 @@
                 <div class="col-lg-8">
                   <div class="intro-body">
                     <p class="intro-title-top">Yogyakarta, Indonesia
-                      <br> <?= $this->session->flashdata('pesan_login');?></p>
+                      <br> </p>
                     <h1 class="intro-title mb-4">
                       <span class="color-b">204 </span> Sekarang
                       <br> Lebih mudah !!!</h1>
@@ -175,7 +175,7 @@
                 <div class="col-lg-8">
                   <div class="intro-body">
                     <p class="intro-title-top">Yogyakarta, Indonesia
-                      <br> <?= $this->session->flashdata('pesan_login');?></p>
+                      <br> </p>
                     <h1 class="intro-title mb-4">
                       <span class="color-b">207 </span> Menjadi
                       <br> Tanpa Ribet !!!</h1>

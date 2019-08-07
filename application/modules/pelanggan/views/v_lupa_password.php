@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <div class="page-wrapper p-t-45 p-b-50">
+    <div class="page-wrapper p-t-45 p-b-50"  style="background-color: #2eca6a;">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">

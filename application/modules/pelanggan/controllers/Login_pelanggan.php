@@ -88,7 +88,7 @@ class Login_pelanggan extends CI_Controller {
 			$this->db->insert('user_token', $user_token);
 			$this->_sendEmail($token, 'verify');
 			$this->session->set_flashdata('pesan_login', '<div class="alert alert-warning">Akun anda sudah didaftarkan, silahkan cek email untuk aktifasi</div>');
-			redirect('pelanggan/LandController','refresh');
+			redirect('pelanggan/LandController/alert','refresh');
 			
 		} 
 		else
@@ -154,26 +154,26 @@ class Login_pelanggan extends CI_Controller {
 					$this->db->update('pelanggan');
 					$this->db->delete('user_token', ['email' => $email]);
 					$this->session->set_flashdata('pesan_login', '<div class="alert alert-success">'. $email .' telah aktif </div>');
-					redirect('pelanggan/LandController','refresh');
+					redirect('pelanggan/LandController//alert','refresh');
 				}
 				else
 				{
 					$this->db->delete('pelanggan', ['email' => $email]);
 					$this->db->delete('user_token', ['email' => $email]);
 					$this->session->set_flashdata('pesan_login', '<div class="alert alert-danger">Activation Failed; Token Kadaluarsa</div>');
-					redirect('pelanggan/LandController','refresh');
+					redirect('pelanggan/LandController/alert','refresh');
 				}
 			}
 			else
 			{
 				$this->session->set_flashdata('pesan_login', '<div class="alert alert-danger">Activation Failed; Token Salah</div>');
-				redirect('pelanggan/LandController','refresh');
+				redirect('pelanggan/LandController/alert','refresh');
 			}
 		}
 		else
 		{
 			$this->session->set_flashdata('pesan_login', '<div class="alert alert-danger">Activation Failed; Email Salah</div>');
-			redirect('pelanggan/LandController','refresh');
+			redirect('pelanggan/LandController/alert','refresh');
 		}
 	}
 	
@@ -201,7 +201,7 @@ class Login_pelanggan extends CI_Controller {
 				$this->_sendEmail($token, 'forgot');
 
 				$this->session->set_flashdata('pesan_login', '<div class="alert alert-success">cek email untuk reset password</div>');
-			    redirect('pelanggan/LandController','refresh');
+			    redirect('pelanggan/LandController/alert','refresh');
 
 			}
 			else
@@ -228,20 +228,20 @@ class Login_pelanggan extends CI_Controller {
 			else
 			{
 				$this->session->set_flashdata('pesan_login', '<div class="alert alert-danger">Reset Failed; Token Salah</div>');
-				redirect('pelanggan/LandController','refresh');
+				redirect('pelanggan/LandController/alert','refresh');
 			}
 		}
 		else
 		{
 			$this->session->set_flashdata('pesan_login', '<div class="alert alert-danger">Reset Password gagal, email Salah</div>');
-			redirect('pelanggan/LandController','refresh');
+			redirect('pelanggan/LandController/alert','refresh');
 		}
 	}
 	public function changePassword()
 	{
 		if (!$this->session->userdata('reset_email'))  
 		{
-			redirect('pelanggan/LandController','refresh');
+			redirect('pelanggan/LandController/alert','refresh');
 		}
 		else
 		{
@@ -261,7 +261,7 @@ class Login_pelanggan extends CI_Controller {
 				$this->session->unset_userdata('reset_email');
 
 				$this->session->set_flashdata('pesan_login', '<div class="alert alert-success">Password Telah diubah</div>');
-				redirect('pelanggan/LandController','refresh');
+				redirect('pelanggan/LandController/alert','refresh');
 			}
 		}
 		

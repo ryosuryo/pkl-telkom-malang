@@ -28,6 +28,10 @@ class LandController extends CI_Controller {
 		$data['konten_pel']='v_contact';
 		$this->load->view('Template_pel', $data);
 	}
+	public function alert()
+	{
+		$this->load->view('v_alert');
+	}
 	
 }
 
