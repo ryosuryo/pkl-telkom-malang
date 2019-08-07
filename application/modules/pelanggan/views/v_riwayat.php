@@ -36,7 +36,6 @@
               '<div class="card-box-ico">'+
                 '<table class="table">'+
                   '<tr><td>Tanggal</td><td> : '+dt['tanggal']+'</td></tr>'+
-                  '<tr><td>Restoran</td><td> : '+dt['nama_restoran']+'</td></tr>'+
                   '<tr><td>Bayar</td><td> : '+dt['total_bayar']+'</td></tr>'+
                   '<tr><td>Status</td><td> : '+dt['status_order']+'</td></tr>'+
                 '</table>'+

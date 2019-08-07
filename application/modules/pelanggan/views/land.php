@@ -46,7 +46,7 @@
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
-      <form class="form-a" method="post" id="sign_in">
+      <form class="form-a" method="post" action="<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_login">
         <div class="row">
           <div class="col-md-12 mb-2">
             <div class="form-group">
@@ -64,7 +64,6 @@
             <button type="submit" class="btn btn-b" style="border-radius: 12px;">Submit</button>
           </div>
         </div><br><br>
-        <div id="pesan" class="alert alert-warning"></div>
          <?php
                                 $pesan = $this->session->flashdata('pesan');
                                 if($pesan != NULL){
@@ -615,49 +614,7 @@
     }
 
     //login
-    $('#pesan').hide(); 
-    $('#sign_in').submit(function(event){
-      event.preventDefault();
-      var datalogin=$('#sign_in').serialize();
-      var username=$('#username').val();
-      $('#pesan').hide();
-      $.getJSON("<?= base_url()?>index.php/pelanggan/Login_pelanggan/get_pelanggan/"+username,function(data){
-        if (data['is_actived']==1) {
-             $.ajax({
-              url: "<?= base_url()?>index.php/pelanggan/Login_pelanggan/proses_login",
-              data:datalogin,
-              type:"post",
-              dataType:"json",
-              success:function(hasil){
-                if (hasil['status']==1) {
-                  $('#pesan').show('animate');
-                  $('#pesan').html("Sukses Login");
-                  setTimeout(function(){
-                    location.href="<?= base_url()?>index.php/Dashboard/dashboard_pelanggan";
-                  }, 2000);
-                }
-                else
-                {
-                  $('#pesan').show('animate');
-                  $('#pesan').html("Kombinasi username password tidak cocok");
-                  setTimeout(function(){
-                    $('#pesan').hide('fade');
-                  }, 2000);
-                }
-              }
-            });
-        }
-        else
-        {
-            $('#pesan').show('animate');
-                  $('#pesan').html("Akun Belum aktif, Tidak bisa login");
-                  setTimeout(function(){
-                    $('#pesan').hide('fade');
-                  }, 2000);
-        }
-      });
-     
-    });
+   
   </script>
 </body>
 </html>

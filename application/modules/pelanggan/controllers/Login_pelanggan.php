@@ -12,37 +12,51 @@ class Login_pelanggan extends CI_Controller {
 	{
 		$this->load->view('v_login_pelanggan');
 	}
-	public function get_pelanggan($username)
-	{
-		$dt_p = $this->lpm->get_pel($username);
-		echo json_encode($dt_p);
-	}
 	public function proses_login()
 	{
 		if ($this->session->userdata('logged')==false) 
 		{
 
-			$this->form_validation->set_rules('username', 'username', 'trim|required');
-			$this->form_validation->set_rules('password', 'password', 'trim|required');
+				$username = $this->input->post('username');
+				$password = $this->input->post('password');
+				$user = $this->db->get_where('pelanggan', ['username' => $username])->row_array();
+				if ($user) 
+				{
+					if ($user['is_actived']==1) 
+					{
+						if (password_verify($password, $user['password'])) 
+						{
 
-			if ($this->form_validation->run() == true) 
-			{
-				if ($this->lpm->cek_login()) {
-					$data['status']=1;
-					echo json_encode($data);
+							$array = [
+				 
+								'id_pelanggan' => $user['id_pelanggan'],
+								'username' => $user['username'],
+								'logged' => true
+							];
+
+							$this->session->set_userdata($array);
+							redirect('Dashboard/Dashboard_pelanggan','refresh');
+						}
+						else
+						{
+							$this->session->set_flashdata('pesan','Password Salah');
+							redirect('pelanggan/LandController','refresh');
+						}
+					}
+					else
+					{
+						$this->session->set_flashdata('pesan','Username belum aktivasi');
+						redirect('pelanggan/LandController','refresh');
+					}
 				}
 				else
 				{
-					$data['status']=0;
-					echo json_encode($data);
+					$this->session->set_flashdata('pesan','Username belum terdaftar');
+					redirect('pelanggan/LandController','refresh');
 				}
+
 			} 
-			else 
-			{
-				$this->session->set_flashdata('pesan',validation_errors());
-				redirect('pelanggan/LandController','refresh');
-			}
-		}
+		 
 		else
 		{
 			$this->session->set_flashdata('pesan','session yg sebelumnya belum dilogout');
@@ -253,7 +267,7 @@ class Login_pelanggan extends CI_Controller {
 			} 
 			else 
 			{
-				$password = $this->input->post('password');
+				$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 				$email = $this->session->userdata('reset_email');
 
 				$data = array('password' => $password );

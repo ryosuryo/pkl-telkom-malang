@@ -52,8 +52,8 @@
                             
                         </div>
                         <div class="bsc-tbl-st">
-                            <table class="table table-striped">
-                                <thead>
+                            <table class="table">
+                                <thead class="thead-dark">
                                     <tr>
                                         <th>No.</th>
                                         <th>ID Pesanan</th>
@@ -69,7 +69,7 @@
                                     foreach ($data_m as $d) 
                                     {
                                         $no++;
-                                        echo '<tr>
+                                        echo '<tr class="table-success">
                                                 <td>'.$no.'</td>
                                                 <td>'.$d->id_pesanan.'</td>
                                                 <td>'.$d->id_restoran.'</td>
@@ -102,8 +102,8 @@
                             
                         </div>
                         <div class="bsc-tbl-st">
-                            <table class="table table-striped">
-                                <thead>
+                            <table class="table">
+                                <thead class="thead-dark">
                                     <tr>
                                         <th>No.</th>
                                         <th>ID Makanan</th>
@@ -240,7 +240,7 @@
         $.each(hasil['data_cart'],function(key,obj){
         no++;
         $("#tm_pesanan").append(
-          '<tr>'+
+          '<tr class="table-success">'+
             '<td>'+no+'</td>'+
             '<td>'+obj['id']+'</td>'+
             '<td>'+obj['name']+'</td>'+
@@ -251,7 +251,7 @@
           );
         });
         $("#tm_pesanan").append(
-        '<tr>'+
+        '<tr class="table-success">'+
           '<td colspan="4">Total Keseluruhan</td>'+
           '<td align="left">'+hasil['total_seluruh']+'</td>'+
           '<td></td>'+
