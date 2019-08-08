@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="<?= base_url()?>assets/css/responsive.css">
 
  <!--/ Intro Single star /-->
  <section class="intro-single">

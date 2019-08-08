@@ -17,6 +17,7 @@
                                         <th>Nama Restoran</th>
                                         <th>Gambar</th>
                                         <th>Alamat Restoran</th>
+                                        <th>Jumlah meja</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -33,6 +34,7 @@
                                                 <td>'.$dr->nama_restoran.'</td>
                                                 <td><img src='.base_url("assets/gambar/$dr->gambar").' width="100px" height="75px"></td>
                                                 <td>'.$dr->alamat_restoran.'</td>
+                                                <td>'.$dr->jmlh_meja.'</td>
                                                 <td><a href="#ubah" onclick="tm_detail('.$dr->id_restoran.')" class="btn btn-warning" data-toggle="modal">Ubah</a>
                                                      <a href='.base_url('index.php/admin/Restoran/hapus/'.$dr->id_restoran).' onclick="return confirm(\'anda yakin menghapus item ini?\')" class="btn btn-danger">Hapus</a></td>
                                             </tr>';
@@ -72,6 +74,8 @@
                                                       <input type="file" name="gambar" class="form-control">
                                                       <label>Alamat Restoran</label>
                                                       <input type="text" name="alamat_restoran"  class="form-control"><br>
+                                                      <label>Jumlah meja</label>
+                                                      <input type="number" name="jmlh_meja"  class="form-control"><br>
                                                      
                                                   
                                             </div>
@@ -102,6 +106,8 @@
                                                       <input type="file" name="gambar" class="form-control" id="gambar">
                                                       <label>Alamat Restoran</label>
                                                       <input type="text" name="alamat_restoran"  class="form-control" id="alamat_restoran"><br>
+                                                      <label>Jumlah Meja</label>
+                                                      <input type="number" name="jmlh_meja"  class="form-control" id="jmlh_meja"><br>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="submit" name="simpan" value="Simpan" class="btn btn-info">Simpan</button>
@@ -118,6 +124,7 @@
         $('#id_restoran').val(data['id_restoran']);
         $('#nama_restoran').val(data['nama_restoran']);
         $('#alamat_restoran').val(data['alamat_restoran']);
+        $('#jmlh_meja').val(data['jmlh_meja']);
       });
    }
 </script>

@@ -24,7 +24,8 @@ class Restoran_model extends CI_Model {
 		{
 			$data = array('nama_restoran' => $this->input->post('nama_restoran'),
 							'gambar' => $this->upload->data('file_name'),
-							'alamat_restoran' => $this->input->post('alamat_restoran')
+							'alamat_restoran' => $this->input->post('alamat_restoran'),
+							'jmlh_meja' => $this->input->post('jmlh_meja')
 						);
 				
 
@@ -55,7 +56,8 @@ class Restoran_model extends CI_Model {
 			{
 				$data = array('nama_restoran' => $this->input->post('nama_restoran'),
 							'gambar' => $this->upload->data('file_name'),
-							'alamat_restoran' => $this->input->post('alamat_restoran')
+							'alamat_restoran' => $this->input->post('alamat_restoran'),
+							'jmlh_meja' => $this->input->post('jmlh_meja')
 						);
 				return $this->db->where('id_restoran', $this->input->post('id_restoran'))->update('restoran',$data);
 			}
@@ -63,7 +65,8 @@ class Restoran_model extends CI_Model {
 		else
 		{
 			$data = array('nama_restoran' => $this->input->post('nama_restoran'),
-							'alamat_restoran' => $this->input->post('alamat_restoran')
+							'alamat_restoran' => $this->input->post('alamat_restoran'),
+							'jmlh_meja' => $this->input->post('jmlh_meja'),
 						);
 			return $this->db->where('id_restoran', $this->input->post('id_restoran'))->update('restoran',$data);
 		}

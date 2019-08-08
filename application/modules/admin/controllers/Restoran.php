@@ -26,6 +26,7 @@ class Restoran extends CI_Controller {
 	{
 		$this->form_validation->set_rules('nama_restoran', 'Nama Restoran', 'trim|required');
 		$this->form_validation->set_rules('alamat_restoran', 'Alamat Restoran', 'trim|required');
+		$this->form_validation->set_rules('jmlh_meja', 'Jumlah Meja', 'trim|required');
 		
 		if ($this->form_validation->run() == TRUE) 
 		{
@@ -54,6 +55,7 @@ class Restoran extends CI_Controller {
 	{
 		$this->form_validation->set_rules('nama_restoran', 'Nama Restoran', 'trim|required');
 		$this->form_validation->set_rules('alamat_restoran', 'Alamat Restoran', 'trim|required');
+		$this->form_validation->set_rules('jmlh_meja', 'Jumlah Meja', 'trim|required');
 		
 		if ($this->form_validation->run() == TRUE) 
 		{
