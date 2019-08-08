@@ -137,6 +137,7 @@
 function tm_detail(id_restoran){
     $.getJSON("<?= base_url()?>index.php/pelanggan/Get_restoran/detail/"+id_restoran,function(data){
       
+      //data restoran
       $('#deskripsi').html(
         '<table class="table table-hover table-stripped">'+
               '<tr><td>Nama Restoran</td><td>'+data['nama_restoran']+'</td></tr>'+
@@ -144,20 +145,27 @@ function tm_detail(id_restoran){
               '<tr><td>Jam Buka</td><td>'+data['jam_buka']+'</td></tr>'+
             '</table>'
             );
+
+            //menampilkan seluruh meja di setiap restoran 
+            $.getJSON("<?= base_url()?>index.php/pelanggan/Get_restoran/get_detail_meja/"+id_restoran,function(data){
+              var tampil_meja='';
+              $.each(data,function(key,dt){
+                  tampil_meja+=
+                  '<label class="btn btn-primary"><input type="radio" onclick="selected(this.form)" name="no_meja"  value="'+dt['no_meja']+'" class=""><i></i>'+dt['no_meja']+'</label> &ensp;'
+              });
+              $("#nomor_meja").html(tampil_meja);
+            });
+
       $('#nomor_meja').html(
         '<form>'+
             '<label>Pesan Meja Nomor ?</label>'+
             '<input type="hidden" id="no_item" class="form-control"><br>'+
-          '<div class="">'+
-            '<label class="btn btn-primary"><input type="radio" onclick="selected(this.form)" name="no_meja"  value="1" class=""><i></i>1</label> &ensp;'+  
-            '<label class="btn btn-primary"><input type="radio" onclick="selected(this.form)" name="no_meja"  value="2" class=""><i></i>2</label> &ensp;'+  
-            '<label class="btn btn-primary"><input type="radio" onclick="selected(this.form)" name="no_meja"  value="3" class=""><i></i>3</label> &ensp;'+
-        '</div>'+
-        
+          '<div id="nomor_meja">'+   
+          '</div>'+ 
         '</form>'
             
             );
-
+      //tombol aksi
         $('#btn').html(
             '<a href="#detail_masakan" data-toggle="modal" onclick="mas_detail('+data['id_restoran']+')" class="btn btn-info" style="text-decoration:none">List Makanan</a> &ensp; '+
             '<button id="beli" onclick="beli('+data['id_restoran']+')" class="btn btn-success">PESAN</button>'
@@ -165,6 +173,10 @@ function tm_detail(id_restoran){
             );
     });
   } 
+
+
+
+
 
   //menampilkan detail menu makanan di setiap restoran
   function mas_detail(id_restoran){

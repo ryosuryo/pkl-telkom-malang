@@ -10,14 +10,9 @@ class Get_restoran extends CI_Controller {
 	}
 	public function index()
 	{
-		
-		
 			$dt = $this->grm->get_restoran();
-			echo json_encode($dt);
-		
-		
+			echo json_encode($dt);	
 	}
-
 	public function cari($nama_restoran='')
 	{
 		$dt = $this->grm->cari_get_restoran($nama_restoran);
@@ -27,6 +22,11 @@ class Get_restoran extends CI_Controller {
 	public function detail($id_restoran)
 	{
 		$dt = $this->grm->get_detail_res($id_restoran);
+		echo json_encode($dt);
+	}
+	public function get_detail_meja($id_restoran)
+	{
+		$dt = $this->grm->detail_meja($id_restoran);
 		echo json_encode($dt);
 	}
 	public function detail_mas($id_restoran)

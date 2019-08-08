@@ -22,7 +22,7 @@
             <br>
             HP,SMS,WA . 0891231749736 | 0812386297358
             <br>
-            Email : bokingsaja@gmail.com
+            Email : boogjaofc@gmail.com
             <br>
             Website : www.boogja.co.id
             <br>

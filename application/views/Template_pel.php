@@ -141,7 +141,7 @@
                 <li class="color-a">
                   <span class="color-text-a">Phone .</span> 089023423724</li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> boogja@gmail.com</li>
+                  <span class="color-text-a">Email .</span> boogjaofc@gmail.com</li>
                 </ul>
             </div>
           </div>
