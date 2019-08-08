@@ -101,11 +101,12 @@ class Transaksi_pel extends CI_Controller {
 		if ($this->session->userdata('logged')==TRUE) {
 			$this->load->model('Login_pelanggan_model','lpm');
 			$this->load->model('Get_masakan_model','gt_mas');
+			$this->load->model('Restoran_meja_model','rmm');
 			$buat_order = $this->gt_mas->buat_order();
 			if ($buat_order) 
 			{
 				$dt_order=$this->gt_mas->get_last_order();
-				$dt_meja=$this->gt_mas->get_last_meja();
+				$dt_meja=$this->rmm->get_last_meja();
 				foreach($this->cart->contents() as $item)  
 				{	
 					$object[] = array('id_order' => $dt_order->id_order,
@@ -117,6 +118,11 @@ class Transaksi_pel extends CI_Controller {
 								);
 				}
 					$masuk_data=$this->db->insert_batch('detail_order', $object);
+
+					$this->db->set('status_meja',"dipakai");
+					$this->db->where('id_restoran', $dt_meja['id_restoran'] && 'no_meja',$dt_meja['no_meja']);
+					$this->db->update('restoran_meja');
+
 					if ($masuk_data) {
 						$this->gt_mas->update_total($dt_order->id_order);
 

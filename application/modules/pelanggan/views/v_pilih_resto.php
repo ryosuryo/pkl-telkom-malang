@@ -80,7 +80,9 @@
     $.getJSON("<?= base_url()?>index.php/pelanggan/Get_restoran",function(data){
     var tampil="";
     $.each(data,function(key,dt){
-      tampil+=
+      if (dt['status']=="Tutup") 
+      {
+          tampil+=
       '<div class="col-md-4">'+
           '<div class="card-box-d">'+
             '<div class="card-img-d">'+
@@ -100,20 +102,59 @@
                   '<p>'+
                     '<strong>Alamat: </strong>'+dt['alamat_restoran']+'</p>'+
                   '<p>'+
-                    '<strong>Status: </strong>'+dt['status']+'</p>'+
+                    '<strong style="color: red;">Status: '+dt['status']+' </strong></p>'+
                     '<p>'+
                     '<strong>Jam Buka: </strong>'+dt['jam_buka']+'</p>'+
                 '</div>'+
               '</div>'+
               '<div class="card-footer-d">'+
                 '<div class="socials-footer d-flex justify-content-center">'+
-                '<a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-danger" style="text-decoration:none">PESAN MEJA</a> &ensp;'+ 
-                '<a href="<?= base_url()?>index.php/pelanggan/Get_masakan/tm_pesan_masakan/'+dt['id_restoran']+'" class="btn btn-primary">PESAN MAKANAN</a>'+
+                '<a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-danger disabled" style="text-decoration:none">PESAN MEJA</a> &ensp;'+ 
+                '<a href="<?= base_url()?>index.php/pelanggan/Get_masakan/tm_pesan_masakan/'+dt['id_restoran']+'" class="btn btn-primary disabled">PESAN MAKANAN</a>'+
                 '</div>'+
               '</div>'+
             '</div>'+
           '</div>'+
         '</div>'
+      }
+      else
+      {
+          tampil+=
+          '<div class="col-md-4">'+
+              '<div class="card-box-d">'+
+                '<div class="card-img-d">'+
+                  '<img src="<?=base_url('assets/gambar/')?>'+dt['gambar']+'" alt="" class="img-d img-fluid" style="width: 600px; height: 450px;">'+
+                '</div>'+
+                '<div class="card-overlay card-overlay-hover">'+
+                  '<div class="card-header-d">'+
+                    '<div class="card-title-d align-self-center">'+
+                      '<h3 class="title-d">'+
+                        '<a href="#" class="link-two">'+dt['nama_restoran']+'</a>'+
+                      '</h3>'+
+                    '</div>'+
+                  '</div>'+
+                  '<div class="card-body-d">'+
+                    '<p class="content-d color-text-a">Deskripsi</p>'+
+                    '<div class="info-agents color-a">'+
+                      '<p>'+
+                        '<strong>Alamat: </strong>'+dt['alamat_restoran']+'</p>'+
+                      '<p>'+
+                        '<strong>Status: </strong>'+dt['status']+'</p>'+
+                        '<p>'+
+                        '<strong>Jam Buka: </strong>'+dt['jam_buka']+'</p>'+
+                    '</div>'+
+                  '</div>'+
+                  '<div class="card-footer-d">'+
+                    '<div class="socials-footer d-flex justify-content-center">'+
+                    '<a href="#detail" data-toggle="modal" onclick="tm_detail('+dt['id_restoran']+')" class="btn btn-danger" style="text-decoration:none">PESAN MEJA</a> &ensp;'+ 
+                    '<a href="<?= base_url()?>index.php/pelanggan/Get_masakan/tm_pesan_masakan/'+dt['id_restoran']+'" class="btn btn-primary">PESAN MAKANAN</a>'+
+                    '</div>'+
+                  '</div>'+
+                '</div>'+
+              '</div>'+
+            '</div>'
+      }
+      
     });
     $("#tampil_restoran").html(tampil);
   });
@@ -151,16 +192,17 @@ function tm_detail(id_restoran){
               var tampil_meja='';
               $.each(data,function(key,dt){
                   tampil_meja+=
-                  '<label class="btn btn-primary"><input type="radio" onclick="selected(this.form)" name="no_meja"  value="'+dt['no_meja']+'" class=""><i></i>'+dt['no_meja']+'</label> &ensp;'
+                  '<label class="btn btn-warning"><input type="radio" onclick="selected(this.form)" name="no_meja"  value="'+dt['no_meja']+'">'+dt['no_meja']+'</label> &ensp;'
               });
-              $("#nomor_meja").html(tampil_meja);
+              $("#nomor_meja_detail").html(tampil_meja);
+
             });
 
       $('#nomor_meja').html(
         '<form>'+
-            '<label>Pesan Meja Nomor ?</label>'+
+            '<label>Pesan Meja Nomor ? <br><small>(bila nomor meja ada yang tidak muncul, meja sedang dipakai atau sudah dipesan)</small></label>'+
             '<input type="hidden" id="no_item" class="form-control"><br>'+
-          '<div id="nomor_meja">'+   
+          '<div id="nomor_meja_detail">'+   
           '</div>'+ 
         '</form>'
             

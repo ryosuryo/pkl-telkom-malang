@@ -20,6 +20,7 @@ class Get_restoran_model extends CI_Model {
 	{
 		return $this->db->join('restoran_meja', 'restoran_meja.id_restoran = restoran.id_restoran')
 						->where('restoran.id_restoran', $id_restoran)
+						->where('restoran_meja.status_meja', 1)
 						->get('restoran')
 						->result();
 	}
