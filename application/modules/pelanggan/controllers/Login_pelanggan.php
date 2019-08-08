@@ -24,17 +24,15 @@ class Login_pelanggan extends CI_Controller {
 				{
 					if ($user['is_actived']==1) 
 					{
-						if (password_verify($password, $user['password'])) 
+						if (password_verify($password,$user['password'])) 
 						{
-
-							$array = [
-				 
+							$data = [
 								'id_pelanggan' => $user['id_pelanggan'],
 								'username' => $user['username'],
 								'logged' => true
 							];
 
-							$this->session->set_userdata($array);
+							$this->session->set_userdata($data);
 							redirect('Dashboard/Dashboard_pelanggan','refresh');
 						}
 						else

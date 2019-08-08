@@ -11,7 +11,7 @@ class Login_pelanggan_model extends CI_Model {
 						'alamat' => $this->input->post('alamat'),
 						'telp' => $this->input->post('telp'),
 						'username' => $this->input->post('username'),
-						'password' => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
+						'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 						'is_actived' => 0,
 						'date_created' => time());
 		return $this->db->insert('pelanggan', $data);
