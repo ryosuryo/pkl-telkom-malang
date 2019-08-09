@@ -25,10 +25,11 @@
 
                                    <?php
                                    $no=0;
+                                   $jmlh_meja = 0;
                                    foreach ($datares as $dr) 
                                    {
                                        $no++;
-                                       $jmlh_meja = '';
+                                       $jmlh_meja = "SELECT COUNT('no_meja') FROM restoran_meja where id_restoran = '.$dr->id_restoran.'";
                                        echo '<tr>
                                                 <td>'.$no.'</td>
                                                 <td>'.$dr->id_restoran.'</td>
