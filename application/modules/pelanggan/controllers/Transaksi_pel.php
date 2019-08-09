@@ -119,9 +119,9 @@ class Transaksi_pel extends CI_Controller {
 				}
 					$masuk_data=$this->db->insert_batch('detail_order', $object);
 
-					$this->db->set('status_meja',"dipakai");
-					$this->db->where('id_restoran', $dt_meja['id_restoran'] && 'no_meja',$dt_meja['no_meja']);
-					$this->db->update('restoran_meja');
+					//$this->db->set('status_meja',"dipakai");
+					//$this->db->where('id_restoran', $dt_meja['id_restoran'] && 'no_meja',$dt_meja['no_meja']);
+					//$this->db->update('restoran_meja');
 
 					if ($masuk_data) {
 						$this->gt_mas->update_total($dt_order->id_order);

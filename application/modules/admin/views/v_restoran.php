@@ -28,13 +28,14 @@
                                    foreach ($datares as $dr) 
                                    {
                                        $no++;
+                                       $jmlh_meja = '';
                                        echo '<tr>
                                                 <td>'.$no.'</td>
                                                 <td>'.$dr->id_restoran.'</td>
                                                 <td>'.$dr->nama_restoran.'</td>
                                                 <td><img src='.base_url("assets/gambar/$dr->gambar").' width="100px" height="75px"></td>
                                                 <td>'.$dr->alamat_restoran.'</td>
-                                                <td>'.$dr->jmlh_meja.'</td>
+                                                <td>'.$jmlh_meja.'</td>
                                                 <td><a href="#ubah" onclick="tm_detail('.$dr->id_restoran.')" class="btn btn-warning" data-toggle="modal">Ubah</a>
                                                      <a href='.base_url('index.php/admin/Restoran/hapus/'.$dr->id_restoran).' onclick="return confirm(\'anda yakin menghapus item ini?\')" class="btn btn-danger">Hapus</a></td>
                                             </tr>';
