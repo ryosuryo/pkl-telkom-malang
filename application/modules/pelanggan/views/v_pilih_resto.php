@@ -105,6 +105,8 @@
                     '<strong style="color: red;">Status: '+dt['status']+' </strong></p>'+
                     '<p>'+
                     '<strong>Jam Buka: </strong>'+dt['jam_buka']+'</p>'+
+                    '<p>'+
+                    '<strong>Jam Tutup: </strong>'+dt['jam_tutup']+'</p>'+
                 '</div>'+
               '</div>'+
               '<div class="card-footer-d">'+
@@ -142,6 +144,8 @@
                         '<strong>Status: </strong>'+dt['status']+'</p>'+
                         '<p>'+
                         '<strong>Jam Buka: </strong>'+dt['jam_buka']+'</p>'+
+                        '<p>'+
+                    '<strong>Jam Tutup: </strong>'+dt['jam_tutup']+'</p>'+
                     '</div>'+
                   '</div>'+
                   '<div class="card-footer-d">'+

@@ -129,7 +129,7 @@
                     <p class="intro-title-top">Yogyakarta, Indonesia
                       <br> </p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b">001 </span> Saatnya
+                      <span class="color-b">Saatnya </span> 
                       <br> Booking Saja</h1>
                     <p class="intro-subtitle intro-price">
                       <a href="<?= base_url()?>index.php/pelanggan/LandController/form_daftar"><span class="price-a">Daftar Sekarang</span></a>
@@ -153,7 +153,7 @@
                     <p class="intro-title-top">Yogyakarta, Indonesia
                       <br> </p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b">204 </span> Sekarang
+                      <span class="color-b">Sekarang </span> 
                       <br> Lebih mudah !!!</h1>
                     <p class="intro-subtitle intro-price">
                       <a href="<?= base_url()?>index.php/pelanggan/LandController/form_daftar"><span class="price-a">Daftar Sekarang</span></a>
@@ -176,7 +176,7 @@
                     <p class="intro-title-top">Yogyakarta, Indonesia
                       <br> </p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b">207 </span> Menjadi
+                      <span class="color-b">Menjadi</span> 
                       <br> Tanpa Ribet !!!</h1>
                     <p class="intro-subtitle intro-price">
                       <a href="<?= base_url()?>index.php/pelanggan/LandController/form_daftar"><span class="price-a">Daftar Sekarang</span></a>

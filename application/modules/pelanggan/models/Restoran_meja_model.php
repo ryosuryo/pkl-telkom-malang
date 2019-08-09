@@ -12,6 +12,13 @@ class Restoran_meja_model extends CI_Model {
                         ->get('pesanan_meja')
                         ->row();
     }
+    public function update_restoran_meja($id_restoran,$no_meja)
+    {
+    	$data = array('status_meja' => 2 );
+    	return $this->db->where('id_restoran', $id_restoran)
+    					->where('no_meja', $no_meja)
+    					->update('restoran_meja', $data);
+    }
 
 }
 
