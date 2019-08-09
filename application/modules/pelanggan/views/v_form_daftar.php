@@ -94,7 +94,7 @@
                         </div>
                         <div>
                             <button class="btn btn--radius-2 btn--blue" type="submit">Register</button>
-                            <a href="<?= base_url()?>index.php/pelanggan/LandController" class="btn btn--radius-2 btn--red" style="text-decoration: none;">Kembali</a>
+                            
                             
                         </div>
                          

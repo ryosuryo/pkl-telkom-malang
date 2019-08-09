@@ -11,9 +11,10 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Masukkan Email Pemulihan</title>
 
     <!-- Icons font CSS-->
+     <link href="<?= base_url()?>assets2/img/login.png" rel="icon">
     <link href="<?= base_url()?>assets3/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="<?= base_url()?>assets3/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->

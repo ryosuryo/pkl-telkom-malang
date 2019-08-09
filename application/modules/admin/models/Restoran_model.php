@@ -5,7 +5,8 @@ class Restoran_model extends CI_Model {
 
 	public function get_resto()
 	{
-		return $this->db->get('restoran')->result();
+		return $this->db->query("SELECT R.*,COUNT(RM.id_meja) as jumlah_meja FROM `restoran` R LEFT JOIN restoran_meja RM USING(id_restoran) GROUP BY id_restoran")->result();
+		
 	}
 	public function tambah()
 	{

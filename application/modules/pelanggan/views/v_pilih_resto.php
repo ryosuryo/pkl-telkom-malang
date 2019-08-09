@@ -35,7 +35,6 @@
                                                 
                                                   
                                                 
-                                                  <div id="deskripsi"></div>
                                                   <div id="nomor_meja"></div><br><br>
                                                   
                                                   
@@ -182,14 +181,6 @@
 function tm_detail(id_restoran){
     $.getJSON("<?= base_url()?>index.php/pelanggan/Get_restoran/detail/"+id_restoran,function(data){
       
-      //data restoran
-      $('#deskripsi').html(
-        '<table class="table table-hover table-stripped">'+
-              '<tr><td>Nama Restoran</td><td>'+data['nama_restoran']+'</td></tr>'+
-              '<tr><td>Alamat</td><td>'+data['alamat_restoran']+'</td></tr>'+
-              '<tr><td>Jam Buka</td><td>'+data['jam_buka']+'</td></tr>'+
-            '</table>'
-            );
 
             //menampilkan seluruh meja di setiap restoran 
             $.getJSON("<?= base_url()?>index.php/pelanggan/Get_restoran/get_detail_meja/"+id_restoran,function(data){
